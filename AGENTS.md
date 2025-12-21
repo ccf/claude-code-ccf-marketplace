@@ -197,6 +197,7 @@ Hypothesis-driven decision making with auditable evidence trails:
 |-------|-------|-------------|
 | `quant-analyst` | opus | Quantitative finance, trading strategies |
 | `risk-manager` | opus | Portfolio risk, VaR, position sizing |
+| `ml-quant-developer` | opus | ML for quant finance, factor investing, deep learning |
 
 ### Blockchain
 

@@ -1579,6 +1579,7 @@
     },
     {
       "name": "quantitative-trading",
+      "description": "Quantitative trading, ML-based asset management, and risk analysis with factor investing, backtesting, and portfolio optimization",
       "source": "./plugins/quantitative-trading",
       "description": "Quantitative analysis, algorithmic trading strategies, financial modeling, portfolio risk management, and backtesting",
       "version": "1.2.0",
