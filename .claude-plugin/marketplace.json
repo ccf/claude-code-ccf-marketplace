@@ -5,8 +5,8 @@
     "url": "https://github.com/ccf/claude-code-plugins"
   },
   "metadata": {
-    "description": "Curated plugin marketplace combining wshobson/agents, ComposioHQ/awesome-claude-skills, m0n0x41d/quint-code, and community best practices. Features 71+ plugins, 100+ agents, 120+ skills optimized for Claude Code.",
-    "version": "2.0.0"
+    "description": "Curated plugin marketplace with 64 focused plugins, 86 specialized agents, and 120+ skills optimized for Claude Code.",
+    "version": "2.1.0"
   },
   "plugins": [
     {
@@ -1353,90 +1353,6 @@
       ]
     },
     {
-      "name": "seo-content-creation",
-      "source": "./plugins/seo-content-creation",
-      "description": "SEO content writing, planning, and quality auditing with E-E-A-T optimization",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "seo",
-        "content-writing",
-        "content-planning",
-        "content-audit"
-      ],
-      "category": "marketing",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/seo-content-writer.md",
-        "./agents/seo-content-planner.md",
-        "./agents/seo-content-auditor.md"
-      ]
-    },
-    {
-      "name": "seo-technical-optimization",
-      "source": "./plugins/seo-technical-optimization",
-      "description": "Technical SEO optimization including meta tags, keywords, structure, and featured snippets",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "seo",
-        "meta-optimization",
-        "keywords",
-        "schema-markup",
-        "snippets"
-      ],
-      "category": "marketing",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/seo-meta-optimizer.md",
-        "./agents/seo-keyword-strategist.md",
-        "./agents/seo-structure-architect.md",
-        "./agents/seo-snippet-hunter.md"
-      ]
-    },
-    {
-      "name": "seo-analysis-monitoring",
-      "source": "./plugins/seo-analysis-monitoring",
-      "description": "Content freshness analysis, cannibalization detection, and authority building for SEO",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "seo",
-        "content-analysis",
-        "e-e-a-t",
-        "authority",
-        "monitoring"
-      ],
-      "category": "marketing",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/seo-content-refresher.md",
-        "./agents/seo-cannibalization-detector.md",
-        "./agents/seo-authority-builder.md"
-      ]
-    },
-    {
       "name": "documentation-generation",
       "source": "./plugins/documentation-generation",
       "description": "OpenAPI specification generation, Mermaid diagram creation, tutorial writing, API reference documentation",
@@ -1575,39 +1491,6 @@
       ]
     },
     {
-      "name": "hr-legal-compliance",
-      "source": "./plugins/hr-legal-compliance",
-      "description": "HR policy documentation, legal compliance templates (GDPR/SOC2/HIPAA), employment contracts, and regulatory documentation",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "hr",
-        "legal",
-        "compliance",
-        "gdpr",
-        "soc2",
-        "hipaa",
-        "policies"
-      ],
-      "category": "business",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/hr-pro.md",
-        "./agents/legal-advisor.md"
-      ],
-      "skills": [
-        "./skills/gdpr-data-handling",
-        "./skills/employment-contract-templates"
-      ]
-    },
-    {
       "name": "customer-sales-automation",
       "source": "./plugins/customer-sales-automation",
       "description": "Customer support workflow automation, sales pipeline management, email campaigns, and CRM integration",
@@ -1723,104 +1606,6 @@
       "skills": [
         "./skills/backtesting-frameworks",
         "./skills/risk-metrics-calculation"
-      ]
-    },
-    {
-      "name": "payment-processing",
-      "source": "./plugins/payment-processing",
-      "description": "Payment gateway integration with Stripe, PayPal, checkout flow implementation, subscription billing, and PCI compliance",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "payments",
-        "stripe",
-        "paypal",
-        "checkout",
-        "billing",
-        "subscriptions",
-        "pci"
-      ],
-      "category": "payments",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/payment-integration.md"
-      ],
-      "skills": [
-        "./skills/billing-automation",
-        "./skills/paypal-integration",
-        "./skills/pci-compliance",
-        "./skills/stripe-integration"
-      ]
-    },
-    {
-      "name": "game-development",
-      "source": "./plugins/game-development",
-      "description": "Unity game development with C# scripting, Minecraft server plugin development with Bukkit/Spigot APIs",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "gaming",
-        "unity",
-        "minecraft",
-        "game-dev",
-        "bukkit",
-        "spigot"
-      ],
-      "category": "gaming",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/unity-developer.md",
-        "./agents/minecraft-bukkit-pro.md"
-      ],
-      "skills": [
-        "./skills/unity-ecs-patterns",
-        "./skills/godot-gdscript-patterns"
-      ]
-    },
-    {
-      "name": "accessibility-compliance",
-      "source": "./plugins/accessibility-compliance",
-      "description": "WCAG accessibility auditing, compliance validation, UI testing for screen readers, keyboard navigation, and inclusive design",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "accessibility",
-        "wcag",
-        "a11y",
-        "compliance",
-        "inclusive-design"
-      ],
-      "category": "accessibility",
-      "strict": false,
-      "commands": [
-        "./commands/accessibility-audit.md"
-      ],
-      "agents": [
-        "./agents/ui-visual-validator.md"
-      ],
-      "skills": [
-        "./skills/wcag-audit-patterns",
-        "./skills/screen-reader-testing"
       ]
     },
     {
