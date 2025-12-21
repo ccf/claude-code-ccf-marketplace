@@ -1,16 +1,17 @@
 # Claude Code Plugins Marketplace
 
-A curated collection of 64 plugins, 86 agents, and 120+ skills for Claude Code.
+A curated collection of 64 plugins, 93 agents, and 130+ skills for Claude Code.
 
 ## Structure
 
 ```
 claude-code-plugins/
-├── shared/agents/           # 86 unique agents (symlinked into plugins)
+├── shared/agents/           # 93 unique agents (symlinked into plugins)
 ├── plugins/                 # 64 domain-specific plugins
 │   ├── */agents/            # Symlinks to shared/agents
 │   ├── */commands/          # Slash commands
 │   └── */skills/            # Modular knowledge packages
+├── workflows/               # Composable workflow templates
 └── .claude-plugin/marketplace.json
 ```
 
@@ -53,6 +54,17 @@ Hypothesis-driven decision making with auditable evidence trails:
 ---
 
 ## Available Agents
+
+### Orchestration & Meta
+
+| Agent | Model | Description |
+|-------|-------|-------------|
+| `task-planner` | opus | Decomposes complex tasks, delegates to agents, coordinates execution |
+| `output-critic` | opus | Reviews agent outputs for correctness, completeness, quality |
+| `context-researcher` | sonnet | Gathers context before implementation, builds understanding |
+| `codebase-navigator` | sonnet | Maps project structure, traces data flows, locates code |
+| `api-designer` | inherit | Designs clean REST/GraphQL/gRPC APIs with best practices |
+| `test-strategist` | inherit | Plans comprehensive testing strategies, identifies edge cases |
 
 ### Architecture & Design
 
@@ -110,7 +122,7 @@ Hypothesis-driven decision making with auditable evidence trails:
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `ai-engineer` | inherit | LLM applications, RAG systems, agents |
-| `prompt-engineer` | opus | Prompt engineering, optimization |
+| `prompt-engineer` | opus | Prompt engineering, optimization techniques |
 | `ml-engineer` | inherit | Model training, deployment, pipelines |
 | `mlops-engineer` | sonnet | MLOps workflows, experiment tracking |
 | `data-scientist` | inherit | Analytics, statistical modeling |
@@ -219,7 +231,7 @@ Hypothesis-driven decision making with auditable evidence trails:
 
 | Agent | Model | Description |
 |-------|-------|-------------|
-| `legacy-modernizer` | opus | Legacy code modernization |
+| `legacy-modernizer` | opus | Legacy code modernization, systematic refactoring |
 | `event-sourcing-architect` | opus | Event sourcing, CQRS patterns |
 | `temporal-python-pro` | opus | Temporal workflows, orchestration |
 

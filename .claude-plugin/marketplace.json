@@ -5,8 +5,8 @@
     "url": "https://github.com/ccf/claude-code-plugins"
   },
   "metadata": {
-    "description": "Curated plugin marketplace with 64 focused plugins, 86 specialized agents, and 120+ skills optimized for Claude Code.",
-    "version": "2.1.0"
+    "description": "Curated plugin marketplace with 64 focused plugins, 93 specialized agents, 130+ skills, and workflow templates optimized for Claude Code.",
+    "version": "2.2.0"
   },
   "plugins": [
     {
@@ -468,21 +468,19 @@
     {
       "name": "agent-orchestration",
       "source": "./plugins/agent-orchestration",
-      "description": "Multi-agent system optimization, skill creation, agent improvement workflows, and context management",
-      "version": "1.3.0",
+      "description": "Multi-agent orchestration with task planning, output critique, context research, and Anthropic best practices",
+      "version": "2.0.0",
       "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
+        "name": "Curated Marketplace"
       },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
       "license": "MIT",
       "keywords": [
         "multi-agent",
         "orchestration",
         "ai-agents",
-        "skill-creation",
-        "optimization"
+        "planning",
+        "critique",
+        "best-practices"
       ],
       "category": "ai-ml",
       "strict": false,
@@ -491,10 +489,21 @@
         "./commands/improve-agent.md"
       ],
       "agents": [
+        "./agents/task-planner.md",
+        "./agents/output-critic.md",
+        "./agents/context-researcher.md",
+        "./agents/codebase-navigator.md",
+        "./agents/api-designer.md",
+        "./agents/test-strategist.md",
         "./agents/context-manager.md"
       ],
       "skills": [
-        "./skills/skill-creator"
+        "./skills/skill-creator",
+        "./skills/agentic-coding-patterns",
+        "./skills/context-optimization",
+        "./skills/anthropic-agent-guidelines",
+        "./skills/eval-driven-development",
+        "./skills/uncertainty-communication"
       ]
     },
     {

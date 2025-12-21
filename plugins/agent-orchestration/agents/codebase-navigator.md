@@ -1,0 +1,1 @@
+../../../shared/agents/codebase-navigator.md
