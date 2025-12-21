@@ -1,6 +1,45 @@
-# Available Agents
+# Claude Code Plugins Marketplace
 
-This marketplace includes 86 specialized agents organized by domain. All agents are stored in `shared/agents/` and symlinked into relevant plugins.
+A curated collection of 64 plugins, 86 agents, and 120+ skills for Claude Code.
+
+## Structure
+
+```
+claude-code-plugins/
+├── shared/agents/           # 86 unique agents (symlinked into plugins)
+├── plugins/                 # 64 domain-specific plugins
+│   ├── */agents/            # Symlinks to shared/agents
+│   ├── */commands/          # Slash commands
+│   └── */skills/            # Modular knowledge packages
+└── .claude-plugin/marketplace.json
+```
+
+## Key Capabilities
+
+### Structured Reasoning (FPF)
+Hypothesis-driven decision making with auditable evidence trails:
+- `/q0-init` — Initialize reasoning knowledge base
+- `/q1-hypothesize <problem>` — Generate competing hypotheses
+- `/q2-verify` — Logical verification
+- `/q3-validate` — Empirical evidence gathering
+- `/q5-decide` — Create Design Rationale Record
+
+### Development Workflows
+- **Subagent-Driven Development** — Fresh subagent per task with code review checkpoints
+- **Git Worktrees** — Isolated workspaces for parallel feature development
+- **Root Cause Tracing** — Trace errors to source, not symptoms
+
+### Cloud & Infrastructure
+- **AWS Development** — CDK, serverless, event-driven architecture
+- **Kubernetes** — Cluster design, Helm, GitOps
+- **Terraform** — IaC patterns and modules
+
+### AI/ML Development
+- **MCP Builder** — Create high-quality MCP servers
+- **Prompt Engineering** — Optimization techniques
+- **RAG Systems** — Vector databases, embeddings
+
+---
 
 ## Model Tiers
 
@@ -13,7 +52,9 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 
 ---
 
-## Architecture & Design
+## Available Agents
+
+### Architecture & Design
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -27,9 +68,9 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `monorepo-architect` | opus | Monorepo structure, tooling, dependency management |
 | `service-mesh-expert` | inherit | Istio, Linkerd, service mesh patterns |
 
-## Languages
+### Languages
 
-### Systems Programming
+#### Systems Programming
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `c-pro` | opus | C with memory management, system calls, embedded |
@@ -37,7 +78,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `rust-pro` | opus | Safe Rust, async patterns, systems programming |
 | `golang-pro` | opus | Go concurrency, microservices, cloud-native |
 
-### Web & Backend
+#### Web & Backend
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `python-pro` | opus | Modern Python 3.12+, async, type hints |
@@ -48,7 +89,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `ruby-pro` | inherit | Ruby, Rails, modern patterns |
 | `php-pro` | inherit | Modern PHP, Laravel patterns |
 
-### JVM & Functional
+#### JVM & Functional
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `java-pro` | inherit | Modern Java, Spring Boot, enterprise |
@@ -57,14 +98,14 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `elixir-pro` | inherit | Elixir, OTP, Phoenix LiveView |
 | `haskell-pro` | inherit | Pure functional Haskell patterns |
 
-### Specialized
+#### Specialized
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `julia-pro` | inherit | Scientific computing, numerical code |
 | `bash-pro` | sonnet | Defensive Bash scripting, automation |
 | `posix-shell-pro` | sonnet | POSIX-compliant shell scripts |
 
-## AI & Machine Learning
+### AI & Machine Learning
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -78,7 +119,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `context-manager` | inherit | Context engineering, knowledge management |
 | `mcp-architect` | opus | MCP server development, tool design |
 
-## Infrastructure & DevOps
+### Infrastructure & DevOps
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -90,7 +131,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `observability-engineer` | inherit | Metrics, logs, traces, dashboards |
 | `network-engineer` | inherit | Networking, load balancing, DNS |
 
-## Security
+### Security
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -100,7 +141,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `frontend-security-coder` | inherit | XSS prevention, CSP, CORS |
 | `mobile-security-coder` | inherit | Mobile app security patterns |
 
-## Data & Databases
+### Data & Databases
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -109,7 +150,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `database-admin` | sonnet | Database operations, automation |
 | `sql-pro` | opus | Advanced SQL, optimization |
 
-## Frontend & Mobile
+### Frontend & Mobile
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -119,7 +160,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `flutter-expert` | inherit | Flutter, Dart, cross-platform |
 | `ui-ux-designer` | inherit | Design systems, user experience |
 
-## Quality & Testing
+### Quality & Testing
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -130,7 +171,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `error-detective` | sonnet | Error analysis, log correlation |
 | `performance-engineer` | inherit | Performance optimization, profiling |
 
-## Documentation
+### Documentation
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -144,26 +185,26 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `c4-container` | sonnet | C4 container diagrams |
 | `c4-context` | sonnet | C4 context diagrams |
 
-## Embedded & Hardware
+### Embedded & Hardware
 
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `arm-cortex-expert` | inherit | ARM Cortex-M firmware, drivers, DMA |
 
-## Finance
+### Finance
 
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `quant-analyst` | opus | Quantitative finance, trading strategies |
 | `risk-manager` | opus | Portfolio risk, VaR, position sizing |
 
-## Blockchain
+### Blockchain
 
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `blockchain-developer` | opus | Smart contracts, DeFi, Web3 |
 
-## Business
+### Business
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -173,7 +214,7 @@ This marketplace includes 86 specialized agents organized by domain. All agents 
 | `sales-automator` | haiku | Sales workflows, CRM |
 | `search-specialist` | haiku | Search optimization, research |
 
-## Modernization
+### Modernization
 
 | Agent | Model | Description |
 |-------|-------|-------------|
@@ -198,3 +239,13 @@ Example:
 @aws-architect Design a serverless architecture for this API
 ```
 
+---
+
+## Sources
+
+This marketplace combines:
+- [wshobson/agents](https://github.com/wshobson/agents) — Base structure
+- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) — Skills
+- [m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code) — FPF reasoning
+- [obra/superpowers](https://github.com/obra/superpowers) — Development workflows
+- [zxkane/aws-skills](https://github.com/zxkane/aws-skills) — AWS patterns
