@@ -2,7 +2,7 @@
 
 > **⚡ Unified Marketplace** — Combining the best of wshobson/agents, ComposioHQ/awesome-claude-skills, m0n0x41d/quint-code, and community best practices
 
-A comprehensive, curated plugin marketplace featuring **71+ focused plugins**, **100+ specialized agents**, **120+ skills**, and production-ready workflows for Claude Code.
+A comprehensive, curated plugin marketplace featuring **64 focused plugins**, **93 specialized agents**, **130+ skills**, and production-ready workflows for Claude Code.
 
 ## What's Included
 
@@ -11,13 +11,52 @@ This repository combines and enhances multiple best-in-class Claude Code plugin 
 | Source | What It Brings |
 |--------|----------------|
 | **[wshobson/agents](https://github.com/wshobson/agents)** | 67 focused plugins, 99 agents, marketplace structure |
-| **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** | MCP builder, skill creator, changelog generator, document skills |
+| **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** | MCP builder, skill creator, changelog generator |
 | **[m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code)** | Structured reasoning (FPF), auditable decision making |
 | **[obra/superpowers](https://github.com/obra/superpowers)** | Git worktrees, root-cause tracing, subagent-driven development |
-| **[NeoLabHQ/context-engineering-kit](https://github.com/NeoLabHQ/context-engineering-kit)** | Prompt engineering, software architecture, kaizen methodology |
-| **[zxkane/aws-skills](https://github.com/zxkane/aws-skills)** | AWS CDK, serverless, event-driven architecture patterns |
+| **[NeoLabHQ/context-engineering-kit](https://github.com/NeoLabHQ/context-engineering-kit)** | Prompt engineering, software architecture |
+| **[zxkane/aws-skills](https://github.com/zxkane/aws-skills)** | AWS CDK, serverless, event-driven architecture |
 
-## Highlighted New Plugins
+---
+
+## Agent Orchestration Architecture
+
+### Coordination Agents
+Multi-agent workflows with specialized coordination:
+
+| Agent | Purpose |
+|-------|---------|
+| `@task-planner` | Decomposes complex tasks, delegates to specialists |
+| `@output-critic` | Reviews outputs before finalization |
+| `@context-researcher` | Gathers context before implementation |
+| `@codebase-navigator` | Maps project structure, locates code |
+
+### Workflow Templates
+Composable patterns in `workflows/`:
+
+```
+Feature Development:
+@task-planner → @codebase-navigator → @architect-review → @{lang}-pro → @code-reviewer
+
+Bug Investigation:
+@codebase-navigator → @debugger → @error-detective → @{lang}-pro → @test-strategist
+
+Architecture Decision:
+@context-researcher → @reasoning-orchestrator → /q1-hypothesize → /q5-decide
+```
+
+### Best Practice Skills
+| Skill | What It Teaches |
+|-------|-----------------|
+| `agentic-coding-patterns` | Writing code that works well with AI |
+| `context-optimization` | Managing context windows effectively |
+| `anthropic-agent-guidelines` | Official Anthropic agent best practices |
+| `eval-driven-development` | Testing and evaluating AI outputs |
+| `uncertainty-communication` | When/how to ask clarifying questions |
+
+---
+
+## Highlighted Capabilities
 
 ### Structured Reasoning (FPF)
 Hypothesis-driven decision making with auditable evidence trails:
@@ -28,40 +67,62 @@ Hypothesis-driven decision making with auditable evidence trails:
 /q5-decide H1                      # Create Design Rationale Record
 ```
 
+### ML Quantitative Finance
+Comprehensive ML-based asset management:
+- Deep learning (LSTM, transformers, autoencoders)
+- Reinforcement learning for portfolio optimization
+- López de Prado framework (CPCV, meta-labeling, PBO)
+- Factor investing with ML
+
 ### AWS Development
 Full-stack AWS with CDK, serverless, and event-driven patterns:
 - AWS CDK best practices and construct patterns
 - Serverless architecture (Lambda, API Gateway, Step Functions)
 - Event-driven design (EventBridge, SQS, SNS)
-- Well-Architected Framework compliance
 
 ### MCP Development  
 Build high-quality MCP servers for LLM integrations:
 - Agent-centric design patterns
 - Tool design best practices
 - Evaluation framework
-- Python and TypeScript guides
 
-### Enhanced Quantitative Trading
-Comprehensive quant and risk management:
-- Factor-based strategies and statistical arbitrage
-- VaR, CVaR, and stress testing
-- R-multiple tracking and expectancy calculation
-- Kelly criterion position sizing
+---
 
-## Plugin Categories
+## Model Tiers
 
-| Category | Plugins | Description |
-|----------|---------|-------------|
-| **Development** | 5 | Debugging, backend, frontend, multi-platform, developer essentials |
-| **Documentation** | 3 | Code docs, API specs, C4 architecture |
-| **Workflows** | 4 | Git, full-stack, TDD, development workflows |
-| **AI & ML** | 5 | LLM apps, agents, context, MLOps, structured reasoning |
-| **Infrastructure** | 6 | Deployment, K8s, cloud, CI/CD, AWS |
-| **Security** | 4 | Scanning, compliance, backend/API, frontend/mobile |
-| **Languages** | 8 | Python, JS/TS, systems (Rust/Go/C/C++), JVM, shell |
-| **Finance** | 1 | Quantitative trading, risk management |
-| **And more...** | 35+ | Data, operations, performance, business, gaming |
+Strategic model assignment for optimal performance:
+
+| Tier | Model | Use Case |
+|------|-------|----------|
+| **Tier 1** | `opus` | Architecture, security, code review, critical coding |
+| **Tier 2** | `inherit` | Complex tasks - uses session default model |
+| **Tier 3** | `sonnet` | Support tasks (docs, testing, debugging) |
+| **Tier 4** | `haiku` | Fast operations (deployment, content) |
+
+---
+
+## Repository Structure
+
+```
+claude-code-plugins/
+├── .claude-plugin/
+│   └── marketplace.json          # 64 plugins defined
+├── shared/
+│   └── agents/                   # 93 unique agents (single source of truth)
+├── plugins/
+│   ├── agent-orchestration/      # Coordination agents + best practice skills
+│   ├── structured-reasoning/     # FPF methodology + commands
+│   ├── aws-development/          # AWS CDK, serverless
+│   ├── mcp-development/          # MCP server building
+│   ├── quantitative-trading/     # Quant, risk, ML finance
+│   └── ... (59+ more plugins)
+├── workflows/                    # Composable workflow templates
+├── AGENTS.md                     # Complete agent catalog
+├── CLAUDE.md                     # Entry point (@AGENTS.md)
+└── README.md
+```
+
+---
 
 ## Quick Start
 
@@ -69,82 +130,68 @@ Comprehensive quant and risk management:
 ```bash
 git clone https://github.com/YOUR_USERNAME/claude-code-plugins.git
 cd claude-code-plugins
-# Copy to Claude Code configuration
-cp -r .claude-plugin ~/.config/claude-code/
+# Symlink to Claude Code configuration
+ln -s $(pwd) ~/.config/claude-code/plugins/claude-code-plugins
 ```
 
 ### Install Specific Plugin
 ```bash
 # Copy individual plugin
-cp -r plugins/structured-reasoning ~/.config/claude-code/plugins/
+cp -r plugins/agent-orchestration ~/.config/claude-code/plugins/
 ```
 
-## Key Skills
+---
 
-### From ComposioHQ
-- **mcp-builder** — Guide for creating MCP servers
-- **skill-creator** — Create effective Claude skills
-- **changelog-generator** — Transform commits to release notes
+## Key Skills by Source
+
+### Agent Orchestration (New)
+- **agentic-coding-patterns** — Writing AI-friendly code
+- **context-optimization** — Managing context windows
+- **anthropic-agent-guidelines** — Official best practices
+- **eval-driven-development** — Testing AI outputs
+- **uncertainty-communication** — Asking clarifying questions
 
 ### From Superpowers
 - **using-git-worktrees** — Isolated workspaces for feature development
-- **subagent-driven-development** — Fresh subagent per task with code review
-- **root-cause-tracing** — Trace errors to their source, not symptoms
+- **subagent-driven-development** — Fresh subagent per task
+- **root-cause-tracing** — Trace errors to source
 
 ### From Context Engineering Kit
-- **prompt-engineering** — Few-shot, chain-of-thought, persuasion principles
-- **software-architecture** — Clean Architecture, DDD, SOLID patterns
+- **prompt-engineering** — Few-shot, chain-of-thought techniques
+- **software-architecture** — Clean Architecture, DDD, SOLID
 
 ### From AWS Skills
-- **aws-cdk-development** — CDK constructs, patterns, validation
+- **aws-cdk-development** — CDK constructs and patterns
 - **aws-serverless-eda** — Lambda, Step Functions, EventBridge
 
-## Three-Tier Model Strategy
+---
 
-Strategic model assignment for optimal performance:
+## Plugin Categories
 
-| Tier | Model | Use Case |
-|------|-------|----------|
-| **Tier 1** | Opus | Architecture, security, code review, production coding |
-| **Tier 2** | Inherit | Complex tasks - user chooses (AI/ML, backend, frontend) |
-| **Tier 3** | Sonnet | Support tasks (docs, testing, debugging) |
-| **Tier 4** | Haiku | Fast operations (SEO, deployment, content) |
+| Category | Count | Examples |
+|----------|-------|----------|
+| **AI & ML** | 6 | agent-orchestration, structured-reasoning, llm-application-dev |
+| **Infrastructure** | 7 | aws-development, kubernetes-operations, cloud-infrastructure |
+| **Languages** | 8 | python-development, systems-programming, javascript-typescript |
+| **Development** | 5 | debugging-toolkit, backend-development, code-refactoring |
+| **Documentation** | 3 | documentation-generation, c4-architecture, code-documentation |
+| **Security** | 4 | security-scanning, backend-api-security, frontend-mobile-security |
+| **Finance** | 1 | quantitative-trading (quant-analyst, risk-manager, ml-quant-developer) |
+| **And more...** | 30+ | data-engineering, observability, performance, business |
 
-## Repository Structure
-
-```
-claude-code-plugins/
-├── .claude-plugin/
-│   └── marketplace.json          # 71+ plugins
-├── plugins/
-│   ├── structured-reasoning/     # FPF methodology
-│   │   ├── agents/
-│   │   ├── commands/             # q0-init, q1-hypothesize, etc.
-│   │   └── skills/
-│   ├── aws-development/          # AWS CDK, serverless
-│   ├── mcp-development/          # MCP server building
-│   ├── quantitative-trading/     # Enhanced quant/risk
-│   ├── development-workflows/    # Subagent patterns
-│   └── ... (65+ more plugins)
-├── docs/                         # Comprehensive documentation
-└── README.md
-```
+---
 
 ## Contributing
 
-To add new agents, skills, or commands:
+1. Add agents to `shared/agents/` (single source of truth)
+2. Create symlinks in relevant `plugins/*/agents/`
+3. Add skills to appropriate `plugins/*/skills/`
+4. Update `.claude-plugin/marketplace.json`
+5. Submit a pull request
 
-1. Identify or create the appropriate plugin in `plugins/`
-2. Add `.md` files in the appropriate subdirectory:
-   - `agents/` — Specialized agents
-   - `commands/` — Tools and workflows  
-   - `skills/` — Modular knowledge packages
-3. Update the plugin definition in `.claude-plugin/marketplace.json`
-4. Submit a pull request
+---
 
 ## Credits
-
-This curated marketplace builds upon the excellent work of:
 
 - **Seth Hobson** ([@wshobson](https://github.com/wshobson)) — Original agents marketplace
 - **Composio** ([@ComposioHQ](https://github.com/ComposioHQ)) — Awesome Claude Skills
