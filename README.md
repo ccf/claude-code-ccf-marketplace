@@ -128,7 +128,7 @@ claude-code-plugins/
 
 ### Install All Plugins
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-code-plugins.git
+git clone https://github.com/ccf/claude-code-plugins.git
 cd claude-code-plugins
 # Symlink to Claude Code configuration
 ln -s $(pwd) ~/.config/claude-code/plugins/claude-code-plugins
