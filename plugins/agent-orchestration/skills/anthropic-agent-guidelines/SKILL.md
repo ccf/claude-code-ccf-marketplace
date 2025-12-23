@@ -1,6 +1,20 @@
 ---
 name: anthropic-agent-guidelines
 description: Official best practices from Anthropic for building effective AI agents. Covers tool design, agentic loops, error handling, and safety patterns.
+
+summary: |
+  - Tool descriptions: 200+ words, include edge cases and examples
+  - Checkpoints every 5 steps for long tasks
+  - Stop-and-ask when: ambiguous, high-risk, unexpected state
+  - Retry with exponential backoff: 1s, 2s, 4s
+  - Audit log all actions with sanitized params
+
+context_cost: medium
+load_when:
+  - "agent design"
+  - "tool design"
+  - "agentic loop"
+  - "anthropic best practices"
 ---
 
 # Anthropic Agent Guidelines

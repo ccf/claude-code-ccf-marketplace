@@ -1,6 +1,20 @@
 ---
 name: context-optimization
 description: Techniques for managing context windows effectively when working with AI assistants. Covers progressive disclosure, context budgeting, and efficient information loading.
+
+summary: |
+  - Budget: System 10%, History 25%, Active 45%, Response 20%
+  - Load in tiers: Metadata → Signatures → Full implementation
+  - Never load entire large files; use semantic search
+  - Refresh context at task boundaries
+  - Summarize, don't dump; elide middle sections
+
+context_cost: low
+load_when:
+  - "context window"
+  - "token limit"
+  - "too much context"
+  - "context management"
 ---
 
 # Context Optimization

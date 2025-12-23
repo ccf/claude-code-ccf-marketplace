@@ -1,6 +1,21 @@
 ---
 name: root-cause-tracing
-description: Trace errors backward through the call chain to find the original trigger. Use when errors occur deep in execution, stack traces show long call chains, or when unclear where invalid data originated.
+description: Trace errors backward through the call chain to find the original trigger.
+
+summary: |
+  - Core: Fix at source, not where error manifests
+  - Process: Symptom → Immediate cause → Trace back → Root cause → Fix
+  - Ask: "What called this? What passed this value?"
+  - Verify: Regression test at point of failure
+  - Anti-pattern: Fixing symptoms, not sources
+
+context_cost: medium
+load_when:
+  - "debugging"
+  - "root cause"
+  - "stack trace"
+  - "error tracing"
+  - "bug investigation"
 ---
 
 # Root Cause Tracing

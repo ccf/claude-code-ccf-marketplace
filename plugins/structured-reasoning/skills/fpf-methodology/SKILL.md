@@ -1,6 +1,25 @@
 ---
 name: fpf-methodology
-description: First Principles Framework (FPF) for structured, auditable reasoning. Use when making architectural decisions with long-term consequences, when multiple viable approaches require systematic evaluation, when an auditable reasoning trail is needed, or when building project knowledge over time.
+description: First Principles Framework (FPF) for structured, auditable reasoning.
+
+summary: |
+  - Cycle: Abduction → Deduction → Induction (Hypothesis → Logic → Evidence)
+  - Commands: /q0-init → /q1-hypothesize → /q2-verify → /q3-validate → /q5-decide
+  - Output: Design Rationale Records (DRRs) for auditable decisions
+  - Use for: Architectural decisions, complex problems, team discussions
+  - Skip for: Quick fixes, obvious solutions, time-critical issues
+
+context_cost: medium
+load_when:
+  - "structured reasoning"
+  - "architectural decision"
+  - "design rationale"
+  - "hypothesis"
+  - "first principles"
+
+enhances:
+  - software-architecture
+  - api-design-principles
 ---
 
 # First Principles Framework (FPF)

@@ -1,6 +1,20 @@
 ---
 name: agentic-coding-patterns
 description: Best practices for writing code that works well with AI assistants. Covers code structure, documentation, and patterns that enable effective AI collaboration.
+
+summary: |
+  - Use explicit types over implicit magic (AI needs clarity)
+  - Self-documenting structure: features/, shared/, types.ts
+  - Include "why" in docstrings, not just "what"
+  - Typed errors with context: `InsufficientInventoryError(product_id, requested, available)`
+  - Factories over fixtures in tests for clear intent
+
+context_cost: medium
+load_when:
+  - "ai-friendly code"
+  - "writing for claude"
+  - "code structure"
+  - "documentation patterns"
 ---
 
 # Agentic Coding Patterns

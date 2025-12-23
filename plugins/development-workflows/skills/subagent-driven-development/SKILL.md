@@ -1,6 +1,20 @@
 ---
 name: subagent-driven-development
-description: Use when executing implementation plans with independent tasks in the current session
+description: Execute plans by dispatching fresh subagent per task with two-stage review.
+
+summary: |
+  - Fresh subagent per task (clean context, focused)
+  - Two-stage review: spec compliance first, then code quality
+  - Pattern: Dispatch → Execute → Review Spec → Review Quality → Next
+  - Use for: independent tasks, implementation plans, parallel work
+  - Avoid for: tightly coupled tasks, exploration, brainstorming
+
+context_cost: medium
+load_when:
+  - "subagent"
+  - "task delegation"
+  - "implementation plan"
+  - "parallel execution"
 ---
 
 # Subagent-Driven Development

@@ -54,6 +54,8 @@ Architecture Decision:
 | `eval-driven-development` | Testing and evaluating AI outputs |
 | `uncertainty-communication` | When/how to ask clarifying questions |
 
+> 📚 **Progressive Disclosure**: Skills now include `summary`, `context_cost`, and `load_when` frontmatter for efficient context loading. See [SKILLS_INDEX.md](./SKILLS_INDEX.md) for the full catalog.
+
 ---
 
 ## Highlighted Capabilities
@@ -118,6 +120,7 @@ claude-code-ccf-marketplace/
 │   └── ... (59+ more plugins)
 ├── workflows/                    # Composable workflow templates
 ├── AGENTS.md                     # Complete agent catalog
+├── SKILLS_INDEX.md               # Skill discovery with context costs
 ├── CLAUDE.md                     # Entry point (@AGENTS.md)
 └── README.md
 ```

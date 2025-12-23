@@ -1,6 +1,20 @@
 ---
 name: eval-driven-development
 description: Framework for testing and evaluating AI agent outputs. Covers evaluation design, metrics, regression testing, and continuous improvement of AI-assisted workflows.
+
+summary: |
+  - Eval types: Exact match, Contains/Pattern, LLM-as-Judge, Human review
+  - Only report issues with confidence ≥ 80
+  - Track pass_rate, precision, recall, F1 over time
+  - Detect regression: previous.pass_rate - current > 0.05
+  - A/B test prompts with statistical comparison
+
+context_cost: medium
+load_when:
+  - "testing ai"
+  - "evaluating agent"
+  - "ai quality"
+  - "regression testing"
 ---
 
 # Eval-Driven Development

@@ -1,6 +1,20 @@
 ---
 name: uncertainty-communication
 description: Patterns for AI agents to effectively communicate uncertainty, ask clarifying questions, and know when to stop and defer to humans.
+
+summary: |
+  - Confidence markers: Certain → "This is", Low → "Might", Unknown → "I don't know"
+  - Ask when: multiple interpretations, conflicting requirements, high risk
+  - Provide defaults with escape hatch: "I'll use X. If you prefer Y, let me know."
+  - Stop conditions: 3+ failed attempts, outside competency, needs human judgment
+  - Never hallucinate certainty; acknowledge knowledge gaps
+
+context_cost: low
+load_when:
+  - "uncertainty"
+  - "clarifying questions"
+  - "when to ask"
+  - "confidence level"
 ---
 
 # Uncertainty Communication
