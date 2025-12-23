@@ -16,6 +16,7 @@ Quick-reference catalog for progressive skill discovery. Skills are organized by
 
 | Skill | Context | Description |
 |-------|---------|-------------|
+| `skill-creator` | 🟡 | Guide for creating effective skills |
 | `agentic-coding-patterns` | 🟡 | AI-friendly code structure and documentation |
 | `anthropic-agent-guidelines` | 🟡 | Official Anthropic best practices for agents |
 | `context-optimization` | 🟢 | Context window management and token budgeting |
@@ -75,8 +76,13 @@ Quick-reference catalog for progressive skill discovery. Skills are organized by
 | Skill | Context | Description |
 |-------|---------|-------------|
 | `changelog-generator` | 🟢 | Automated changelog generation |
-| `git-worktrees` | 🟢 | Parallel development with worktrees |
 | `subagent-driven-development` | 🟡 | Subagent patterns for complex tasks |
+
+## Git PR Workflows
+
+| Skill | Context | Description |
+|-------|---------|-------------|
+| `using-git-worktrees` | 🟡 | Isolated git worktrees with safety verification |
 
 ## Documentation Generation
 

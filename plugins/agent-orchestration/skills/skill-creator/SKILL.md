@@ -1,6 +1,21 @@
 ---
 name: skill-creator
-description: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.
+description: Guide for creating effective skills that extend Claude's capabilities.
+
+summary: |
+  - Structure: skill-name/SKILL.md + optional scripts/, references/, assets/
+  - Frontmatter: name, description (required); summary, context_cost, load_when (recommended)
+  - Be specific in description about when to use the skill
+  - Include worked examples and common pitfalls
+  - Bundle scripts for deterministic/repeatable tasks
+
+context_cost: medium
+load_when:
+  - "create skill"
+  - "new skill"
+  - "skill template"
+  - "extending claude"
+
 license: Complete terms in LICENSE.txt
 ---
 

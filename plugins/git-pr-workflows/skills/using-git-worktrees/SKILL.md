@@ -1,6 +1,20 @@
 ---
 name: using-git-worktrees
-description: Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification
+description: Create isolated git worktrees with smart directory selection and safety verification.
+
+summary: |
+  - Priority: .worktrees/ > worktrees/ > CLAUDE.md > ask user
+  - Always verify .gitignore before creating project-local worktree
+  - Create: `git worktree add .worktrees/branch-name -b branch-name`
+  - Run project setup (npm install, cargo build, etc.) automatically
+  - Verify tests pass before starting work
+
+context_cost: medium
+load_when:
+  - "git worktree"
+  - "isolated workspace"
+  - "feature branch"
+  - "parallel development"
 ---
 
 # Using Git Worktrees
