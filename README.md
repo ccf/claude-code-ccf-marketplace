@@ -4,19 +4,6 @@
 
 A comprehensive, curated plugin marketplace featuring **62 focused plugins**, **93 specialized agents**, **130+ skills**, and production-ready workflows for Claude Code.
 
-## What's Included
-
-This repository combines and enhances multiple best-in-class Claude Code plugin sources:
-
-| Source | What It Brings |
-|--------|----------------|
-| **[wshobson/agents](https://github.com/wshobson/agents)** | 67 focused plugins, 99 agents, marketplace structure |
-| **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** | MCP builder, skill creator, changelog generator |
-| **[m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code)** | Structured reasoning (FPF), auditable decision making |
-| **[obra/superpowers](https://github.com/obra/superpowers)** | Git worktrees, root-cause tracing, subagent-driven development |
-| **[NeoLabHQ/context-engineering-kit](https://github.com/NeoLabHQ/context-engineering-kit)** | Prompt engineering, software architecture |
-| **[zxkane/aws-skills](https://github.com/zxkane/aws-skills)** | AWS CDK, serverless, event-driven architecture |
-
 ---
 
 ## Agent Orchestration Architecture
@@ -196,12 +183,18 @@ cp -r plugins/agent-orchestration ~/.claude/plugins/
 
 ## Credits
 
-- **Seth Hobson** ([@wshobson](https://github.com/wshobson)) — Original agents marketplace
-- **Composio** ([@ComposioHQ](https://github.com/ComposioHQ)) — Awesome Claude Skills
-- **m0n0x41d** ([@m0n0x41d](https://github.com/m0n0x41d)) — Quint-Code FPF framework
-- **Jesse Vincent** ([@obra](https://github.com/obra)) — Superpowers skills
-- **NeoLabHQ** ([@NeoLabHQ](https://github.com/NeoLabHQ)) — Context Engineering Kit
-- **Kane** ([@zxkane](https://github.com/zxkane)) — AWS Skills
+This repository combines and enhances multiple best-in-class Claude Code plugin sources:
+
+| Source | What It Brings |
+|--------|----------------|
+| **[wshobson/agents](https://github.com/wshobson/agents)** | 67 focused plugins, 99 agents, marketplace structure |
+| **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** | MCP builder, skill creator, changelog generator |
+| **[m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code)** | Structured reasoning (FPF), auditable decision making |
+| **[obra/superpowers](https://github.com/obra/superpowers)** | Git worktrees, root-cause tracing, subagent-driven development |
+| **[NeoLabHQ/context-engineering-kit](https://github.com/NeoLabHQ/context-engineering-kit)** | Prompt engineering, software architecture |
+| **[zxkane/aws-skills](https://github.com/zxkane/aws-skills)** | AWS CDK, serverless, event-driven architecture |
+
+---
 
 ## License
 
