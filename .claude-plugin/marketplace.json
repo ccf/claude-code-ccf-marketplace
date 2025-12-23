@@ -1,8 +1,8 @@
 {
-  "name": "claude-code-plugins",
+  "name": "claude-code-ccf-marketplace",
   "owner": {
     "name": "Curated Marketplace",
-    "url": "https://github.com/ccf/claude-code-plugins"
+    "url": "https://github.com/ccf/claude-code-ccf-marketplace"
   },
   "metadata": {
     "description": "Curated plugin marketplace with 64 focused plugins, 93 specialized agents, 130+ skills, and workflow templates optimized for Claude Code.",

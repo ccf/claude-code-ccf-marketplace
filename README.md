@@ -104,7 +104,7 @@ Strategic model assignment for optimal performance:
 ## Repository Structure
 
 ```
-claude-code-plugins/
+claude-code-ccf-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # 64 plugins defined
 ├── shared/
@@ -128,10 +128,10 @@ claude-code-plugins/
 
 ### Install All Plugins
 ```bash
-git clone https://github.com/ccf/claude-code-plugins.git
-cd claude-code-plugins
+git clone https://github.com/ccf/claude-code-ccf-marketplace.git
+cd claude-code-ccf-marketplace
 # Symlink to Claude Code configuration
-ln -s $(pwd) ~/.claude/plugins/claude-code-plugins
+ln -s $(pwd) ~/.claude/plugins/claude-code-ccf-marketplace
 ```
 
 ### Install Specific Plugin
@@ -144,7 +144,7 @@ cp -r plugins/agent-orchestration ~/.claude/plugins/
 
 ## Key Skills by Source
 
-### Agent Orchestration (New)
+### Agent Orchestration
 - **agentic-coding-patterns** — Writing AI-friendly code
 - **context-optimization** — Managing context windows
 - **anthropic-agent-guidelines** — Official best practices
