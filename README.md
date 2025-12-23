@@ -1,6 +1,6 @@
 # Claude Code Plugins: Curated Marketplace
 
-> **⚡ Unified Marketplace** — Combining the best of wshobson/agents, ComposioHQ/awesome-claude-skills, m0n0x41d/quint-code, and community best practices
+> **⚡ Unified Marketplace** — Combining my favorite Claude Code sub-agents and skills in an agent orchestration architecture with workflows
 
 A comprehensive, curated plugin marketplace featuring **64 focused plugins**, **93 specialized agents**, **130+ skills**, and production-ready workflows for Claude Code.
 
@@ -131,13 +131,13 @@ claude-code-plugins/
 git clone https://github.com/ccf/claude-code-plugins.git
 cd claude-code-plugins
 # Symlink to Claude Code configuration
-ln -s $(pwd) ~/.config/claude-code/plugins/claude-code-plugins
+ln -s $(pwd) ~/.claude/plugins/claude-code-plugins
 ```
 
 ### Install Specific Plugin
 ```bash
 # Copy individual plugin
-cp -r plugins/agent-orchestration ~/.config/claude-code/plugins/
+cp -r plugins/agent-orchestration ~/.claude/plugins/
 ```
 
 ---
