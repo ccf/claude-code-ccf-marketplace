@@ -102,9 +102,7 @@
       "agents": [
         "./agents/code-reviewer.md"
       ],
-      "skills": [
-        "./skills/using-git-worktrees"
-      ]
+      "skills": []
     },
     {
       "name": "backend-development",
@@ -499,7 +497,6 @@
         "./agents/context-manager.md"
       ],
       "skills": [
-        "./skills/skill-creator",
         "./skills/agentic-coding-patterns",
         "./skills/context-optimization",
         "./skills/anthropic-agent-guidelines",
@@ -1886,7 +1883,6 @@
         "./skills/nx-workspace-patterns",
         "./skills/turborepo-caching",
         "./skills/bazel-build-optimization",
-        "./skills/monorepo-dependency-management",
         "./skills/terminal-title"
       ]
     },
