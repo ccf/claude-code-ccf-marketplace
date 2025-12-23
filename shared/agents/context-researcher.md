@@ -2,6 +2,8 @@
 name: context-researcher
 description: Gathers and synthesizes context before main work begins. Explores codebases, reads documentation, and builds understanding. Use PROACTIVELY at the start of unfamiliar tasks to establish situational awareness.
 model: sonnet
+tools: Glob, Grep, LS, Read, WebFetch, WebSearch
+color: blue
 ---
 
 # Context Researcher

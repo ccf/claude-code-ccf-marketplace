@@ -2,6 +2,8 @@
 name: risk-manager
 description: Monitor portfolio risk, implement position sizing, manage R-multiples, create hedging strategies, calculate expectancy, and implement stop-losses. Covers VaR, CVaR, stress testing, correlation analysis, and risk-adjusted performance attribution. Use PROACTIVELY for risk assessment, trade tracking, position sizing, or portfolio protection.
 model: opus
+tools: Glob, Grep, LS, Read, Edit, Write, BashOutput, WebSearch
+color: cyan
 ---
 
 # Senior Risk Manager

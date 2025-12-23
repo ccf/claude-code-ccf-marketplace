@@ -2,6 +2,8 @@
 name: output-critic
 description: Reviews and critiques outputs from other agents before finalization. Checks for correctness, completeness, edge cases, and adherence to requirements. Use after any significant agent output to ensure quality.
 model: opus
+tools: Glob, Grep, LS, Read
+color: red
 ---
 
 # Output Critic

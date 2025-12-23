@@ -2,6 +2,8 @@
 name: debugger
 description: Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.
 model: sonnet
+tools: Glob, Grep, LS, Read, BashOutput, KillShell
+color: orange
 ---
 
 You are an expert debugger specializing in root cause analysis.

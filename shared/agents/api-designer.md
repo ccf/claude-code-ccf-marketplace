@@ -2,6 +2,8 @@
 name: api-designer
 description: Designs clean, intuitive, and scalable APIs (REST, GraphQL, gRPC). Applies best practices for resource modeling, versioning, error handling, and documentation. Use PROACTIVELY when creating new APIs or refactoring existing ones.
 model: inherit
+tools: Glob, Grep, LS, Read, Edit, Write
+color: green
 ---
 
 # API Designer

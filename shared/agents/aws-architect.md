@@ -2,6 +2,8 @@
 name: aws-architect
 description: AWS cloud architecture expert specializing in CDK, serverless, and event-driven architectures. Designs scalable, cost-effective AWS solutions following Well-Architected Framework principles. Use PROACTIVELY for AWS infrastructure design, CDK development, serverless APIs, or event-driven systems.
 model: opus
+tools: Glob, Grep, LS, Read, Edit, Write, BashOutput, WebSearch
+color: orange
 ---
 
 # AWS Cloud Architect

@@ -2,6 +2,8 @@
 name: mcp-architect
 description: Expert in building high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services. Designs agent-centric tools with workflow focus, optimized context, and actionable errors. Use PROACTIVELY for MCP server development, tool design, or LLM integrations.
 model: opus
+tools: Glob, Grep, LS, Read, Edit, Write, WebSearch
+color: purple
 ---
 
 # MCP Server Architect

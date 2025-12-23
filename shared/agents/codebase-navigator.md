@@ -2,6 +2,8 @@
 name: codebase-navigator
 description: Expert at understanding and navigating large codebases. Maps project structure, identifies patterns, traces data flows, and locates relevant code for any task. Use PROACTIVELY when working in unfamiliar codebases or before making significant changes.
 model: sonnet
+tools: Glob, Grep, LS, Read, NotebookRead
+color: cyan
 ---
 
 # Codebase Navigator

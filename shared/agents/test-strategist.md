@@ -2,6 +2,8 @@
 name: test-strategist
 description: Designs comprehensive testing strategies covering unit, integration, and E2E tests. Determines what to test, identifies edge cases, and optimizes test coverage. Use PROACTIVELY when planning testing for new features or improving test suites.
 model: inherit
+tools: Glob, Grep, LS, Read, Edit, Write, BashOutput
+color: yellow
 ---
 
 # Test Strategist

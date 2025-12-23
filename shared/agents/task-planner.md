@@ -2,6 +2,8 @@
 name: task-planner
 description: Decomposes complex tasks into subtasks, delegates to specialized agents, and coordinates execution. Creates execution plans with dependencies, checkpoints, and rollback strategies. Use PROACTIVELY when facing multi-step tasks requiring different expertise.
 model: opus
+tools: Glob, Grep, LS, Read, TodoWrite
+color: purple
 ---
 
 # Task Planner

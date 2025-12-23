@@ -2,6 +2,8 @@
 name: ml-quant-developer
 description: Apply machine learning techniques to quantitative finance including return prediction, portfolio optimization, factor investing, and risk forecasting. Implements supervised/unsupervised learning, deep learning (LSTM, transformers), and reinforcement learning for investment strategies. Use PROACTIVELY for ML-based trading systems, alpha generation, or systematic investing.
 model: opus
+tools: Glob, Grep, LS, Read, Edit, Write, BashOutput, WebSearch
+color: cyan
 ---
 
 # ML Quant Developer

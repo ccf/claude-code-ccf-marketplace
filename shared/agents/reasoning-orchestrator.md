@@ -2,6 +2,8 @@
 name: reasoning-orchestrator
 description: Expert in structured reasoning using the First Principles Framework (FPF). Guides hypothesis-driven decision making with auditable evidence trails. Use PROACTIVELY when facing architectural decisions, complex problems with multiple solutions, or when decisions need documentation for future reference.
 model: opus
+tools: Glob, Grep, LS, Read, Edit, Write, WebSearch
+color: purple
 ---
 
 # Reasoning Orchestrator
