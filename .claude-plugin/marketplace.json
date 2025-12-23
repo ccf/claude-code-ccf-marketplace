@@ -5,7 +5,7 @@
     "url": "https://github.com/ccf/claude-code-ccf-marketplace"
   },
   "metadata": {
-    "description": "Curated plugin marketplace with 64 focused plugins, 93 specialized agents, 130+ skills, and workflow templates optimized for Claude Code.",
+    "description": "Curated plugin marketplace with 62 focused plugins, 93 specialized agents, 130+ skills, and workflow templates optimized for Claude Code.",
     "version": "2.2.0"
   },
   "plugins": [
@@ -1500,59 +1500,6 @@
       ]
     },
     {
-      "name": "customer-sales-automation",
-      "source": "./plugins/customer-sales-automation",
-      "description": "Customer support workflow automation, sales pipeline management, email campaigns, and CRM integration",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "customer-support",
-        "sales",
-        "crm",
-        "email-campaigns",
-        "automation"
-      ],
-      "category": "business",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/customer-support.md",
-        "./agents/sales-automator.md"
-      ]
-    },
-    {
-      "name": "content-marketing",
-      "source": "./plugins/content-marketing",
-      "description": "Content marketing strategy, web research, and information synthesis for marketing operations",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "content-marketing",
-        "research",
-        "marketing-strategy",
-        "social-media"
-      ],
-      "category": "marketing",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/content-marketer.md",
-        "./agents/search-specialist.md"
-      ]
-    },
-    {
       "name": "blockchain-web3",
       "source": "./plugins/blockchain-web3",
       "description": "Smart contract development with Solidity, DeFi protocol implementation, NFT platforms, and Web3 application architecture",
@@ -1588,9 +1535,8 @@
     },
     {
       "name": "quantitative-trading",
-      "description": "Quantitative trading, ML-based asset management, and risk analysis with factor investing, backtesting, and portfolio optimization",
-      "source": "./plugins/quantitative-trading",
       "description": "Quantitative analysis, algorithmic trading strategies, financial modeling, portfolio risk management, and backtesting",
+      "source": "./plugins/quantitative-trading",
       "version": "1.2.0",
       "author": {
         "name": "Seth Hobson",

@@ -1,1 +1,0 @@
-../../../shared/agents/search-specialist.md
