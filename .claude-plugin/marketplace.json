@@ -6,8 +6,8 @@
     "url": "https://github.com/ccf/claude-code-ccf-marketplace"
   },
   "metadata": {
-    "description": "Curated plugin marketplace with 62 focused plugins, 93 specialized agents, 130+ skills, and workflow templates optimized for Claude Code.",
-    "version": "2.2.0"
+    "description": "Curated plugin marketplace with 57 focused plugins, 84 specialized agents, 120+ skills, and workflow templates optimized for Claude Code.",
+    "version": "2.3.0"
   },
   "plugins": [
     {
@@ -1402,40 +1402,6 @@
       ]
     },
     {
-      "name": "c4-architecture",
-      "source": "./plugins/c4-architecture",
-      "description": "Comprehensive C4 architecture documentation workflow with bottom-up code analysis, component synthesis, container mapping, and context diagram generation",
-      "version": "1.0.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "c4",
-        "architecture",
-        "documentation",
-        "diagrams",
-        "system-design",
-        "component",
-        "container",
-        "context"
-      ],
-      "category": "documentation",
-      "strict": false,
-      "commands": [
-        "./commands/c4-architecture.md"
-      ],
-      "agents": [
-        "./agents/c4-code.md",
-        "./agents/c4-component.md",
-        "./agents/c4-container.md",
-        "./agents/c4-context.md"
-      ]
-    },
-    {
       "name": "multi-platform-apps",
       "source": "./plugins/multi-platform-apps",
       "description": "Cross-platform application development coordinating web, iOS, Android, and desktop implementations",
@@ -1603,41 +1569,6 @@
       ]
     },
     {
-      "name": "javascript-typescript",
-      "source": "./plugins/javascript-typescript",
-      "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "javascript",
-        "typescript",
-        "es6",
-        "nodejs",
-        "react"
-      ],
-      "category": "languages",
-      "strict": false,
-      "commands": [
-        "./commands/typescript-scaffold.md"
-      ],
-      "agents": [
-        "./agents/javascript-pro.md",
-        "./agents/typescript-pro.md"
-      ],
-      "skills": [
-        "./skills/typescript-advanced-types",
-        "./skills/nodejs-backend-patterns",
-        "./skills/javascript-testing-patterns",
-        "./skills/modern-javascript-patterns"
-      ]
-    },
-    {
       "name": "systems-programming",
       "source": "./plugins/systems-programming",
       "description": "Systems programming with Rust, Go, C, and C++ for performance-critical and low-level development",
@@ -1704,33 +1635,6 @@
       ]
     },
     {
-      "name": "web-scripting",
-      "source": "./plugins/web-scripting",
-      "description": "Web scripting with PHP and Ruby for web applications, CMS development, and backend services",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "php",
-        "ruby",
-        "rails",
-        "wordpress",
-        "web-scripting"
-      ],
-      "category": "languages",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/php-pro.md",
-        "./agents/ruby-pro.md"
-      ]
-    },
-    {
       "name": "functional-programming",
       "source": "./plugins/functional-programming",
       "description": "Functional programming with Elixir, OTP patterns, Phoenix framework, and distributed systems",
@@ -1783,34 +1687,6 @@
         "./agents/julia-pro.md"
       ],
       "skills": []
-    },
-    {
-      "name": "arm-cortex-microcontrollers",
-      "source": "./plugins/arm-cortex-microcontrollers",
-      "description": "ARM Cortex-M firmware development for Teensy, STM32, nRF52, and SAMD with peripheral drivers and memory safety patterns",
-      "version": "1.2.0",
-      "author": {
-        "name": "Ryan Snodgrass",
-        "url": "https://github.com/rsnodgrass"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "embedded",
-        "arm",
-        "cortex-m",
-        "firmware",
-        "microcontroller",
-        "teensy",
-        "stm32"
-      ],
-      "category": "languages",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/arm-cortex-expert.md"
-      ]
     },
     {
       "name": "shell-scripting",
@@ -1927,36 +1803,6 @@
       ],
       "skills": [
         "./skills/fpf-methodology"
-      ]
-    },
-    {
-      "name": "aws-development",
-      "source": "./plugins/aws-development",
-      "description": "AWS cloud development with CDK, serverless, event-driven architecture, and Well-Architected Framework best practices",
-      "version": "1.0.0",
-      "author": {
-        "name": "Curated Marketplace"
-      },
-      "license": "MIT",
-      "keywords": [
-        "aws",
-        "cdk",
-        "serverless",
-        "lambda",
-        "event-driven",
-        "cloud"
-      ],
-      "category": "infrastructure",
-      "strict": false,
-      "commands": [],
-      "agents": [
-        "./agents/aws-architect.md"
-      ],
-      "skills": [
-        "./skills/aws-cdk-development",
-        "./skills/aws-serverless-eda",
-        "./skills/aws-cost-operations",
-        "./skills/aws-agentic-ai"
       ]
     },
     {

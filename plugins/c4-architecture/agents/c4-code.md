@@ -1,1 +1,0 @@
-../../../shared/agents/c4-code.md

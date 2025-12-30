@@ -23,15 +23,6 @@ Quick-reference catalog for progressive skill discovery. Skills are organized by
 | `eval-driven-development` | 🟡 | Testing and evaluating AI outputs |
 | `uncertainty-communication` | 🟢 | When to ask questions, confidence markers |
 
-## AWS Development
-
-| Skill | Context | Description |
-|-------|---------|-------------|
-| `aws-agentic-ai` | 🟡 | AWS Bedrock, AI applications on AWS |
-| `aws-cdk-development` | 🟡 | Infrastructure as code with CDK |
-| `aws-cost-operations` | 🟡 | Cost optimization and FinOps |
-| `aws-serverless-eda` | 🔴 | Event-driven architecture patterns |
-
 ## Backend Development
 
 | Skill | Context | Description |
@@ -96,15 +87,6 @@ Quick-reference catalog for progressive skill discovery. Skills are organized by
 |-------|---------|-------------|
 | `react-native-architecture` | 🔴 | React Native patterns |
 | `tailwind-design-system` | 🔴 | Design systems with Tailwind |
-
-## JavaScript/TypeScript
-
-| Skill | Context | Description |
-|-------|---------|-------------|
-| `javascript-testing-patterns` | 🔴 | Jest/Vitest testing (split into examples.md, mocking.md) |
-| `modern-javascript-patterns` | 🔴 | ES6+ features (split into advanced.md, async.md) |
-| `nodejs-backend-patterns` | 🔴 | Express/Fastify (split into database.md, middleware.md) |
-| `typescript-advanced-types` | 🔴 | Generics, utility types, inference |
 
 ## Kubernetes Operations
 

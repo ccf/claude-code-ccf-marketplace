@@ -1,1 +1,0 @@
-../../../shared/agents/javascript-pro.md

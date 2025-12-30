@@ -1,1 +1,0 @@
-../../../shared/agents/ruby-pro.md

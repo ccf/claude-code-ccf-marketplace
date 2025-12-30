@@ -1,13 +1,13 @@
 # Claude Code Plugins Marketplace
 
-A curated collection of 64 plugins, 93 agents, and 130+ skills for Claude Code.
+A curated collection of 57 plugins, 84 agents, and 120+ skills for Claude Code.
 
 ## Structure
 
 ```
 claude-code-plugins/
-├── shared/agents/           # 93 unique agents (symlinked into plugins)
-├── plugins/                 # 64 domain-specific plugins
+├── shared/agents/           # 84 unique agents (symlinked into plugins)
+├── plugins/                 # 57 domain-specific plugins
 │   ├── */agents/            # Symlinks to shared/agents
 │   ├── */commands/          # Slash commands
 │   └── */skills/            # Modular knowledge packages
@@ -31,9 +31,9 @@ Hypothesis-driven decision making with auditable evidence trails:
 - **Root Cause Tracing** — Trace errors to source, not symptoms
 
 ### Cloud & Infrastructure
-- **AWS Development** — CDK, serverless, event-driven architecture
 - **Kubernetes** — Cluster design, Helm, GitOps
 - **Terraform** — IaC patterns and modules
+- **Multi-Cloud** — AWS/Azure/GCP infrastructure patterns
 
 ### AI/ML Development
 - **MCP Builder** — Create high-quality MCP servers
@@ -96,10 +96,6 @@ Hypothesis-driven decision making with auditable evidence trails:
 | `python-pro` | opus | Modern Python 3.12+, async, type hints |
 | `django-pro` | opus | Django 5.x, DRF, Celery, async views |
 | `fastapi-pro` | opus | FastAPI, async patterns, Pydantic |
-| `javascript-pro` | opus | Modern JS/ES6+, Node.js patterns |
-| `typescript-pro` | opus | TypeScript advanced types, strict mode |
-| `ruby-pro` | inherit | Ruby, Rails, modern patterns |
-| `php-pro` | inherit | Modern PHP, Laravel patterns |
 
 #### JVM & Functional
 | Agent | Model | Description |
@@ -135,7 +131,6 @@ Hypothesis-driven decision making with auditable evidence trails:
 
 | Agent | Model | Description |
 |-------|-------|-------------|
-| `aws-architect` | opus | AWS CDK, serverless, event-driven |
 | `terraform-specialist` | inherit | Terraform modules, IaC patterns |
 | `deployment-engineer` | haiku | CI/CD pipelines, GitOps workflows |
 | `devops-troubleshooter` | sonnet | Incident response, debugging |
@@ -192,16 +187,6 @@ Hypothesis-driven decision making with auditable evidence trails:
 | `tutorial-engineer` | sonnet | Tutorial creation, examples |
 | `reference-builder` | sonnet | Reference documentation |
 | `mermaid-expert` | sonnet | Diagrams, flowcharts |
-| `c4-code` | haiku | C4 code-level documentation |
-| `c4-component` | sonnet | C4 component diagrams |
-| `c4-container` | sonnet | C4 container diagrams |
-| `c4-context` | sonnet | C4 context diagrams |
-
-### Embedded & Hardware
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `arm-cortex-expert` | inherit | ARM Cortex-M firmware, drivers, DMA |
 
 ### Finance
 
@@ -249,7 +234,7 @@ Example:
 ```
 @rust-pro Review this unsafe block for memory safety issues
 @quant-analyst Build a momentum strategy with proper backtesting
-@aws-architect Design a serverless architecture for this API
+@cloud-architect Design a serverless architecture for this API
 ```
 
 ---
@@ -261,4 +246,3 @@ This marketplace combines:
 - [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) — Skills
 - [m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code) — FPF reasoning
 - [obra/superpowers](https://github.com/obra/superpowers) — Development workflows
-- [zxkane/aws-skills](https://github.com/zxkane/aws-skills) — AWS patterns

@@ -2,7 +2,7 @@
 
 > **⚡ Unified Marketplace** — Combining my favorite Claude Code sub-agents and skills in an agent orchestration architecture with workflows
 
-A comprehensive, curated plugin marketplace featuring **62 focused plugins**, **93 specialized agents**, **130+ skills**, and production-ready workflows for Claude Code.
+A comprehensive, curated plugin marketplace featuring **57 focused plugins**, **84 specialized agents**, **120+ skills**, and production-ready workflows for Claude Code.
 
 ---
 
@@ -63,12 +63,6 @@ Comprehensive ML-based asset management:
 - López de Prado framework (CPCV, meta-labeling, PBO)
 - Factor investing with ML
 
-### AWS Development
-Full-stack AWS with CDK, serverless, and event-driven patterns:
-- AWS CDK best practices and construct patterns
-- Serverless architecture (Lambda, API Gateway, Step Functions)
-- Event-driven design (EventBridge, SQS, SNS)
-
 ### MCP Development  
 Build high-quality MCP servers for LLM integrations:
 - Agent-centric design patterns
@@ -95,16 +89,15 @@ Strategic model assignment for optimal performance:
 ```
 claude-code-ccf-marketplace/
 ├── .claude-plugin/
-│   └── marketplace.json          # 64 plugins defined
+│   └── marketplace.json          # 57 plugins defined
 ├── shared/
-│   └── agents/                   # 93 unique agents (single source of truth)
+│   └── agents/                   # 84 unique agents (single source of truth)
 ├── plugins/
 │   ├── agent-orchestration/      # Coordination agents + best practice skills
 │   ├── structured-reasoning/     # FPF methodology + commands
-│   ├── aws-development/          # AWS CDK, serverless
 │   ├── mcp-development/          # MCP server building
 │   ├── quantitative-trading/     # Quant, risk, ML finance
-│   └── ... (59+ more plugins)
+│   └── ... (53+ more plugins)
 ├── workflows/                    # Composable workflow templates
 ├── AGENTS.md                     # Complete agent catalog
 ├── SKILLS_INDEX.md               # Skill discovery with context costs
@@ -150,10 +143,6 @@ cp -r plugins/agent-orchestration ~/.claude/plugins/
 - **prompt-engineering** — Few-shot, chain-of-thought techniques
 - **software-architecture** — Clean Architecture, DDD, SOLID
 
-### From AWS Skills
-- **aws-cdk-development** — CDK constructs and patterns
-- **aws-serverless-eda** — Lambda, Step Functions, EventBridge
-
 ---
 
 ## Plugin Categories
@@ -161,13 +150,13 @@ cp -r plugins/agent-orchestration ~/.claude/plugins/
 | Category | Count | Examples |
 |----------|-------|----------|
 | **AI & ML** | 6 | agent-orchestration, structured-reasoning, llm-application-dev |
-| **Infrastructure** | 7 | aws-development, kubernetes-operations, cloud-infrastructure |
-| **Languages** | 8 | python-development, systems-programming, javascript-typescript |
+| **Infrastructure** | 6 | kubernetes-operations, cloud-infrastructure, cicd-automation |
+| **Languages** | 5 | python-development, systems-programming, jvm-languages |
 | **Development** | 5 | debugging-toolkit, backend-development, code-refactoring |
-| **Documentation** | 3 | documentation-generation, c4-architecture, code-documentation |
+| **Documentation** | 2 | documentation-generation, code-documentation |
 | **Security** | 4 | security-scanning, backend-api-security, frontend-mobile-security |
 | **Finance** | 1 | quantitative-trading (quant-analyst, risk-manager, ml-quant-developer) |
-| **And more...** | 30+ | data-engineering, observability, performance, business |
+| **And more...** | 28+ | data-engineering, observability, performance, business |
 
 ---
 
@@ -192,7 +181,6 @@ This repository combines and enhances multiple best-in-class Claude Code plugin 
 | **[m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code)** | Structured reasoning (FPF), auditable decision making |
 | **[obra/superpowers](https://github.com/obra/superpowers)** | Git worktrees, root-cause tracing, subagent-driven development |
 | **[NeoLabHQ/context-engineering-kit](https://github.com/NeoLabHQ/context-engineering-kit)** | Prompt engineering, software architecture |
-| **[zxkane/aws-skills](https://github.com/zxkane/aws-skills)** | AWS CDK, serverless, event-driven architecture |
 
 ---
 
