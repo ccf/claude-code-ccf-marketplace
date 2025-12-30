@@ -6,8 +6,8 @@
     "url": "https://github.com/ccf/claude-code-ccf-marketplace"
   },
   "metadata": {
-    "description": "Curated plugin marketplace with 57 focused plugins, 84 specialized agents, 120+ skills, and workflow templates optimized for Claude Code.",
-    "version": "2.3.0"
+    "description": "Curated plugin marketplace with 57 focused plugins, 80 specialized agents, 120+ skills, and workflow templates optimized for Claude Code.",
+    "version": "2.4.0"
   },
   "plugins": [
     {

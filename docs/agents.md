@@ -127,7 +127,6 @@ Complete reference for all **99 specialized AI agents** organized by category wi
 |-------|-------|-------------|
 | [performance-engineer](../plugins/observability-monitoring/agents/performance-engineer.md) | opus | Application profiling and optimization |
 | [observability-engineer](../plugins/observability-monitoring/agents/observability-engineer.md) | opus | Production monitoring, distributed tracing, SLI/SLO management |
-| [search-specialist](../plugins/content-marketing/agents/search-specialist.md) | haiku | Advanced web research and information synthesis |
 
 ### Data & AI
 
@@ -172,26 +171,7 @@ Complete reference for all **99 specialized AI agents** organized by category wi
 | [quant-analyst](../plugins/quantitative-trading/agents/quant-analyst.md) | opus | Financial modeling, trading strategies, market analysis |
 | [risk-manager](../plugins/quantitative-trading/agents/risk-manager.md) | sonnet | Portfolio risk monitoring and management |
 
-#### Marketing & Sales
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| [content-marketer](../plugins/content-marketing/agents/content-marketer.md) | sonnet | Blog posts, social media, email campaigns |
-| [sales-automator](../plugins/customer-sales-automation/agents/sales-automator.md) | haiku | Cold emails, follow-ups, proposal generation |
-
-#### Support & Legal
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| [customer-support](../plugins/customer-sales-automation/agents/customer-support.md) | sonnet | Support tickets, FAQ responses, customer communication |
-| [hr-pro](../plugins/hr-legal-compliance/agents/hr-pro.md) | opus | HR operations, policies, employee relations |
-| [legal-advisor](../plugins/hr-legal-compliance/agents/legal-advisor.md) | opus | Privacy policies, terms of service, legal documentation |
-
-### SEO & Content Optimization
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| [seo-content-auditor](../plugins/seo-content-creation/agents/seo-content-auditor.md) | sonnet | Content quality analysis, E-E-A-T signals assessment |
+### Specialized Domains
 | [seo-meta-optimizer](../plugins/seo-technical-optimization/agents/seo-meta-optimizer.md) | haiku | Meta title and description optimization |
 | [seo-keyword-strategist](../plugins/seo-technical-optimization/agents/seo-keyword-strategist.md) | haiku | Keyword analysis and semantic variations |
 | [seo-structure-architect](../plugins/seo-technical-optimization/agents/seo-structure-architect.md) | haiku | Content structure and schema markup |

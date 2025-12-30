@@ -237,34 +237,20 @@ Next.js, React + Vite, and Node.js project setup with pnpm and TypeScript best p
 | **api-scaffolding** | REST/GraphQL API generation | `/plugin install api-scaffolding` |
 | **api-testing-observability** | API testing and monitoring | `/plugin install api-testing-observability` |
 
-### 📢 Marketing (4 plugins)
-
-| Plugin | Description | Install |
-|--------|-------------|---------|
-| **seo-content-creation** | SEO content writing and planning | `/plugin install seo-content-creation` |
-| **seo-technical-optimization** | Meta tags, keywords, and schema markup | `/plugin install seo-technical-optimization` |
-| **seo-analysis-monitoring** | Content analysis and authority building | `/plugin install seo-analysis-monitoring` |
-| **content-marketing** | Content strategy and web research | `/plugin install content-marketing` |
-
-### 💼 Business (3 plugins)
+### 💼 Business (1 plugin)
 
 | Plugin | Description | Install |
 |--------|-------------|---------|
 | **business-analytics** | KPI tracking and financial reporting | `/plugin install business-analytics` |
-| **hr-legal-compliance** | HR policies and legal templates | `/plugin install hr-legal-compliance` |
-| **customer-sales-automation** | Support and sales automation | `/plugin install customer-sales-automation` |
 
-### 💻 Languages (7 plugins)
+### 💻 Languages (4 plugins)
 
 | Plugin | Description | Install |
 |--------|-------------|---------|
 | **python-development** | Python 3.12+ with Django/FastAPI | `/plugin install python-development` |
-| **javascript-typescript** | JavaScript/TypeScript with Node.js | `/plugin install javascript-typescript` |
 | **systems-programming** | Rust, Go, C, C++ for systems development | `/plugin install systems-programming` |
 | **jvm-languages** | Java, Scala, C# with enterprise patterns | `/plugin install jvm-languages` |
-| **web-scripting** | PHP and Ruby for web applications | `/plugin install web-scripting` |
 | **functional-programming** | Elixir with OTP and Phoenix | `/plugin install functional-programming` |
-| **arm-cortex-microcontrollers** | ARM Cortex-M firmware and drivers | `/plugin install arm-cortex-microcontrollers` |
 
 ### 🔗 Blockchain (1 plugin)
 

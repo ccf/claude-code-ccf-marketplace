@@ -1,12 +1,12 @@
 # Claude Code Plugins Marketplace
 
-A curated collection of 57 plugins, 84 agents, and 120+ skills for Claude Code.
+A curated collection of 57 plugins, 80 agents, and 120+ skills for Claude Code.
 
 ## Structure
 
 ```
 claude-code-plugins/
-├── shared/agents/           # 84 unique agents (symlinked into plugins)
+├── shared/agents/           # 80 unique agents (symlinked into plugins)
 ├── plugins/                 # 57 domain-specific plugins
 │   ├── */agents/            # Symlinks to shared/agents
 │   ├── */commands/          # Slash commands
@@ -207,10 +207,6 @@ Hypothesis-driven decision making with auditable evidence trails:
 | Agent | Model | Description |
 |-------|-------|-------------|
 | `business-analyst` | sonnet | Business analysis, KPIs, dashboards |
-| `content-marketer` | haiku | Content strategy, marketing |
-| `customer-support` | haiku | Support automation, ticketing |
-| `sales-automator` | haiku | Sales workflows, CRM |
-| `search-specialist` | haiku | Search optimization, research |
 
 ### Modernization
 
