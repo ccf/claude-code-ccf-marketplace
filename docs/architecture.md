@@ -39,10 +39,10 @@ This marketplace follows industry best practices with a focus on granularity, co
 - **67 focused plugins** optimized for specific use cases
 - **23 clear categories** with 1-6 plugins each for easy discovery
 - Organized by domain:
-  - **Development**: 4 plugins (debugging, backend, frontend, multi-platform)
-  - **Security**: 4 plugins (scanning, compliance, backend-api, frontend-mobile)
+  - **Development**: 2 plugins (debugging, backend)
+  - **Security**: 3 plugins (scanning, compliance, backend-api)
   - **Operations**: 4 plugins (incident, diagnostics, distributed, observability)
-  - **Languages**: 7 plugins (Python, JS/TS, systems, JVM, scripting, functional, embedded)
+  - **Languages**: 4 plugins (Python, systems, JVM, functional)
   - **Infrastructure**: 5 plugins (deployment, validation, K8s, cloud, CI/CD)
   - And 18 more specialized categories
 
@@ -112,15 +112,15 @@ claude-agents/
 │   │   │   └── security-dependencies.md
 │   │   └── skills/               # Security skills (1 total)
 │   │       └── sast-configuration/
-│   ├── c4-architecture/
-│   │   ├── agents/               # C4 architecture agents
-│   │   │   ├── c4-code.md
+│   ├── security-scanning/
+│   │   ├── agents/               # Security agents
+│   │   │   ├── security-auditor.md
 │   │   │   ├── c4-component.md
 │   │   │   ├── c4-container.md
-│   │   │   └── c4-context.md
+│   │   │   └── threat-modeling-expert.md
 │   │   └── commands/
-│   │       └── c4-architecture.md
-│   └── ... (62 more isolated plugins)
+│   │       └── security-sast.md
+│   └── ... (50+ more isolated plugins)
 ├── docs/                          # Documentation
 │   ├── agent-skills.md           # Agent Skills guide
 │   ├── agents.md                 # Agent reference
@@ -298,9 +298,8 @@ full-stack-orchestration/
 **Orchestration:**
 1. backend-architect (design API)
 2. database-architect (design schema)
-3. frontend-developer (build UI)
-4. test-automator (create tests)
-5. security-auditor (security review)
+3. test-automator (create tests)
+4. security-auditor (security review)
 6. deployment-engineer (CI/CD)
 7. observability-engineer (monitoring)
 

@@ -35,12 +35,8 @@ Complete reference for all **99 specialized AI agents** organized by category wi
 
 | Agent | Model | Description |
 |-------|-------|-------------|
-| [javascript-pro](../plugins/javascript-typescript/agents/javascript-pro.md) | sonnet | Modern JavaScript with ES6+, async patterns, Node.js |
-| [typescript-pro](../plugins/javascript-typescript/agents/typescript-pro.md) | sonnet | Advanced TypeScript with type systems and generics |
 | [python-pro](../plugins/python-development/agents/python-pro.md) | sonnet | Python development with advanced features and optimization |
 | [temporal-python-pro](../plugins/backend-development/agents/temporal-python-pro.md) | sonnet | Temporal workflow orchestration with Python SDK, durable workflows, saga patterns |
-| [ruby-pro](../plugins/web-scripting/agents/ruby-pro.md) | sonnet | Ruby with metaprogramming, Rails patterns, gem development |
-| [php-pro](../plugins/web-scripting/agents/php-pro.md) | sonnet | Modern PHP with frameworks and performance optimization |
 
 #### Enterprise & JVM
 
@@ -143,10 +139,6 @@ Complete reference for all **99 specialized AI agents** organized by category wi
 | [reference-builder](../plugins/documentation-generation/agents/reference-builder.md) | haiku | Technical references and API documentation |
 | [tutorial-engineer](../plugins/code-documentation/agents/tutorial-engineer.md) | sonnet | Step-by-step tutorials and educational content |
 | [mermaid-expert](../plugins/documentation-generation/agents/mermaid-expert.md) | sonnet | Diagram creation (flowcharts, sequences, ERDs) |
-| [c4-code](../plugins/c4-architecture/agents/c4-code.md) | haiku | C4 Code-level documentation with function signatures and dependencies |
-| [c4-component](../plugins/c4-architecture/agents/c4-component.md) | sonnet | C4 Component-level architecture synthesis and documentation |
-| [c4-container](../plugins/c4-architecture/agents/c4-container.md) | sonnet | C4 Container-level architecture with API documentation |
-| [c4-context](../plugins/c4-architecture/agents/c4-context.md) | sonnet | C4 Context-level system documentation with personas and user journeys |
 
 ### Business & Operations
 
@@ -173,7 +165,6 @@ Complete reference for all **99 specialized AI agents** organized by category wi
 
 | Agent | Model | Description |
 |-------|-------|-------------|
-| [arm-cortex-expert](../plugins/arm-cortex-microcontrollers/agents/arm-cortex-expert.md) | sonnet | ARM Cortex-M firmware and peripheral driver development |
 | [blockchain-developer](../plugins/blockchain-web3/agents/blockchain-developer.md) | sonnet | Web3 apps, smart contracts, DeFi protocols |
 | [payment-integration](../plugins/payment-processing/agents/payment-integration.md) | sonnet | Payment processor integration (Stripe, PayPal) |
 | [legacy-modernizer](../plugins/framework-migration/agents/legacy-modernizer.md) | sonnet | Legacy code refactoring and modernization |

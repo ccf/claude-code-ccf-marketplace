@@ -182,7 +182,7 @@ Based on Phase 2 output, route to appropriate domain agent using Task tool:
 
 **Routing Logic:**
 - Python issues → subagent_type="python-development::python-pro"
-- TypeScript/JavaScript → subagent_type="javascript-typescript::typescript-pro"
+- TypeScript/JavaScript → subagent_type="python-development::python-pro"
 - Go → subagent_type="systems-programming::golang-pro"
 - Rust → subagent_type="systems-programming::rust-pro"
 - SQL/Database → subagent_type="database-cloud-optimization::database-optimizer"
@@ -626,7 +626,7 @@ For issues spanning multiple domains, orchestrate specialized agents sequentiall
    - Context: "TypeError: Cannot read property 'map' of undefined, 500+ occurrences in last hour, affects Safari users on iOS 14"
 2. **Phase 2**: debugger + code-reviewer investigate
    - Context: "API response sometimes returns null instead of empty array when no results. Frontend assumes array."
-3. **Phase 3a**: Task(subagent_type="javascript-typescript::typescript-pro")
+3. **Phase 3a**: Task(subagent_type="python-development::python-pro")
    - Fix frontend with proper null checks
    - Add type guards
    - Context: "Backend API /api/users endpoint returning null instead of [] when no results. Fix frontend to handle both. Add TypeScript strict null checks."

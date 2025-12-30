@@ -51,13 +51,7 @@ Orchestrate end-to-end feature development from requirements to production deplo
    - Expected output: Backend services with APIs, business logic, database integration, feature flags
    - Context: Technical design, API contracts, data models
 
-5. **Frontend Implementation**
-   - Use Task tool with subagent_type="frontend-mobile-development::frontend-developer"
-   - Prompt: "Build frontend components for: $ARGUMENTS. Integrate with backend APIs: [include API endpoints from step 4]. Implement responsive UI, state management, error handling, loading states, and analytics tracking. Add feature flag integration for A/B testing capabilities."
-   - Expected output: Frontend components with API integration, state management, analytics
-   - Context: Backend APIs, UI/UX designs, user stories
-
-6. **Data Pipeline & Integration**
+5. **Data Pipeline & Integration**
    - Use Task tool with subagent_type="data-engineering::data-engineer"
    - Prompt: "Build data pipelines for: $ARGUMENTS. Design ETL/ELT processes, implement data validation, create analytics events, set up data quality monitoring. Integrate with product analytics platforms for feature usage tracking."
    - Expected output: Data pipelines, analytics events, data quality checks

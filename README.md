@@ -154,7 +154,7 @@ cp -r plugins/agent-orchestration ~/.claude/plugins/
 | **Languages** | 5 | python-development, systems-programming, jvm-languages |
 | **Development** | 5 | debugging-toolkit, backend-development, code-refactoring |
 | **Documentation** | 2 | documentation-generation, code-documentation |
-| **Security** | 4 | security-scanning, backend-api-security, frontend-mobile-security |
+| **Security** | 3 | security-scanning, security-compliance, backend-api-security |
 | **Finance** | 1 | quantitative-trading (quant-analyst, risk-manager, ml-quant-developer) |
 | **And more...** | 28+ | data-engineering, observability, performance, business |
 

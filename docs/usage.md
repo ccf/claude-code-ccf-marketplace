@@ -54,7 +54,6 @@ Claude Code automatically selects and coordinates the appropriate agents based o
 |---------|-------------|
 | `/backend-development:feature-development` | End-to-end backend feature development |
 | `/full-stack-orchestration:full-stack-feature` | Complete full-stack feature implementation |
-| `/multi-platform-apps:multi-platform` | Cross-platform app development coordination |
 
 ### Testing & Quality
 
@@ -94,7 +93,6 @@ Claude Code automatically selects and coordinates the appropriate agents based o
 | `/security-scanning:security-sast` | Static application security testing |
 | `/security-scanning:security-dependencies` | Dependency vulnerability scanning |
 | `/security-compliance:compliance-check` | SOC2/HIPAA/GDPR compliance |
-| `/frontend-mobile-security:xss-scan` | XSS vulnerability scanning |
 
 ### Infrastructure & Deployment
 
@@ -120,7 +118,6 @@ Claude Code automatically selects and coordinates the appropriate agents based o
 | `/code-documentation:doc-generate` | Generate comprehensive documentation |
 | `/code-documentation:code-explain` | Explain code functionality |
 | `/documentation-generation:doc-generate` | OpenAPI specs, diagrams, tutorials |
-| `/c4-architecture:c4-architecture` | Generate comprehensive C4 architecture documentation (Context, Container, Component, Code) |
 
 ### Refactoring & Maintenance
 
@@ -155,7 +152,6 @@ Claude Code automatically selects and coordinates the appropriate agents based o
 | Command | Description |
 |---------|-------------|
 | `/python-development:python-scaffold` | FastAPI/Django project setup |
-| `/javascript-typescript:typescript-scaffold` | Next.js/React + Vite setup |
 | `/systems-programming:rust-project` | Rust project scaffolding |
 
 ### AI & LLM Development
@@ -263,27 +259,6 @@ Plugins provide pre-configured multi-agent workflows accessible via slash comman
 
 **Orchestration:** incident-responder → devops-troubleshooter → debugger → error-detective → observability-engineer
 
-### C4 Architecture Documentation
-
-```bash
-# Generate comprehensive C4 architecture documentation
-/c4-architecture:c4-architecture
-
-# Natural language alternative
-"Create C4 architecture documentation for this codebase"
-```
-
-**Orchestration:** c4-code → c4-component → c4-container → c4-context
-
-**What happens:**
-
-1. **Code Level**: Bottom-up analysis of all subdirectories, creating code-level documentation with function signatures and dependencies
-2. **Component Level**: Synthesizes code documentation into logical components with interfaces and relationships
-3. **Container Level**: Maps components to deployment containers with OpenAPI/Swagger API specifications
-4. **Context Level**: Creates high-level system context with personas, user journeys, and external dependencies
-
-**Output:** Complete C4 documentation in `C4-Documentation/` directory with Mermaid diagrams at all levels (Context, Container, Component, Code)
-
 ## Command Arguments and Options
 
 Many slash commands support arguments for precise control:
@@ -298,9 +273,6 @@ Many slash commands support arguments for precise control:
 # Security dependency scanning
 /security-scanning:security-dependencies
 
-# Component scaffolding
-/frontend-mobile-development:component-scaffold UserProfile component with hooks
-
 # TDD workflow cycle
 /tdd-workflows:tdd-red User can reset password
 /tdd-workflows:tdd-green
@@ -311,9 +283,6 @@ Many slash commands support arguments for precise control:
 
 # Python project scaffolding
 /python-development:python-scaffold fastapi-microservice
-
-# C4 architecture documentation generation
-/c4-architecture:c4-architecture
 ```
 
 ## Combining Natural Language and Commands

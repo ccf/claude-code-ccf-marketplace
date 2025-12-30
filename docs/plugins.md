@@ -98,12 +98,6 @@ Rapid incident triage, root cause analysis, and automated resolution workflows f
 
 FastAPI/Django project initialization with modern tooling (uv, ruff) and production-ready architecture.
 
-**javascript-typescript** - JavaScript/TypeScript scaffolding
-
-```bash
-/plugin install javascript-typescript
-```
-
 Next.js, React + Vite, and Node.js project setup with pnpm and TypeScript best practices.
 
 ---
@@ -123,7 +117,6 @@ Next.js, React + Vite, and Node.js project setup with pnpm and TypeScript best p
 |--------|-------------|---------|
 | **code-documentation** | Documentation generation and code explanation | `/plugin install code-documentation` |
 | **documentation-generation** | OpenAPI specs, Mermaid diagrams, tutorials | `/plugin install documentation-generation` |
-| **c4-architecture** | Comprehensive C4 architecture documentation workflow with bottom-up code analysis, component synthesis, container mapping, and context diagrams | `/plugin install c4-architecture` |
 
 ### 🔄 Workflows (3 plugins)
 

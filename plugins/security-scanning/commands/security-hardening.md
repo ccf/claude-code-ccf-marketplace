@@ -37,13 +37,13 @@ Implement comprehensive security hardening with defense-in-depth strategy throug
 - Context: Builds upon vulnerability fixes with preventive controls
 
 ### 6. Frontend Security Implementation
-- Use Task tool with subagent_type="frontend-mobile-security::frontend-security-coder"
+- Use Task tool with subagent_type="security-scanning::security-auditor"
 - Prompt: "Implement frontend security measures for: $ARGUMENTS. Configure CSP headers with nonce-based policies, implement XSS prevention with DOMPurify, secure authentication flows with PKCE OAuth2, add SRI for external resources, implement secure cookie handling with SameSite/HttpOnly/Secure flags."
 - Output: Secure frontend components, CSP policy configuration, authentication flow implementation, security headers configuration
 - Context: Complements backend security with client-side protections
 
 ### 7. Mobile Security Hardening
-- Use Task tool with subagent_type="frontend-mobile-security::mobile-security-coder"
+- Use Task tool with subagent_type="security-scanning::security-auditor"
 - Prompt: "Implement mobile app security for: $ARGUMENTS. Add certificate pinning, implement biometric authentication, secure local storage with encryption, obfuscate code with ProGuard/R8, implement anti-tampering and root/jailbreak detection, secure IPC communications."
 - Output: Hardened mobile application, security configuration files, obfuscation rules, certificate pinning implementation
 - Context: Extends security to mobile platforms if applicable
