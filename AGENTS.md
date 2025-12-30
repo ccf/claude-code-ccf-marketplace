@@ -1,13 +1,13 @@
 # Claude Code Plugins Marketplace
 
-A curated collection of 57 plugins, 80 agents, and 120+ skills for Claude Code.
+A curated collection of 54 plugins, 73 agents, and 115+ skills for Claude Code.
 
 ## Structure
 
 ```
 claude-code-plugins/
-├── shared/agents/           # 80 unique agents (symlinked into plugins)
-├── plugins/                 # 57 domain-specific plugins
+├── shared/agents/           # 73 unique agents (symlinked into plugins)
+├── plugins/                 # 54 domain-specific plugins
 │   ├── */agents/            # Symlinks to shared/agents
 │   ├── */commands/          # Slash commands
 │   └── */skills/            # Modular knowledge packages
@@ -145,8 +145,6 @@ Hypothesis-driven decision making with auditable evidence trails:
 | `security-auditor` | opus | Security analysis, vulnerability detection |
 | `threat-modeling-expert` | opus | STRIDE analysis, attack trees |
 | `backend-security-coder` | sonnet | Secure coding, input validation |
-| `frontend-security-coder` | inherit | XSS prevention, CSP, CORS |
-| `mobile-security-coder` | inherit | Mobile app security patterns |
 
 ### Data & Databases
 
@@ -156,16 +154,6 @@ Hypothesis-driven decision making with auditable evidence trails:
 | `database-optimizer` | inherit | Query optimization, performance tuning |
 | `database-admin` | sonnet | Database operations, automation |
 | `sql-pro` | opus | Advanced SQL, optimization |
-
-### Frontend & Mobile
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `frontend-developer` | inherit | React, Vue, modern frontend |
-| `mobile-developer` | inherit | React Native, cross-platform |
-| `ios-developer` | inherit | Swift, iOS native development |
-| `flutter-expert` | inherit | Flutter, Dart, cross-platform |
-| `ui-ux-designer` | inherit | Design systems, user experience |
 
 ### Quality & Testing
 

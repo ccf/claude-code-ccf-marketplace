@@ -2,7 +2,7 @@
 
 > **⚡ Unified Marketplace** — Combining my favorite Claude Code sub-agents and skills in an agent orchestration architecture with workflows
 
-A comprehensive, curated plugin marketplace featuring **57 focused plugins**, **80 specialized agents**, **120+ skills**, and production-ready workflows for Claude Code.
+A comprehensive, curated plugin marketplace featuring **54 focused plugins**, **73 specialized agents**, **115+ skills**, and production-ready workflows for Claude Code.
 
 ---
 
@@ -89,15 +89,15 @@ Strategic model assignment for optimal performance:
 ```
 claude-code-ccf-marketplace/
 ├── .claude-plugin/
-│   └── marketplace.json          # 57 plugins defined
+│   └── marketplace.json          # 54 plugins defined
 ├── shared/
-│   └── agents/                   # 80 unique agents (single source of truth)
+│   └── agents/                   # 73 unique agents (single source of truth)
 ├── plugins/
 │   ├── agent-orchestration/      # Coordination agents + best practice skills
 │   ├── structured-reasoning/     # FPF methodology + commands
 │   ├── mcp-development/          # MCP server building
 │   ├── quantitative-trading/     # Quant, risk, ML finance
-│   └── ... (53+ more plugins)
+│   └── ... (50+ more plugins)
 ├── workflows/                    # Composable workflow templates
 ├── AGENTS.md                     # Complete agent catalog
 ├── SKILLS_INDEX.md               # Skill discovery with context costs

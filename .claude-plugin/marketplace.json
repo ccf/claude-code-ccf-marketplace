@@ -6,8 +6,8 @@
     "url": "https://github.com/ccf/claude-code-ccf-marketplace"
   },
   "metadata": {
-    "description": "Curated plugin marketplace with 57 focused plugins, 80 specialized agents, 120+ skills, and workflow templates optimized for Claude Code.",
-    "version": "2.4.0"
+    "description": "Curated plugin marketplace with 54 focused plugins, 73 specialized agents, 115+ skills, and workflow templates optimized for Claude Code.",
+    "version": "2.5.0"
   },
   "plugins": [
     {
@@ -151,41 +151,6 @@
         "./skills/saga-orchestration",
         "./skills/cqrs-implementation",
         "./skills/software-architecture"
-      ]
-    },
-    {
-      "name": "frontend-mobile-development",
-      "source": "./plugins/frontend-mobile-development",
-      "description": "Frontend UI development and mobile application implementation across platforms",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "frontend",
-        "mobile",
-        "react",
-        "ui",
-        "cross-platform"
-      ],
-      "category": "development",
-      "strict": false,
-      "commands": [
-        "./commands/component-scaffold.md"
-      ],
-      "agents": [
-        "./agents/frontend-developer.md",
-        "./agents/mobile-developer.md"
-      ],
-      "skills": [
-        "./skills/react-state-management",
-        "./skills/nextjs-app-router-patterns",
-        "./skills/react-native-architecture",
-        "./skills/tailwind-design-system"
       ]
     },
     {
@@ -932,7 +897,6 @@
       ],
       "agents": [
         "./agents/performance-engineer.md",
-        "./agents/frontend-developer.md",
         "./agents/observability-engineer.md"
       ]
     },
@@ -1246,36 +1210,6 @@
       ]
     },
     {
-      "name": "frontend-mobile-security",
-      "source": "./plugins/frontend-mobile-security",
-      "description": "XSS prevention, CSRF protection, content security policies, mobile app security, and secure storage patterns",
-      "version": "1.2.0",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "frontend-security",
-        "mobile-security",
-        "xss",
-        "csrf",
-        "csp"
-      ],
-      "category": "security",
-      "strict": false,
-      "commands": [
-        "./commands/xss-scan.md"
-      ],
-      "agents": [
-        "./agents/frontend-security-coder.md",
-        "./agents/mobile-security-coder.md",
-        "./agents/frontend-developer.md"
-      ]
-    },
-    {
       "name": "data-validation-suite",
       "source": "./plugins/data-validation-suite",
       "description": "Schema validation, data quality monitoring, streaming validation pipelines, and input validation for backend APIs",
@@ -1399,40 +1333,6 @@
         "./skills/architecture-decision-records",
         "./skills/changelog-automation",
         "./skills/changelog-generator"
-      ]
-    },
-    {
-      "name": "multi-platform-apps",
-      "source": "./plugins/multi-platform-apps",
-      "description": "Cross-platform application development coordinating web, iOS, Android, and desktop implementations",
-      "version": "1.2.1",
-      "author": {
-        "name": "Seth Hobson",
-        "url": "https://github.com/wshobson"
-      },
-      "homepage": "https://github.com/wshobson/agents",
-      "repository": "https://github.com/wshobson/agents",
-      "license": "MIT",
-      "keywords": [
-        "cross-platform",
-        "mobile",
-        "web",
-        "desktop",
-        "react-native",
-        "flutter"
-      ],
-      "category": "development",
-      "strict": false,
-      "commands": [
-        "./commands/multi-platform.md"
-      ],
-      "agents": [
-        "./agents/mobile-developer.md",
-        "./agents/flutter-expert.md",
-        "./agents/ios-developer.md",
-        "./agents/frontend-developer.md",
-        "./agents/backend-architect.md",
-        "./agents/ui-ux-designer.md"
       ]
     },
     {

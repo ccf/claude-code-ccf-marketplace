@@ -11,7 +11,6 @@ Complete reference for all **99 specialized AI agents** organized by category wi
 | Agent | Model | Description |
 |-------|-------|-------------|
 | [backend-architect](../plugins/backend-development/agents/backend-architect.md) | opus | RESTful API design, microservice boundaries, database schemas |
-| [frontend-developer](../plugins/multi-platform-apps/agents/frontend-developer.md) | sonnet | React components, responsive layouts, client-side state management |
 | [graphql-architect](../plugins/backend-development/agents/graphql-architect.md) | opus | GraphQL schemas, resolvers, federation architecture |
 | [architect-reviewer](../plugins/comprehensive-review/agents/architect-review.md) | opus | Architectural consistency analysis and pattern validation |
 | [cloud-architect](../plugins/cloud-infrastructure/agents/cloud-architect.md) | opus | AWS/Azure/GCP infrastructure design and cost optimization |
@@ -20,16 +19,6 @@ Complete reference for all **99 specialized AI agents** organized by category wi
 | [service-mesh-expert](../plugins/cloud-infrastructure/agents/service-mesh-expert.md) | opus | Istio/Linkerd service mesh architecture, mTLS, and traffic management |
 | [event-sourcing-architect](../plugins/backend-development/agents/event-sourcing-architect.md) | opus | Event sourcing, CQRS patterns, event stores, and saga orchestration |
 | [monorepo-architect](../plugins/developer-essentials/agents/monorepo-architect.md) | opus | Monorepo tooling with Nx, Turborepo, Bazel, and workspace optimization |
-
-#### UI/UX & Mobile
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| [ui-ux-designer](../plugins/multi-platform-apps/agents/ui-ux-designer.md) | sonnet | Interface design, wireframes, design systems |
-| [ui-visual-validator](../plugins/accessibility-compliance/agents/ui-visual-validator.md) | sonnet | Visual regression testing and UI verification |
-| [mobile-developer](../plugins/multi-platform-apps/agents/mobile-developer.md) | sonnet | React Native and Flutter application development |
-| [ios-developer](../plugins/multi-platform-apps/agents/ios-developer.md) | sonnet | Native iOS development with Swift/SwiftUI |
-| [flutter-expert](../plugins/multi-platform-apps/agents/flutter-expert.md) | sonnet | Advanced Flutter development with state management |
 
 ### Programming Languages
 
@@ -108,8 +97,6 @@ Complete reference for all **99 specialized AI agents** organized by category wi
 | [code-reviewer](../plugins/comprehensive-review/agents/code-reviewer.md) | opus | Code review with security focus and production reliability |
 | [security-auditor](../plugins/comprehensive-review/agents/security-auditor.md) | opus | Vulnerability assessment and OWASP compliance |
 | [backend-security-coder](../plugins/data-validation-suite/agents/backend-security-coder.md) | opus | Secure backend coding practices, API security implementation |
-| [frontend-security-coder](../plugins/frontend-mobile-security/agents/frontend-security-coder.md) | opus | XSS prevention, CSP implementation, client-side security |
-| [mobile-security-coder](../plugins/frontend-mobile-security/agents/mobile-security-coder.md) | opus | Mobile security patterns, WebView security, biometric auth |
 | [threat-modeling-expert](../plugins/security-scanning/agents/threat-modeling-expert.md) | opus | STRIDE threat modeling, attack trees, and security requirements |
 
 #### Testing & Debugging
@@ -270,7 +257,7 @@ Haiku: database-optimizer (tune query performance)
 #### Pattern 4: Multi-Agent Workflows
 ```
 Full-Stack Feature Development:
-Sonnet: backend-architect + frontend-developer (design components)
+Sonnet: backend-architect (design API components)
   ↓
 Haiku: Generate code following designs
   ↓

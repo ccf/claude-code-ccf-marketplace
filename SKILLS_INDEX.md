@@ -81,13 +81,6 @@ Quick-reference catalog for progressive skill discovery. Skills are organized by
 |-------|---------|-------------|
 | `openapi-spec-generation` | 🔴 | OpenAPI 3.1 specs (split into templates.md, validation.md) |
 
-## Frontend & Mobile
-
-| Skill | Context | Description |
-|-------|---------|-------------|
-| `react-native-architecture` | 🔴 | React Native patterns |
-| `tailwind-design-system` | 🔴 | Design systems with Tailwind |
-
 ## Kubernetes Operations
 
 | Skill | Context | Description |

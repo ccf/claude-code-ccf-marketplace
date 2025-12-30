@@ -42,12 +42,6 @@ Git workflow automation, pull request enhancement, and team onboarding processes
 
 RESTful and GraphQL API design with test-driven development and modern backend architecture patterns.
 
-**frontend-mobile-development** - UI and mobile development
-
-```bash
-/plugin install frontend-mobile-development
-```
-
 React/React Native component development with automated scaffolding and cross-platform implementation.
 
 **full-stack-orchestration** - End-to-end feature development
@@ -122,8 +116,6 @@ Next.js, React + Vite, and Node.js project setup with pnpm and TypeScript best p
 |--------|-------------|---------|
 | **debugging-toolkit** | Interactive debugging and DX optimization | `/plugin install debugging-toolkit` |
 | **backend-development** | Backend API design with GraphQL and TDD | `/plugin install backend-development` |
-| **frontend-mobile-development** | Frontend UI and mobile development | `/plugin install frontend-mobile-development` |
-| **multi-platform-apps** | Cross-platform app coordination (web/iOS/Android) | `/plugin install multi-platform-apps` |
 
 ### 📚 Documentation (3 plugins)
 
@@ -221,7 +213,6 @@ Next.js, React + Vite, and Node.js project setup with pnpm and TypeScript best p
 | **security-scanning** | SAST analysis and vulnerability scanning | `/plugin install security-scanning` |
 | **security-compliance** | SOC2/HIPAA/GDPR compliance | `/plugin install security-compliance` |
 | **backend-api-security** | API security and authentication | `/plugin install backend-api-security` |
-| **frontend-mobile-security** | XSS/CSRF prevention and mobile security | `/plugin install frontend-mobile-security` |
 
 ### 🔄 Modernization (2 plugins)
 
