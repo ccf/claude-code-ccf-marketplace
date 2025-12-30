@@ -1,1 +1,0 @@
-../../../shared/agents/java-pro.md

@@ -1,13 +1,13 @@
 # Claude Code Plugins Marketplace
 
-A curated collection of 54 plugins, 73 agents, and 115+ skills for Claude Code.
+A curated collection of 26 consolidated plugins, 63 agents, and 98+ skills for Claude Code.
 
 ## Structure
 
 ```
 claude-code-plugins/
-├── shared/agents/           # 73 unique agents (symlinked into plugins)
-├── plugins/                 # 54 domain-specific plugins
+├── shared/agents/           # 63 unique agents (symlinked into plugins)
+├── plugins/                 # 26 consolidated domain plugins
 │   ├── */agents/            # Symlinks to shared/agents
 │   ├── */commands/          # Slash commands
 │   └── */skills/            # Modular knowledge packages

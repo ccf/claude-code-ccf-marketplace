@@ -1,1 +1,0 @@
-../../../shared/agents/scala-pro.md

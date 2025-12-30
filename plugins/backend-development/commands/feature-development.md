@@ -32,7 +32,7 @@ Orchestrate end-to-end feature development from requirements to production deplo
    - Context: Initial feature request and business context
 
 2. **Technical Architecture Design**
-   - Use Task tool with subagent_type="comprehensive-review::architect-review"
+   - Use Task tool with subagent_type="code-quality::architect-review"
    - Prompt: "Design technical architecture for feature: $ARGUMENTS. Using requirements: [include business analysis from step 1]. Define service boundaries, API contracts, data models, integration points, and technology stack. Consider scalability, performance, and security requirements."
    - Expected output: Technical design document with architecture diagrams, API specifications, data models
    - Context: Business requirements, existing system architecture
@@ -80,7 +80,7 @@ Orchestrate end-to-end feature development from requirements to production deplo
 ## Phase 4: Deployment & Monitoring
 
 10. **Deployment Strategy & Pipeline**
-    - Use Task tool with subagent_type="deployment-strategies::deployment-engineer"
+    - Use Task tool with subagent_type="infrastructure::deployment-engineer"
     - Prompt: "Prepare deployment for: $ARGUMENTS. Create CI/CD pipeline with automated tests: [from step 7]. Configure feature flags for gradual rollout, implement blue-green deployment, set up rollback procedures. Create deployment runbook and rollback plan."
     - Expected output: CI/CD pipeline, deployment configuration, rollback procedures
     - Context: Test suites, infrastructure requirements, deployment strategy

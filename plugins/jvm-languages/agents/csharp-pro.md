@@ -1,1 +1,0 @@
-../../../shared/agents/csharp-pro.md

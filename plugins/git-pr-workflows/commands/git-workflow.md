@@ -61,12 +61,12 @@ Orchestrate a comprehensive git workflow from code review through PR creation, l
 ## Phase 4: Branch Strategy and Push Preparation
 
 ### 1. Branch Management
-- Use Task tool with subagent_type="cicd-automation::deployment-engineer"
+- Use Task tool with subagent_type="infrastructure::deployment-engineer"
 - Prompt: "Based on workflow type [--trunk-based or --feature-branch], prepare branch strategy. For feature branch: ensure branch name follows pattern (feature|bugfix|hotfix)/<ticket>-<description>. For trunk-based: prepare for direct main push with feature flag strategy if needed. Current branch: [insert branch], target: [insert target branch]. Verify no conflicts with target branch."
 - Expected output: Branch preparation commands and conflict status
 
 ### 2. Pre-Push Validation
-- Use Task tool with subagent_type="cicd-automation::deployment-engineer"
+- Use Task tool with subagent_type="infrastructure::deployment-engineer"
 - Prompt: "Perform final pre-push checks: 1) Verify all CI checks will pass, 2) Confirm no sensitive data in commits, 3) Validate commit signatures if required, 4) Check branch protection rules, 5) Ensure all review comments addressed. Test summary: [insert test results]. Review status: [insert review summary]."
 - Context from previous: All previous validation results
 - Expected output: Push readiness confirmation or blocking issues
@@ -80,7 +80,7 @@ Orchestrate a comprehensive git workflow from code review through PR creation, l
 - Expected output: Complete PR description in Markdown
 
 ### 2. PR Metadata and Automation Setup
-- Use Task tool with subagent_type="cicd-automation::deployment-engineer"
+- Use Task tool with subagent_type="infrastructure::deployment-engineer"
 - Prompt: "Configure PR metadata: 1) Assign appropriate reviewers based on CODEOWNERS, 2) Add labels (type, priority, component), 3) Link related issues, 4) Set milestone if applicable, 5) Configure merge strategy (squash/merge/rebase), 6) Set up auto-merge if all checks pass. Consider draft status: [--draft-pr flag]. Include test status: [insert test summary]."
 - Context from previous: PR description, test results, review status
 - Expected output: PR configuration commands and automation rules

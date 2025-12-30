@@ -4,7 +4,7 @@
 
 ## Phase 1: Issue Analysis - Error Detection and Context Gathering
 
-Use Task tool with subagent_type="error-debugging::error-detective" followed by subagent_type="error-debugging::debugger":
+Use Task tool with subagent_type="error-debugging::error-detective" followed by subagent_type="debugging::debugger":
 
 **First: Error-Detective Analysis**
 
@@ -89,7 +89,7 @@ TESTING_REQUIREMENTS: [scenarios that must be covered]
 
 ## Phase 2: Root Cause Investigation - Deep Code Analysis
 
-Use Task tool with subagent_type="error-debugging::debugger" and subagent_type="comprehensive-review::code-reviewer" for systematic investigation:
+Use Task tool with subagent_type="debugging::debugger" and subagent_type="code-quality::code-reviewer" for systematic investigation:
 
 **First: Debugger Code Analysis**
 
@@ -493,7 +493,7 @@ FINAL_VERDICT: {
 
 ## Phase 5: Documentation and Prevention - Long-term Resilience
 
-Use Task tool with subagent_type="comprehensive-review::code-reviewer" for prevention strategies:
+Use Task tool with subagent_type="code-quality::code-reviewer" for prevention strategies:
 
 **Prompt:**
 ```

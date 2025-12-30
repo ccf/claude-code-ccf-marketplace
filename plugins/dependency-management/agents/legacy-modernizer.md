@@ -1,1 +1,0 @@
-../../../shared/agents/legacy-modernizer.md

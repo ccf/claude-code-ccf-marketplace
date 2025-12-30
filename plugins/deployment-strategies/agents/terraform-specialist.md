@@ -1,1 +1,0 @@
-../../../shared/agents/terraform-specialist.md

@@ -53,55 +53,74 @@ Claude Code automatically selects and coordinates the appropriate agents based o
 | Command | Description |
 |---------|-------------|
 | `/backend-development:feature-development` | End-to-end backend feature development |
-| `/full-stack-orchestration:full-stack-feature` | Complete full-stack feature implementation |
 
 ### Testing & Quality
 
 | Command | Description |
 |---------|-------------|
-| `/unit-testing:test-generate` | Generate comprehensive unit tests |
-| `/tdd-workflows:tdd-cycle` | Complete TDD red-green-refactor cycle |
-| `/tdd-workflows:tdd-red` | Write failing tests first |
-| `/tdd-workflows:tdd-green` | Implement code to pass tests |
-| `/tdd-workflows:tdd-refactor` | Refactor with passing tests |
+| `/testing:test-generate` | Generate comprehensive unit tests |
+| `/testing:tdd-cycle` | Complete TDD red-green-refactor cycle |
+| `/testing:tdd-red` | Write failing tests first |
+| `/testing:tdd-green` | Implement code to pass tests |
+| `/testing:tdd-refactor` | Refactor with passing tests |
 
 ### Code Quality & Review
 
 | Command | Description |
 |---------|-------------|
-| `/code-review-ai:ai-review` | AI-powered code review |
-| `/comprehensive-review:full-review` | Multi-perspective analysis |
-| `/comprehensive-review:pr-enhance` | Enhance pull requests |
+| `/code-quality:ai-review` | AI-powered code review |
+| `/code-quality:full-review` | Multi-perspective analysis |
+| `/code-quality:pr-enhance` | Enhance pull requests |
+| `/code-quality:multi-agent-review` | Multi-agent code review |
 
 ### Debugging & Troubleshooting
 
 | Command | Description |
 |---------|-------------|
-| `/debugging-toolkit:smart-debug` | Interactive smart debugging |
+| `/debugging:smart-debug` | Interactive smart debugging |
+| `/debugging:error-analysis` | Deep error analysis |
+| `/debugging:error-trace` | Stack trace debugging |
+| `/debugging:debug-trace` | Distributed system tracing |
+| `/debugging:multi-agent-review` | Multi-agent problem diagnosis |
 | `/incident-response:incident-response` | Production incident management |
 | `/incident-response:smart-fix` | Automated incident resolution |
-| `/error-debugging:error-analysis` | Deep error analysis |
-| `/error-debugging:error-trace` | Stack trace debugging |
-| `/error-diagnostics:smart-debug` | Smart diagnostic debugging |
-| `/distributed-debugging:debug-trace` | Distributed system tracing |
 
 ### Security
 
 | Command | Description |
 |---------|-------------|
-| `/security-scanning:security-hardening` | Comprehensive security hardening |
-| `/security-scanning:security-sast` | Static application security testing |
-| `/security-scanning:security-dependencies` | Dependency vulnerability scanning |
-| `/security-compliance:compliance-check` | SOC2/HIPAA/GDPR compliance |
+| `/security:security-hardening` | Comprehensive security hardening |
+| `/security:security-sast` | Static application security testing |
+| `/security:security-dependencies` | Dependency vulnerability scanning |
+| `/security:compliance-check` | SOC2/HIPAA/GDPR compliance |
 
 ### Infrastructure & Deployment
 
 | Command | Description |
 |---------|-------------|
+| `/infrastructure:workflow-automate` | CI/CD pipeline automation |
+| `/infrastructure:config-validate` | Pre-deployment validation |
 | `/observability-monitoring:monitor-setup` | Setup monitoring infrastructure |
 | `/observability-monitoring:slo-implement` | Implement SLO/SLI metrics |
-| `/deployment-validation:config-validate` | Pre-deployment validation |
-| `/cicd-automation:workflow-automate` | CI/CD pipeline automation |
+
+### Database
+
+| Command | Description |
+|---------|-------------|
+| `/database:sql-migrations` | Database migration automation |
+| `/database:migration-observability` | Migration monitoring |
+| `/database:cost-optimize` | Database cost optimization |
+
+### Refactoring & Modernization
+
+| Command | Description |
+|---------|-------------|
+| `/refactoring:refactor-clean` | Code cleanup and refactoring |
+| `/refactoring:tech-debt` | Technical debt management |
+| `/refactoring:deps-audit` | Dependency auditing |
+| `/refactoring:legacy-modernize` | Legacy code modernization |
+| `/refactoring:code-migrate` | Code migration |
+| `/refactoring:deps-upgrade` | Dependency upgrades |
 
 ### Data & ML
 
@@ -115,251 +134,167 @@ Claude Code automatically selects and coordinates the appropriate agents based o
 
 | Command | Description |
 |---------|-------------|
-| `/code-documentation:doc-generate` | Generate comprehensive documentation |
-| `/code-documentation:code-explain` | Explain code functionality |
-| `/documentation-generation:doc-generate` | OpenAPI specs, diagrams, tutorials |
-
-### Refactoring & Maintenance
-
-| Command | Description |
-|---------|-------------|
-| `/code-refactoring:refactor-clean` | Code cleanup and refactoring |
-| `/code-refactoring:tech-debt` | Technical debt management |
-| `/codebase-cleanup:deps-audit` | Dependency auditing |
-| `/codebase-cleanup:tech-debt` | Technical debt reduction |
-| `/framework-migration:legacy-modernize` | Legacy code modernization |
-| `/framework-migration:code-migrate` | Framework migration |
-| `/framework-migration:deps-upgrade` | Dependency upgrades |
-
-### Database
-
-| Command | Description |
-|---------|-------------|
-| `/database-migrations:sql-migrations` | SQL migration automation |
-| `/database-migrations:migration-observability` | Migration monitoring |
-| `/database-cloud-optimization:cost-optimize` | Database and cloud optimization |
+| `/documentation:doc-generate` | Generate documentation |
+| `/documentation:code-explain` | Explain code functionality |
+| `/documentation:doc-generate-openapi` | Generate OpenAPI specs |
 
 ### Git & PR Workflows
 
 | Command | Description |
 |---------|-------------|
-| `/git-pr-workflows:pr-enhance` | Enhance pull request quality |
-| `/git-pr-workflows:onboard` | Team onboarding automation |
 | `/git-pr-workflows:git-workflow` | Git workflow automation |
+| `/git-pr-workflows:pr-workflow` | PR workflow automation |
+| `/git-pr-workflows:branch-cleanup` | Branch cleanup |
 
-### Project Scaffolding
-
-| Command | Description |
-|---------|-------------|
-| `/python-development:python-scaffold` | FastAPI/Django project setup |
-| `/systems-programming:rust-project` | Rust project scaffolding |
-
-### AI & LLM Development
+### Structured Reasoning (FPF)
 
 | Command | Description |
 |---------|-------------|
-| `/llm-application-dev:langchain-agent` | LangChain agent development |
-| `/llm-application-dev:ai-assistant` | AI assistant implementation |
-| `/llm-application-dev:prompt-optimize` | Prompt engineering optimization |
+| `/structured-reasoning:q0-init` | Initialize reasoning knowledge base |
+| `/structured-reasoning:q1-hypothesize` | Generate competing hypotheses |
+| `/structured-reasoning:q2-verify` | Logical verification |
+| `/structured-reasoning:q3-validate` | Empirical validation |
+| `/structured-reasoning:q4-specify` | Create formal specification |
+| `/structured-reasoning:q5-decide` | Create Design Rationale Record |
+
+### Agent Orchestration
+
+| Command | Description |
+|---------|-------------|
 | `/agent-orchestration:multi-agent-optimize` | Multi-agent optimization |
-| `/agent-orchestration:improve-agent` | Agent improvement workflows |
+| `/agent-orchestration:improve-agent` | Agent improvement |
+| `/agent-orchestration:context-save` | Save context |
 
-### Testing & Performance
+---
 
-| Command | Description |
-|---------|-------------|
-| `/performance-testing-review:ai-review` | Performance analysis |
-| `/application-performance:performance-optimization` | App optimization |
+## Multi-Agent Workflows
 
-### Team Collaboration
+### Workflow Templates
 
-| Command | Description |
-|---------|-------------|
-| `/team-collaboration:issue` | Issue management automation |
-| `/team-collaboration:standup-notes` | Standup notes generation |
+The marketplace includes composable workflow templates in `workflows/`:
 
-### Accessibility
+#### Feature Development
+```
+@task-planner → @codebase-navigator → @architect-review → @{lang}-pro → @code-reviewer
+```
 
-| Command | Description |
-|---------|-------------|
-| `/accessibility-compliance:accessibility-audit` | WCAG compliance auditing |
+#### Bug Investigation
+```
+@codebase-navigator → @debugger → @error-detective → @{lang}-pro → @test-strategist
+```
 
-### API Development
+#### Architecture Decision
+```
+@context-researcher → @reasoning-orchestrator → /q1-hypothesize → /q5-decide
+```
 
-| Command | Description |
-|---------|-------------|
-| `/api-testing-observability:api-mock` | API mocking and testing |
-
-### Context Management
-
-| Command | Description |
-|---------|-------------|
-| `/context-management:context-save` | Save conversation context |
-| `/context-management:context-restore` | Restore previous context |
-
-## Multi-Agent Workflow Examples
-
-Plugins provide pre-configured multi-agent workflows accessible via slash commands.
-
-### Full-Stack Development
+### Invoking Multi-Agent Workflows
 
 ```bash
-# Command-based workflow invocation
-/full-stack-orchestration:full-stack-feature "user dashboard with real-time analytics"
+# Complex feature development with multiple agents
+"Build user authentication with JWT tokens, database storage, and API endpoints"
 
-# Natural language alternative
-"Implement user dashboard with real-time analytics"
+# Claude coordinates: backend-architect → python-pro → security-auditor → test-automator
 ```
 
-**Orchestration:** backend-architect → database-architect → frontend-developer → test-automator → security-auditor → deployment-engineer → observability-engineer
+### Agent Coordination Patterns
 
-**What happens:**
-
-1. Database schema design with migrations
-2. Backend API implementation (REST/GraphQL)
-3. Frontend components with state management
-4. Comprehensive test suite (unit/integration/E2E)
-5. Security audit and hardening
-6. CI/CD pipeline setup with feature flags
-7. Observability and monitoring configuration
-
-### Security Hardening
-
-```bash
-# Comprehensive security assessment and remediation
-/security-scanning:security-hardening --level comprehensive
-
-# Natural language alternative
-"Perform security audit and implement OWASP best practices"
+#### Pattern 1: Planning → Execution
+```
+@task-planner (decompose task)
+  ↓
+@context-researcher (gather context)
+  ↓
+@{specialist}-pro (implement)
+  ↓
+@output-critic (review)
 ```
 
-**Orchestration:** security-auditor → backend-security-coder → frontend-security-coder → mobile-security-coder → test-automator
-
-### Data/ML Pipeline
-
-```bash
-# ML feature development with production deployment
-/machine-learning-ops:ml-pipeline "customer churn prediction model"
-
-# Natural language alternative
-"Build customer churn prediction model with deployment"
+#### Pattern 2: Diagnosis → Fix
+```
+@debugger (identify issue)
+  ↓
+@error-detective (trace cause)
+  ↓
+@{lang}-pro (implement fix)
+  ↓
+@test-strategist (verify)
 ```
 
-**Orchestration:** data-scientist → data-engineer → ml-engineer → mlops-engineer → performance-engineer
-
-### Incident Response
-
-```bash
-# Smart debugging with root cause analysis
-/incident-response:smart-fix "production memory leak in payment service"
-
-# Natural language alternative
-"Debug production memory leak and create runbook"
-```
-
-**Orchestration:** incident-responder → devops-troubleshooter → debugger → error-detective → observability-engineer
-
-## Command Arguments and Options
-
-Many slash commands support arguments for precise control:
-
-```bash
-# Test generation for specific files
-/unit-testing:test-generate src/api/users.py
-
-# Feature development with methodology specification
-/backend-development:feature-development OAuth2 integration with social login
-
-# Security dependency scanning
-/security-scanning:security-dependencies
-
-# TDD workflow cycle
-/tdd-workflows:tdd-red User can reset password
-/tdd-workflows:tdd-green
-/tdd-workflows:tdd-refactor
-
-# Smart debugging
-/debugging-toolkit:smart-debug memory leak in checkout flow
-
-# Python project scaffolding
-/python-development:python-scaffold fastapi-microservice
-```
-
-## Combining Natural Language and Commands
-
-You can mix both approaches for optimal flexibility:
-
-```
-# Start with a command for structured workflow
-/full-stack-orchestration:full-stack-feature "payment processing"
-
-# Then provide natural language guidance
-"Ensure PCI-DSS compliance and integrate with Stripe"
-"Add retry logic for failed transactions"
-"Set up fraud detection rules"
-```
+---
 
 ## Best Practices
 
-### When to Use Slash Commands
+### 1. Use Slash Commands for Repeatability
 
-- **Structured workflows** - Multi-step processes with clear phases
-- **Repetitive tasks** - Operations you perform frequently
-- **Precise control** - When you need specific parameters
-- **Discovery** - Exploring available functionality
+Instead of:
+```
+"Review my code for security issues"
+```
 
-### When to Use Natural Language
+Use:
+```bash
+/security:security-sast
+```
 
-- **Exploratory work** - When you're not sure which tool to use
-- **Complex reasoning** - When Claude needs to coordinate multiple agents
-- **Contextual decisions** - When the right approach depends on the situation
-- **Ad-hoc tasks** - One-off operations that don't fit a command
-
-### Workflow Composition
-
-Compose multiple plugins for complex scenarios:
+### 2. Chain Commands for Complex Tasks
 
 ```bash
-# 1. Start with feature development
-/backend-development:feature-development payment processing API
+# Step 1: Analyze
+/debugging:error-analysis "Memory leak in payment service"
 
-# 2. Add security hardening
-/security-scanning:security-hardening
+# Step 2: Fix
+/incident-response:smart-fix "Memory leak in payment service"
 
-# 3. Generate comprehensive tests
-/unit-testing:test-generate
-
-# 4. Review the implementation
-/code-review-ai:ai-review
-
-# 5. Set up CI/CD
-/cicd-automation:workflow-automate
-
-# 6. Add monitoring
-/observability-monitoring:monitor-setup
+# Step 3: Verify
+/testing:test-generate "payment service memory management"
 ```
 
-## Agent Skills Integration
+### 3. Use Natural Language for Exploratory Work
 
-Agent Skills work alongside commands to provide deep expertise:
-
+When you're not sure what you need:
 ```
-User: "Set up FastAPI project with async patterns"
-→ Activates: fastapi-templates skill
-→ Invokes: /python-development:python-scaffold
-→ Result: Production-ready FastAPI project with best practices
-
-User: "Implement Kubernetes deployment with Helm"
-→ Activates: helm-chart-scaffolding, k8s-manifest-generator skills
-→ Guides: kubernetes-architect agent
-→ Result: Production-grade K8s manifests with Helm charts
+"I'm getting intermittent 500 errors in production. Help me investigate."
 ```
 
-See [Agent Skills](./agent-skills.md) for details on the 107 specialized skills.
+Claude will coordinate the appropriate agents.
 
-## See Also
+### 4. Leverage Agent Specialization
 
-- [Agent Skills](./agent-skills.md) - Specialized knowledge packages
-- [Agent Reference](./agents.md) - Complete agent catalog
-- [Plugin Reference](./plugins.md) - All 67 plugins
-- [Architecture](./architecture.md) - Design principles
+Each agent has specific expertise. Use the right agent for the job:
+
+| Task | Best Agent |
+|------|------------|
+| API design | `@backend-architect` |
+| Security review | `@security-auditor` |
+| Performance tuning | `@performance-engineer` |
+| Database optimization | `@database-optimizer` |
+| ML pipeline | `@ml-engineer` |
+
+---
+
+## Troubleshooting
+
+### Command Not Found
+
+If a slash command doesn't work:
+
+1. Check the plugin is installed: `/plugin`
+2. Verify command name: Check plugin's `commands/` directory
+3. Reinstall if needed: `/plugin install <plugin-name>`
+
+### Agent Not Available
+
+If an agent isn't responding:
+
+1. Verify the agent exists in `shared/agents/`
+2. Check the plugin includes the agent in its manifest
+3. Try natural language invocation as fallback
+
+### Context Issues
+
+For context-related problems:
+
+1. Use `/agent-orchestration:context-save` to preserve context
+2. Break large tasks into smaller steps
+3. Use progressive disclosure skills

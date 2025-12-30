@@ -2,7 +2,7 @@
 
 > **⚡ Unified Marketplace** — Combining my favorite Claude Code sub-agents and skills in an agent orchestration architecture with workflows
 
-A comprehensive, curated plugin marketplace featuring **54 focused plugins**, **73 specialized agents**, **115+ skills**, and production-ready workflows for Claude Code.
+A comprehensive, curated plugin marketplace featuring **26 consolidated plugins**, **63 specialized agents**, **98+ skills**, and production-ready workflows for Claude Code.
 
 ---
 
@@ -89,15 +89,17 @@ Strategic model assignment for optimal performance:
 ```
 claude-code-ccf-marketplace/
 ├── .claude-plugin/
-│   └── marketplace.json          # 54 plugins defined
+│   └── marketplace.json          # 26 consolidated plugins
 ├── shared/
-│   └── agents/                   # 73 unique agents (single source of truth)
+│   └── agents/                   # 63 unique agents (single source of truth)
 ├── plugins/
-│   ├── agent-orchestration/      # Coordination agents + best practice skills
-│   ├── structured-reasoning/     # FPF methodology + commands
-│   ├── mcp-development/          # MCP server building
-│   ├── quantitative-trading/     # Quant, risk, ML finance
-│   └── ... (50+ more plugins)
+│   ├── agent-orchestration/      # AI coordination, context, subagent patterns
+│   ├── infrastructure/           # Cloud, K8s, Terraform, CI/CD, GitOps
+│   ├── security/                 # SAST, compliance, threat modeling, API security
+│   ├── refactoring/              # Migrations, tech debt, modernization
+│   ├── debugging/                # Error analysis, root cause, distributed tracing
+│   ├── code-quality/             # Reviews, architecture, performance analysis
+│   └── ... (20+ more plugins)
 ├── workflows/                    # Composable workflow templates
 ├── AGENTS.md                     # Complete agent catalog
 ├── SKILLS_INDEX.md               # Skill discovery with context costs
@@ -145,18 +147,22 @@ cp -r plugins/agent-orchestration ~/.claude/plugins/
 
 ---
 
-## Plugin Categories
+## Consolidated Plugin Categories
 
-| Category | Count | Examples |
-|----------|-------|----------|
-| **AI & ML** | 6 | agent-orchestration, structured-reasoning, llm-application-dev |
-| **Infrastructure** | 6 | kubernetes-operations, cloud-infrastructure, cicd-automation |
-| **Languages** | 5 | python-development, systems-programming, jvm-languages |
-| **Development** | 5 | debugging-toolkit, backend-development, code-refactoring |
-| **Documentation** | 2 | documentation-generation, code-documentation |
-| **Security** | 3 | security-scanning, security-compliance, backend-api-security |
+| Category | Count | Plugins |
+|----------|-------|---------|
+| **AI & ML** | 5 | agent-orchestration, structured-reasoning, llm-application-dev, mcp-development, machine-learning-ops |
+| **Infrastructure** | 1 | infrastructure (cloud, K8s, Terraform, CI/CD, GitOps, service mesh) |
+| **Development** | 5 | debugging, testing, refactoring, code-quality, backend-development |
+| **Languages** | 3 | python-development, systems-programming, shell-scripting |
+| **Data** | 3 | database, data-engineering, data-validation-suite |
+| **Security** | 1 | security (SAST, compliance, threat modeling, API security) |
+| **Documentation** | 1 | documentation (code, API, diagrams, changelogs, ADRs) |
+| **API** | 1 | api-development (REST, GraphQL, testing, mocking) |
+| **Observability** | 2 | observability-monitoring, incident-response |
 | **Finance** | 1 | quantitative-trading (quant-analyst, risk-manager, ml-quant-developer) |
-| **And more...** | 28+ | data-engineering, observability, performance, business |
+| **Workflows** | 2 | git-pr-workflows, developer-essentials |
+| **Performance** | 1 | application-performance |
 
 ---
 

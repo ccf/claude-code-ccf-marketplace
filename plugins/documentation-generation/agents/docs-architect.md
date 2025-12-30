@@ -1,1 +1,0 @@
-../../../shared/agents/docs-architect.md
