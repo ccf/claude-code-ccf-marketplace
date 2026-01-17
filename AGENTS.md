@@ -1,44 +1,39 @@
 # Claude Code Plugins Marketplace
 
-A curated collection of 26 consolidated plugins, 63 agents, and 98+ skills for Claude Code.
+A curated collection of 10 specialized plugins and 16 unique agents for Claude Code.
+
+**Focus**: Capabilities NOT covered by Claude Code's built-in agents.
 
 ## Structure
 
 ```
 claude-code-plugins/
-├── shared/agents/           # 63 unique agents (symlinked into plugins)
-├── plugins/                 # 26 consolidated domain plugins
+├── shared/agents/           # Agent definitions (symlinked into plugins)
+├── plugins/                 # 10 specialized domain plugins
 │   ├── */agents/            # Symlinks to shared/agents
 │   ├── */commands/          # Slash commands
 │   └── */skills/            # Modular knowledge packages
-├── workflows/               # Composable workflow templates
 └── .claude-plugin/marketplace.json
 ```
 
-## Key Capabilities
+---
 
-### Structured Reasoning (FPF)
-Hypothesis-driven decision making with auditable evidence trails:
-- `/q0-init` — Initialize reasoning knowledge base
-- `/q1-hypothesize <problem>` — Generate competing hypotheses
-- `/q2-verify` — Logical verification
-- `/q3-validate` — Empirical evidence gathering
-- `/q5-decide` — Create Design Rationale Record
+## Why These Agents?
 
-### Development Workflows
-- **Subagent-Driven Development** — Fresh subagent per task with code review checkpoints
-- **Git Worktrees** — Isolated workspaces for parallel feature development
-- **Root Cause Tracing** — Trace errors to source, not symptoms
+Claude Code has 100+ built-in agents covering languages (Python, Rust, Go, etc.), infrastructure (Kubernetes, Terraform), databases, testing, and more. This marketplace focuses on **gaps**:
 
-### Cloud & Infrastructure
-- **Kubernetes** — Cluster design, Helm, GitOps
-- **Terraform** — IaC patterns and modules
-- **Multi-Cloud** — AWS/Azure/GCP infrastructure patterns
-
-### AI/ML Development
-- **MCP Builder** — Create high-quality MCP servers
-- **Prompt Engineering** — Optimization techniques
-- **RAG Systems** — Vector databases, embeddings
+| Category | Built-in Coverage | This Marketplace Adds |
+|----------|-------------------|----------------------|
+| Finance/Quant | None | quant-analyst, risk-manager, ml-quant-developer |
+| Structured Reasoning | None | reasoning-orchestrator (FPF methodology) |
+| MCP Development | Basic | mcp-architect (advanced patterns) |
+| LLM Applications | Basic | ai-engineer, prompt-engineer (RAG, agents) |
+| Shell Scripting | Basic | bash-pro, posix-shell-pro (defensive patterns) |
+| Documentation | API docs only | docs-architect, mermaid-expert (architecture docs) |
+| Modernization | Basic | legacy-modernizer (systematic migration) |
+| Monorepos | None | monorepo-architect (Nx/Turborepo/Bazel) |
+| Event Sourcing | None | event-sourcing-architect, temporal-python-pro |
+| Threat Modeling | Basic security | threat-modeling-expert (STRIDE, attack trees) |
 
 ---
 
@@ -53,172 +48,97 @@ Hypothesis-driven decision making with auditable evidence trails:
 
 ---
 
-## Available Agents
+## Available Agents (16)
 
-### Orchestration & Meta
+### Finance & Quantitative Trading
 
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `task-planner` | opus | Decomposes complex tasks, delegates to agents, coordinates execution |
-| `output-critic` | opus | Reviews agent outputs for correctness, completeness, quality |
-| `context-researcher` | sonnet | Gathers context before implementation, builds understanding |
-| `codebase-navigator` | sonnet | Maps project structure, traces data flows, locates code |
-| `api-designer` | inherit | Designs clean REST/GraphQL/gRPC APIs with best practices |
-| `test-strategist` | inherit | Plans comprehensive testing strategies, identifies edge cases |
+| Agent | Model | Plugin | Description |
+|-------|-------|--------|-------------|
+| `quant-analyst` | opus | quantitative-trading | Quantitative finance, trading strategies, backtesting |
+| `risk-manager` | opus | quantitative-trading | Portfolio risk, VaR, position sizing, hedging |
+| `ml-quant-developer` | opus | quantitative-trading | ML for finance: LSTM, transformers, factor investing |
 
-### Architecture & Design
+### AI & LLM Development
 
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `architect-review` | opus | Software architecture patterns, clean architecture, microservices |
-| `backend-architect` | inherit | Scalable API design, microservices, distributed systems |
-| `cloud-architect` | opus | AWS/Azure/GCP multi-cloud infrastructure, IaC patterns |
-| `database-architect` | opus | Data layer design, technology selection, schema design |
-| `graphql-architect` | inherit | GraphQL schema design, federation, performance |
-| `hybrid-cloud-architect` | inherit | Multi-cloud networking, hybrid deployments |
-| `kubernetes-architect` | inherit | K8s cluster design, helm charts, GitOps |
-| `monorepo-architect` | opus | Monorepo structure, tooling, dependency management |
-| `service-mesh-expert` | inherit | Istio, Linkerd, service mesh patterns |
+| Agent | Model | Plugin | Description |
+|-------|-------|--------|-------------|
+| `reasoning-orchestrator` | opus | structured-reasoning | FPF methodology, hypothesis-driven decision making |
+| `mcp-architect` | opus | mcp-development | MCP server development, tool design patterns |
+| `ai-engineer` | inherit | llm-application-dev | RAG systems, AI agents, LLM applications |
+| `prompt-engineer` | opus | llm-application-dev | Prompt optimization, few-shot, chain-of-thought |
 
-### Languages
+### Backend & Architecture
 
-#### Systems Programming
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `c-pro` | opus | C with memory management, system calls, embedded |
-| `cpp-pro` | opus | Modern C++ (11/14/17/20/23), RAII, templates |
-| `rust-pro` | opus | Safe Rust, async patterns, systems programming |
-| `golang-pro` | opus | Go concurrency, microservices, cloud-native |
+| Agent | Model | Plugin | Description |
+|-------|-------|--------|-------------|
+| `event-sourcing-architect` | opus | backend-development | Event sourcing, CQRS patterns, projections |
+| `temporal-python-pro` | opus | backend-development | Temporal workflows, orchestration patterns |
+| `monorepo-architect` | opus | developer-essentials | Nx, Turborepo, Bazel, dependency management |
 
-#### Web & Backend
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `python-pro` | opus | Modern Python 3.12+, async, type hints |
-| `django-pro` | opus | Django 5.x, DRF, Celery, async views |
-| `fastapi-pro` | opus | FastAPI, async patterns, Pydantic |
+### Shell & Scripting
 
-#### JVM & Functional
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `java-pro` | inherit | Modern Java, Spring Boot, enterprise |
-| `scala-pro` | inherit | Functional Scala, Akka, Cats |
-| `csharp-pro` | inherit | C# with records, pattern matching, async |
-| `elixir-pro` | inherit | Elixir, OTP, Phoenix LiveView |
-| `haskell-pro` | inherit | Pure functional Haskell patterns |
-
-#### Specialized
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `julia-pro` | inherit | Scientific computing, numerical code |
-| `bash-pro` | sonnet | Defensive Bash scripting, automation |
-| `posix-shell-pro` | sonnet | POSIX-compliant shell scripts |
-
-### AI & Machine Learning
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `ai-engineer` | inherit | LLM applications, RAG systems, agents |
-| `prompt-engineer` | opus | Prompt engineering, optimization techniques |
-| `ml-engineer` | inherit | Model training, deployment, pipelines |
-| `mlops-engineer` | sonnet | MLOps workflows, experiment tracking |
-| `data-scientist` | inherit | Analytics, statistical modeling |
-| `vector-database-engineer` | inherit | Vector DBs, embeddings, similarity search |
-| `reasoning-orchestrator` | opus | FPF structured reasoning, decision making |
-| `context-manager` | inherit | Context engineering, knowledge management |
-| `mcp-architect` | opus | MCP server development, tool design |
-
-### Infrastructure & DevOps
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `terraform-specialist` | inherit | Terraform modules, IaC patterns |
-| `deployment-engineer` | haiku | CI/CD pipelines, GitOps workflows |
-| `devops-troubleshooter` | sonnet | Incident response, debugging |
-| `incident-responder` | sonnet | Production incidents, triage |
-| `observability-engineer` | inherit | Metrics, logs, traces, dashboards |
-| `network-engineer` | inherit | Networking, load balancing, DNS |
-
-### Security
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `security-auditor` | opus | Security analysis, vulnerability detection |
-| `threat-modeling-expert` | opus | STRIDE analysis, attack trees |
-| `backend-security-coder` | sonnet | Secure coding, input validation |
-
-### Data & Databases
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `data-engineer` | opus | ETL pipelines, data warehouses |
-| `database-optimizer` | inherit | Query optimization, performance tuning |
-| `database-admin` | sonnet | Database operations, automation |
-| `sql-pro` | opus | Advanced SQL, optimization |
-
-### Quality & Testing
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `code-reviewer` | opus | Code review, quality analysis |
-| `test-automator` | inherit | Test automation, coverage |
-| `tdd-orchestrator` | opus | Test-driven development workflows |
-| `debugger` | sonnet | Debugging, troubleshooting |
-| `error-detective` | sonnet | Error analysis, log correlation |
-| `performance-engineer` | inherit | Performance optimization, profiling |
+| Agent | Model | Plugin | Description |
+|-------|-------|--------|-------------|
+| `bash-pro` | sonnet | shell-scripting | Defensive Bash, error handling, shellcheck |
+| `posix-shell-pro` | sonnet | shell-scripting | POSIX-compliant scripts, portability |
 
 ### Documentation
 
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `docs-architect` | sonnet | Technical documentation architecture |
-| `api-documenter` | sonnet | OpenAPI specs, API docs |
-| `tutorial-engineer` | sonnet | Tutorial creation, examples |
-| `reference-builder` | sonnet | Reference documentation |
-| `mermaid-expert` | sonnet | Diagrams, flowcharts |
+| Agent | Model | Plugin | Description |
+|-------|-------|--------|-------------|
+| `docs-architect` | sonnet | documentation | Technical documentation architecture |
+| `mermaid-expert` | sonnet | documentation | Diagrams, flowcharts, sequence diagrams |
 
-### Finance
+### Modernization & Security
 
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `quant-analyst` | opus | Quantitative finance, trading strategies |
-| `risk-manager` | opus | Portfolio risk, VaR, position sizing |
-| `ml-quant-developer` | opus | ML for quant finance, factor investing, deep learning |
+| Agent | Model | Plugin | Description |
+|-------|-------|--------|-------------|
+| `legacy-modernizer` | opus | refactoring | Legacy code modernization, systematic migration |
+| `threat-modeling-expert` | opus | security | STRIDE analysis, attack trees, threat mitigation |
 
-### Blockchain
+---
 
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `blockchain-developer` | opus | Smart contracts, DeFi, Web3 |
+## Key Capabilities
 
-### Business
+### Structured Reasoning (FPF)
+Hypothesis-driven decision making with auditable evidence trails:
+```bash
+/q0-init                           # Initialize knowledge base
+/q1-hypothesize "API caching"      # Generate competing hypotheses
+/q2-verify H1                      # Logical verification
+/q3-validate H1                    # Empirical evidence
+/q5-decide H1                      # Create Design Rationale Record
+```
 
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `business-analyst` | sonnet | Business analysis, KPIs, dashboards |
+### ML Quantitative Finance
+Comprehensive ML-based asset management:
+- Deep learning (LSTM, transformers, autoencoders)
+- Reinforcement learning for portfolio optimization
+- Lopez de Prado framework (CPCV, meta-labeling, PBO)
+- Factor investing with ML
 
-### Modernization
-
-| Agent | Model | Description |
-|-------|-------|-------------|
-| `legacy-modernizer` | opus | Legacy code modernization, systematic refactoring |
-| `event-sourcing-architect` | opus | Event sourcing, CQRS patterns |
-| `temporal-python-pro` | opus | Temporal workflows, orchestration |
+### MCP Development
+Build high-quality MCP servers for LLM integrations:
+- Agent-centric design patterns
+- Tool design best practices
+- Evaluation framework
 
 ---
 
 ## Usage
 
-Agents are automatically available when using plugins. To invoke directly:
+Agents are automatically available when plugins are enabled. To invoke directly:
 
 ```
 @agent-name your request here
 ```
 
-Example:
+Examples:
 ```
-@rust-pro Review this unsafe block for memory safety issues
 @quant-analyst Build a momentum strategy with proper backtesting
-@cloud-architect Design a serverless architecture for this API
+@reasoning-orchestrator Help me decide between REST vs GraphQL
+@mcp-architect Design a MCP server for database queries
+@bash-pro Write a defensive deployment script
 ```
 
 ---
@@ -226,7 +146,7 @@ Example:
 ## Sources
 
 This marketplace combines:
-- [wshobson/agents](https://github.com/wshobson/agents) — Base structure
-- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) — Skills
-- [m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code) — FPF reasoning
-- [obra/superpowers](https://github.com/obra/superpowers) — Development workflows
+- [wshobson/agents](https://github.com/wshobson/agents) - Base structure
+- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) - Skills
+- [m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code) - FPF reasoning
+- [obra/superpowers](https://github.com/obra/superpowers) - Development workflows

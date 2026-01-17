@@ -1,47 +1,30 @@
 # Claude Code Plugins: Curated Marketplace
 
-> **⚡ Unified Marketplace** — Combining my favorite Claude Code sub-agents and skills in an agent orchestration architecture with workflows
+> **Focused Plugins** — Capabilities NOT covered by Claude Code's 100+ built-in agents
 
-A comprehensive, curated plugin marketplace featuring **26 consolidated plugins**, **63 specialized agents**, **98+ skills**, and production-ready workflows for Claude Code.
+A curated plugin marketplace featuring **10 specialized plugins**, **16 unique agents**, and **40+ skills** for Claude Code.
 
 ---
 
-## Agent Orchestration Architecture
+## Why This Marketplace?
 
-### Coordination Agents
-Multi-agent workflows with specialized coordination:
+Claude Code includes built-in agents for:
+- Languages (Python, Rust, Go, TypeScript, etc.)
+- Infrastructure (Kubernetes, Terraform, AWS/Azure/GCP)
+- Databases (PostgreSQL, SQL optimization)
+- Testing, debugging, code review
 
-| Agent | Purpose |
-|-------|---------|
-| `@task-planner` | Decomposes complex tasks, delegates to specialists |
-| `@output-critic` | Reviews outputs before finalization |
-| `@context-researcher` | Gathers context before implementation |
-| `@codebase-navigator` | Maps project structure, locates code |
+**This marketplace fills the gaps:**
 
-### Workflow Templates
-Composable patterns in `workflows/`:
-
-```
-Feature Development:
-@task-planner → @codebase-navigator → @architect-review → @{lang}-pro → @code-reviewer
-
-Bug Investigation:
-@codebase-navigator → @debugger → @error-detective → @{lang}-pro → @test-strategist
-
-Architecture Decision:
-@context-researcher → @reasoning-orchestrator → /q1-hypothesize → /q5-decide
-```
-
-### Best Practice Skills
-| Skill | What It Teaches |
-|-------|-----------------|
-| `agentic-coding-patterns` | Writing code that works well with AI |
-| `context-optimization` | Managing context windows effectively |
-| `anthropic-agent-guidelines` | Official Anthropic agent best practices |
-| `eval-driven-development` | Testing and evaluating AI outputs |
-| `uncertainty-communication` | When/how to ask clarifying questions |
-
-> 📚 **Progressive Disclosure**: Skills now include `summary`, `context_cost`, and `load_when` frontmatter for efficient context loading. See [SKILLS_INDEX.md](./SKILLS_INDEX.md) for the full catalog.
+| Category | What We Add |
+|----------|-------------|
+| **Finance/Quant** | Trading strategies, risk management, ML for finance |
+| **Structured Reasoning** | FPF methodology with auditable decision trails |
+| **MCP Development** | Advanced MCP server patterns |
+| **LLM Applications** | RAG systems, prompt engineering, AI agents |
+| **Event Sourcing** | CQRS, Temporal workflows |
+| **Monorepos** | Nx, Turborepo, Bazel architecture |
+| **Threat Modeling** | STRIDE analysis, attack trees |
 
 ---
 
@@ -60,50 +43,53 @@ Hypothesis-driven decision making with auditable evidence trails:
 Comprehensive ML-based asset management:
 - Deep learning (LSTM, transformers, autoencoders)
 - Reinforcement learning for portfolio optimization
-- López de Prado framework (CPCV, meta-labeling, PBO)
+- Lopez de Prado framework (CPCV, meta-labeling, PBO)
 - Factor investing with ML
 
-### MCP Development  
+### MCP Development
 Build high-quality MCP servers for LLM integrations:
 - Agent-centric design patterns
 - Tool design best practices
-- Evaluation framework
 
 ---
 
-## Model Tiers
+## Available Plugins (10)
 
-Strategic model assignment for optimal performance:
-
-| Tier | Model | Use Case |
-|------|-------|----------|
-| **Tier 1** | `opus` | Architecture, security, code review, critical coding |
-| **Tier 2** | `inherit` | Complex tasks - uses session default model |
-| **Tier 3** | `sonnet` | Support tasks (docs, testing, debugging) |
-| **Tier 4** | `haiku` | Fast operations (deployment, content) |
+| Plugin | Agents | Skills | Focus |
+|--------|--------|--------|-------|
+| `quantitative-trading` | 3 | 2 | Quant finance, ML trading, risk |
+| `structured-reasoning` | 1 | 1 | FPF methodology |
+| `mcp-development` | 1 | 1 | MCP server patterns |
+| `llm-application-dev` | 2 | 9 | RAG, prompts, AI agents |
+| `shell-scripting` | 2 | 3 | Defensive Bash, POSIX |
+| `documentation` | 2 | 4 | Docs architecture, diagrams |
+| `refactoring` | 1 | 4 | Legacy modernization |
+| `developer-essentials` | 1 | 12 | Monorepo architecture |
+| `backend-development` | 2 | 10 | Event sourcing, Temporal |
+| `security` | 1 | 5 | Threat modeling, STRIDE |
 
 ---
 
 ## Repository Structure
 
 ```
-claude-code-ccf-marketplace/
+claude-code-plugins/
 ├── .claude-plugin/
-│   └── marketplace.json          # 26 consolidated plugins
+│   └── marketplace.json          # 10 plugins
 ├── shared/
-│   └── agents/                   # 63 unique agents (single source of truth)
+│   └── agents/                   # Agent definitions
 ├── plugins/
-│   ├── agent-orchestration/      # AI coordination, context, subagent patterns
-│   ├── infrastructure/           # Cloud, K8s, Terraform, CI/CD, GitOps
-│   ├── security/                 # SAST, compliance, threat modeling, API security
-│   ├── refactoring/              # Migrations, tech debt, modernization
-│   ├── debugging/                # Error analysis, root cause, distributed tracing
-│   ├── code-quality/             # Reviews, architecture, performance analysis
-│   └── ... (20+ more plugins)
-├── workflows/                    # Composable workflow templates
-├── AGENTS.md                     # Complete agent catalog
-├── SKILLS_INDEX.md               # Skill discovery with context costs
-├── CLAUDE.md                     # Entry point (@AGENTS.md)
+│   ├── quantitative-trading/     # Finance specialty
+│   ├── structured-reasoning/     # FPF methodology
+│   ├── mcp-development/          # MCP servers
+│   ├── llm-application-dev/      # LLM applications
+│   ├── shell-scripting/          # Bash/POSIX
+│   ├── documentation/            # Docs architecture
+│   ├── refactoring/              # Modernization
+│   ├── developer-essentials/     # Monorepos
+│   ├── backend-development/      # Event sourcing
+│   └── security/                 # Threat modeling
+├── AGENTS.md                     # Agent catalog
 └── README.md
 ```
 
@@ -121,48 +107,19 @@ ln -s $(pwd) ~/.claude/plugins/claude-code-ccf-marketplace
 
 ### Install Specific Plugin
 ```bash
-# Copy individual plugin
-cp -r plugins/agent-orchestration ~/.claude/plugins/
+cp -r plugins/quantitative-trading ~/.claude/plugins/
 ```
 
 ---
 
-## Key Skills by Source
+## Model Tiers
 
-### Agent Orchestration
-- **agentic-coding-patterns** — Writing AI-friendly code
-- **context-optimization** — Managing context windows
-- **anthropic-agent-guidelines** — Official best practices
-- **eval-driven-development** — Testing AI outputs
-- **uncertainty-communication** — Asking clarifying questions
-
-### From Superpowers
-- **using-git-worktrees** — Isolated workspaces for feature development
-- **subagent-driven-development** — Fresh subagent per task
-- **root-cause-tracing** — Trace errors to source
-
-### From Context Engineering Kit
-- **prompt-engineering** — Few-shot, chain-of-thought techniques
-- **software-architecture** — Clean Architecture, DDD, SOLID
-
----
-
-## Consolidated Plugin Categories
-
-| Category | Count | Plugins |
-|----------|-------|---------|
-| **AI & ML** | 5 | agent-orchestration, structured-reasoning, llm-application-dev, mcp-development, machine-learning-ops |
-| **Infrastructure** | 1 | infrastructure (cloud, K8s, Terraform, CI/CD, GitOps, service mesh) |
-| **Development** | 5 | debugging, testing, refactoring, code-quality, backend-development |
-| **Languages** | 3 | python-development, systems-programming, shell-scripting |
-| **Data** | 3 | database, data-engineering, data-validation-suite |
-| **Security** | 1 | security (SAST, compliance, threat modeling, API security) |
-| **Documentation** | 1 | documentation (code, API, diagrams, changelogs, ADRs) |
-| **API** | 1 | api-development (REST, GraphQL, testing, mocking) |
-| **Observability** | 2 | observability-monitoring, incident-response |
-| **Finance** | 1 | quantitative-trading (quant-analyst, risk-manager, ml-quant-developer) |
-| **Workflows** | 2 | git-pr-workflows, developer-essentials |
-| **Performance** | 1 | application-performance |
+| Tier | Model | Use Case |
+|------|-------|----------|
+| **Tier 1** | `opus` | Architecture, security, critical decisions |
+| **Tier 2** | `inherit` | Complex tasks - session default |
+| **Tier 3** | `sonnet` | Support tasks (docs, testing) |
+| **Tier 4** | `haiku` | Fast operations |
 
 ---
 
@@ -178,18 +135,15 @@ cp -r plugins/agent-orchestration ~/.claude/plugins/
 
 ## Credits
 
-This repository combines and enhances multiple best-in-class Claude Code plugin sources:
-
 | Source | What It Brings |
 |--------|----------------|
-| **[wshobson/agents](https://github.com/wshobson/agents)** | 67 focused plugins, 99 agents, marketplace structure |
-| **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** | MCP builder, skill creator, changelog generator |
-| **[m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code)** | Structured reasoning (FPF), auditable decision making |
-| **[obra/superpowers](https://github.com/obra/superpowers)** | Git worktrees, root-cause tracing, subagent-driven development |
-| **[NeoLabHQ/context-engineering-kit](https://github.com/NeoLabHQ/context-engineering-kit)** | Prompt engineering, software architecture |
+| **[wshobson/agents](https://github.com/wshobson/agents)** | Base structure, marketplace pattern |
+| **[ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)** | MCP builder, skill creator |
+| **[m0n0x41d/quint-code](https://github.com/m0n0x41d/quint-code)** | Structured reasoning (FPF) |
+| **[obra/superpowers](https://github.com/obra/superpowers)** | Git worktrees, root-cause tracing |
 
 ---
 
 ## License
 
-MIT License — see individual plugins for specific licensing.
+MIT License - see individual plugins for specific licensing.

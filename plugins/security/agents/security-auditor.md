@@ -1,1 +1,0 @@
-../../../shared/agents/security-auditor.md
