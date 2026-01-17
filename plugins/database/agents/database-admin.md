@@ -1,1 +1,0 @@
-../../../shared/agents/database-admin.md

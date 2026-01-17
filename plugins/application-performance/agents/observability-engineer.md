@@ -1,1 +1,0 @@
-../../../shared/agents/observability-engineer.md

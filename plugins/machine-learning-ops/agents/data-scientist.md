@@ -1,1 +1,0 @@
-../../../shared/agents/data-scientist.md

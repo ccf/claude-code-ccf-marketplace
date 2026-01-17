@@ -1,1 +1,0 @@
-../../../shared/agents/c-pro.md

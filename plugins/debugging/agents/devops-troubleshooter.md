@@ -1,1 +1,0 @@
-../../../shared/agents/devops-troubleshooter.md

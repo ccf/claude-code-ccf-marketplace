@@ -1,1 +1,0 @@
-../../../shared/agents/cpp-pro.md

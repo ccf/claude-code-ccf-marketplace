@@ -1,1 +1,0 @@
-../../../shared/agents/fastapi-pro.md

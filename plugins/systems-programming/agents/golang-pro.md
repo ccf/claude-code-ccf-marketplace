@@ -1,1 +1,0 @@
-../../../shared/agents/golang-pro.md

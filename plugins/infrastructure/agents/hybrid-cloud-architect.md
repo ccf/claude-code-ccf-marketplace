@@ -1,1 +1,0 @@
-../../../shared/agents/hybrid-cloud-architect.md

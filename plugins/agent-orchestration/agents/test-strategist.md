@@ -1,1 +1,0 @@
-../../../shared/agents/test-strategist.md

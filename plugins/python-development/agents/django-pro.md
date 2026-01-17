@@ -1,1 +1,0 @@
-../../../shared/agents/django-pro.md

@@ -1,1 +1,0 @@
-../../../shared/agents/sql-pro.md

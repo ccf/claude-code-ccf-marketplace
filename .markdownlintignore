@@ -1,19 +1,1 @@
 node_modules/
-
-# Inactive plugins (not in marketplace.json)
-plugins/agent-orchestration/
-plugins/api-development/
-plugins/application-performance/
-plugins/code-quality/
-plugins/data-engineering/
-plugins/data-validation-suite/
-plugins/database/
-plugins/debugging/
-plugins/git-pr-workflows/
-plugins/incident-response/
-plugins/infrastructure/
-plugins/machine-learning-ops/
-plugins/observability-monitoring/
-plugins/python-development/
-plugins/systems-programming/
-plugins/testing/

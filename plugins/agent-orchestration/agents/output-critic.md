@@ -1,1 +1,0 @@
-../../../shared/agents/output-critic.md

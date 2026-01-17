@@ -1,1 +1,0 @@
-../../../shared/agents/service-mesh-expert.md
