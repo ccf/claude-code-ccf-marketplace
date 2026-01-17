@@ -1,0 +1,37 @@
+{
+  "name": "claude-code-plugins",
+  "version": "4.0.0",
+  "description": "Curated plugin marketplace with 10 specialized plugins and 16 unique agents for Claude Code",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules",
+    "lint:json": "node -e \"require('./.claude-plugin/marketplace.json')\" && echo 'JSON valid'",
+    "lint": "npm run lint:json && npm run lint:md",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "markdownlint-cli": "^0.43.0",
+    "prettier": "^3.2.0"
+  },
+  "lint-staged": {
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "markdownlint --fix",
+      "prettier --write"
+    ],
+    "*.{yaml,yml}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccf/claude-code-plugins.git"
+  },
+  "license": "MIT"
+}

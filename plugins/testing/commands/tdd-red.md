@@ -39,21 +39,25 @@ Generate failing tests using Task tool with subagent_type="unit-testing::test-au
 ## Framework Patterns
 
 **JavaScript/TypeScript (Jest/Vitest)**
+
 - Mock dependencies with `vi.fn()` or `jest.fn()`
 - Use `@testing-library` for React components
 - Property tests with `fast-check`
 
 **Python (pytest)**
+
 - Fixtures with appropriate scopes
 - Parametrize for multiple test cases
 - Hypothesis for property-based tests
 
 **Go**
+
 - Table-driven tests with subtests
 - `t.Parallel()` for parallel execution
 - Use `testify/assert` for cleaner assertions
 
 **Ruby (RSpec)**
+
 - `let` for lazy loading, `let!` for eager
 - Contexts for different scenarios
 - Shared examples for common behavior
@@ -93,6 +97,7 @@ Generate failing tests using Task tool with subagent_type="unit-testing::test-au
 ## Validation
 
 After generation:
+
 1. Run tests - confirm they fail
 2. Verify helpful failure messages
 3. Check test independence
@@ -103,33 +108,33 @@ After generation:
 ```typescript
 // auth.service.test.ts
 describe('AuthService', () => {
-  let authService: AuthService;
-  let mockUserRepo: jest.Mocked<UserRepository>;
+  let authService: AuthService
+  let mockUserRepo: jest.Mocked<UserRepository>
 
   beforeEach(() => {
-    mockUserRepo = { findByEmail: jest.fn() } as any;
-    authService = new AuthService(mockUserRepo);
-  });
+    mockUserRepo = { findByEmail: jest.fn() } as any
+    authService = new AuthService(mockUserRepo)
+  })
 
   it('should_return_token_when_valid_credentials', async () => {
-    const user = { id: '1', email: 'test@example.com', passwordHash: 'hashed' };
-    mockUserRepo.findByEmail.mockResolvedValue(user);
+    const user = { id: '1', email: 'test@example.com', passwordHash: 'hashed' }
+    mockUserRepo.findByEmail.mockResolvedValue(user)
 
-    const result = await authService.authenticate('test@example.com', 'pass');
+    const result = await authService.authenticate('test@example.com', 'pass')
 
-    expect(result.success).toBe(true);
-    expect(result.token).toBeDefined();
-  });
+    expect(result.success).toBe(true)
+    expect(result.token).toBeDefined()
+  })
 
   it('should_fail_when_user_not_found', async () => {
-    mockUserRepo.findByEmail.mockResolvedValue(null);
+    mockUserRepo.findByEmail.mockResolvedValue(null)
 
-    const result = await authService.authenticate('none@example.com', 'pass');
+    const result = await authService.authenticate('none@example.com', 'pass')
 
-    expect(result.success).toBe(false);
-    expect(result.error).toBe('INVALID_CREDENTIALS');
-  });
-});
+    expect(result.success).toBe(false)
+    expect(result.error).toBe('INVALID_CREDENTIALS')
+  })
+})
 ```
 
 Test requirements: $ARGUMENTS

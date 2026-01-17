@@ -11,11 +11,11 @@ summary: |
 
 context_cost: high
 load_when:
-  - "python testing"
-  - "pytest"
-  - "test fixtures"
-  - "mocking python"
-  - "tdd python"
+  - 'python testing'
+  - 'pytest'
+  - 'test fixtures'
+  - 'mocking python'
+  - 'tdd python'
 
 enhances:
   - async-python-patterns
@@ -42,10 +42,10 @@ def test_add():
     """Basic test with AAA pattern."""
     # Arrange
     a, b = 2, 3
-    
+
     # Act
     result = a + b
-    
+
     # Assert
     assert result == 5
 ```
@@ -113,9 +113,9 @@ def test_service(mock_fetch):
 def test_with_mock():
     mock_client = MagicMock()
     mock_client.get.return_value = {"status": "ok"}
-    
+
     result = process_with_client(mock_client)
-    
+
     mock_client.get.assert_called_with("/api/status")
 ```
 
@@ -167,5 +167,5 @@ pytest --cov-fail-under=80    # Fail if < 80%
 
 ---
 
-*For fixture patterns, see [fixtures.md](./fixtures.md)*
-*For mocking examples, see [mocking.md](./mocking.md)*
+_For fixture patterns, see [fixtures.md](./fixtures.md)_
+_For mocking examples, see [mocking.md](./mocking.md)_

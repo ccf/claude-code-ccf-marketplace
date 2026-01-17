@@ -24,7 +24,7 @@ mock.method.side_effect = [1, 2, 3]  # Sequential returns
 def test_class(MockClass):
     instance = MockClass.return_value
     instance.method.return_value = "mocked"
-    
+
     result = function_that_uses_class()
     assert result == "mocked"
 
@@ -123,7 +123,7 @@ def test_api_call():
         json={"key": "value"},
         status=200,
     )
-    
+
     result = requests.get("https://api.example.com/data")
     assert result.json()["key"] == "value"
 
@@ -192,4 +192,3 @@ def test_time_context():
     with freeze_time("2024-06-01"):
         assert datetime.now().month == 6
 ```
-

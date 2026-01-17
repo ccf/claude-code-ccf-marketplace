@@ -25,14 +25,14 @@ def calculate_position_size(
 ) -> dict:
     """
     Calculate position size based on fixed fractional risk.
-    
+
     Returns:
         Position size, dollar risk, and R-value (1R = max loss)
     """
     risk_per_share = abs(entry_price - stop_loss_price)
     dollar_risk = capital * risk_per_trade
     shares = int(dollar_risk / risk_per_share)
-    
+
     return {
         'shares': shares,
         'position_value': shares * entry_price,
@@ -47,14 +47,14 @@ def calculate_position_size(
 
 **Definition**: 1R = Initial risk (distance from entry to stop-loss × position size)
 
-| Trade Result | R-Multiple | Interpretation |
-|-------------|------------|----------------|
-| Hit stop-loss | -1R | Expected loss, well-managed |
-| Small loss | -0.5R | Exited early, acceptable |
-| Break-even | 0R | No gain or loss |
-| Small win | +1R | Risked $1 to make $1 |
-| Good win | +2-3R | Solid risk-adjusted return |
-| Great win | +5R+ | Let winners run properly |
+| Trade Result  | R-Multiple | Interpretation              |
+| ------------- | ---------- | --------------------------- |
+| Hit stop-loss | -1R        | Expected loss, well-managed |
+| Small loss    | -0.5R      | Exited early, acceptable    |
+| Break-even    | 0R         | No gain or loss             |
+| Small win     | +1R        | Risked $1 to make $1        |
+| Good win      | +2-3R      | Solid risk-adjusted return  |
+| Great win     | +5R+       | Let winners run properly    |
 
 ```python
 class RMultipleTracker:
@@ -63,7 +63,7 @@ class RMultipleTracker:
     """
     def __init__(self):
         self.trades = []
-    
+
     def record_trade(
         self,
         entry: float,
@@ -75,7 +75,7 @@ class RMultipleTracker:
         one_r = abs(entry - stop_loss) * shares
         pnl = (exit_price - entry) * shares
         r_multiple = pnl / one_r if one_r > 0 else 0
-        
+
         trade = {
             'entry': entry,
             'stop_loss': stop_loss,
@@ -87,7 +87,7 @@ class RMultipleTracker:
         }
         self.trades.append(trade)
         return trade
-    
+
     def calculate_expectancy(self) -> float:
         """
         Expectancy = (Win% × Avg Win) - (Loss% × Avg Loss)
@@ -95,22 +95,22 @@ class RMultipleTracker:
         """
         if not self.trades:
             return 0
-        
+
         r_multiples = [t['r_multiple'] for t in self.trades]
         winners = [r for r in r_multiples if r > 0]
         losers = [r for r in r_multiples if r <= 0]
-        
+
         win_rate = len(winners) / len(r_multiples)
         avg_win = np.mean(winners) if winners else 0
         avg_loss = abs(np.mean(losers)) if losers else 0
-        
+
         expectancy = (win_rate * avg_win) - ((1 - win_rate) * avg_loss)
         return expectancy
-    
+
     def calculate_system_quality(self) -> float:
         """
         System Quality Number (SQN) = sqrt(N) × Expectancy / StdDev(R)
-        
+
         SQN Interpretation:
         < 1.6: Poor system
         1.6-2.0: Average system
@@ -120,7 +120,7 @@ class RMultipleTracker:
         """
         if len(self.trades) < 30:
             return None  # Need sufficient trades
-        
+
         r_multiples = [t['r_multiple'] for t in self.trades]
         sqn = np.sqrt(len(r_multiples)) * np.mean(r_multiples) / np.std(r_multiples)
         return sqn
@@ -129,6 +129,7 @@ class RMultipleTracker:
 ## Value at Risk (VaR) Methodologies
 
 ### 1. Historical VaR
+
 ```python
 def historical_var(returns: pd.Series, confidence: float = 0.95) -> float:
     """
@@ -139,6 +140,7 @@ def historical_var(returns: pd.Series, confidence: float = 0.95) -> float:
 ```
 
 ### 2. Parametric VaR
+
 ```python
 def parametric_var(
     returns: pd.Series,
@@ -156,6 +158,7 @@ def parametric_var(
 ```
 
 ### 3. Monte Carlo VaR
+
 ```python
 def monte_carlo_var(
     returns: pd.Series,
@@ -169,18 +172,19 @@ def monte_carlo_var(
     """
     mu = returns.mean()
     sigma = returns.std()
-    
+
     # Simulate returns
     simulated_returns = np.random.normal(
         mu * holding_period,
         sigma * np.sqrt(holding_period),
         simulations
     )
-    
+
     return -np.percentile(simulated_returns, (1 - confidence) * 100)
 ```
 
 ### 4. Conditional VaR (Expected Shortfall)
+
 ```python
 def expected_shortfall(returns: pd.Series, confidence: float = 0.95) -> float:
     """
@@ -194,6 +198,7 @@ def expected_shortfall(returns: pd.Series, confidence: float = 0.95) -> float:
 ## Portfolio Risk Analysis
 
 ### Correlation & Concentration Risk
+
 ```python
 def analyze_portfolio_risk(
     weights: np.ndarray,
@@ -204,30 +209,30 @@ def analyze_portfolio_risk(
     """
     # Covariance matrix
     cov_matrix = returns.cov() * 252
-    
+
     # Portfolio volatility
     port_var = weights.T @ cov_matrix @ weights
     port_vol = np.sqrt(port_var)
-    
+
     # Marginal contribution to risk
     mcr = cov_matrix @ weights / port_vol
-    
+
     # Component contribution to risk
     ccr = weights * mcr
     pcr = ccr / port_vol  # Percentage contribution
-    
+
     # Correlation matrix for concentration analysis
     corr_matrix = returns.corr()
     avg_correlation = (corr_matrix.sum().sum() - len(returns.columns)) / (
         len(returns.columns) * (len(returns.columns) - 1)
     )
-    
+
     # Effective number of bets (diversification ratio)
     individual_vols = np.sqrt(np.diag(cov_matrix))
     weighted_vol = weights @ individual_vols
     diversification_ratio = weighted_vol / port_vol
     effective_n = diversification_ratio ** 2
-    
+
     return {
         'portfolio_volatility': port_vol,
         'marginal_risk': mcr,
@@ -240,6 +245,7 @@ def analyze_portfolio_risk(
 ```
 
 ### Maximum Drawdown Analysis
+
 ```python
 def analyze_drawdowns(returns: pd.Series, top_n: int = 5) -> dict:
     """
@@ -248,11 +254,11 @@ def analyze_drawdowns(returns: pd.Series, top_n: int = 5) -> dict:
     cumulative = (1 + returns).cumprod()
     running_max = cumulative.cummax()
     drawdowns = cumulative / running_max - 1
-    
+
     # Find drawdown periods
     is_underwater = drawdowns < 0
     drawdown_periods = []
-    
+
     start = None
     for i, underwater in enumerate(is_underwater):
         if underwater and start is None:
@@ -268,10 +274,10 @@ def analyze_drawdowns(returns: pd.Series, top_n: int = 5) -> dict:
                 'recovery_days': None  # Calculated if recovered
             })
             start = None
-    
+
     # Sort by severity
     drawdown_periods.sort(key=lambda x: x['max_drawdown'])
-    
+
     return {
         'current_drawdown': drawdowns.iloc[-1],
         'max_drawdown': drawdowns.min(),
@@ -285,6 +291,7 @@ def analyze_drawdowns(returns: pd.Series, top_n: int = 5) -> dict:
 ## Stress Testing & Scenario Analysis
 
 ### Historical Stress Scenarios
+
 ```python
 STRESS_SCENARIOS = {
     'black_monday_1987': {'equity': -0.20, 'bonds': 0.03, 'gold': 0.04},
@@ -304,20 +311,20 @@ def stress_test_portfolio(
     """
     results = []
     total_value = sum(positions.values())
-    
+
     for scenario_name, shocks in scenarios.items():
         scenario_pnl = 0
         for asset, value in positions.items():
             asset_type = categorize_asset(asset)
             shock = shocks.get(asset_type, 0)
             scenario_pnl += value * shock
-        
+
         results.append({
             'scenario': scenario_name,
             'pnl': scenario_pnl,
             'pct_loss': scenario_pnl / total_value
         })
-    
+
     return pd.DataFrame(results).sort_values('pnl')
 ```
 
@@ -332,10 +339,10 @@ def kelly_criterion(
 ) -> float:
     """
     Kelly Criterion: Optimal fraction of capital to risk.
-    
+
     Full Kelly is too aggressive for most applications.
     Use half-Kelly or quarter-Kelly in practice.
-    
+
     f* = (bp - q) / b
     where:
         b = avg_win / avg_loss (win/loss ratio)
@@ -344,40 +351,41 @@ def kelly_criterion(
     """
     if avg_loss == 0 or win_rate == 0:
         return 0
-    
+
     b = avg_win / avg_loss
     p = win_rate
     q = 1 - p
-    
+
     full_kelly = (b * p - q) / b
-    
+
     # Never bet negative Kelly (negative expectancy)
     if full_kelly <= 0:
         return 0
-    
+
     return full_kelly * kelly_fraction
 ```
 
 ## Risk Limits & Guardrails
 
 ### Position & Portfolio Limits
+
 ```python
 RISK_LIMITS = {
     # Position-level limits
     'max_position_size': 0.10,       # Max 10% in single position
     'max_sector_exposure': 0.25,     # Max 25% in single sector
     'max_single_stock_risk': 0.02,   # Max 2% risk per trade
-    
+
     # Portfolio-level limits
     'max_portfolio_var_95': 0.05,    # Max 5% daily VaR
     'max_drawdown_limit': 0.15,      # Stop trading at 15% DD
     'max_leverage': 2.0,             # Max 2x leverage
     'min_cash_buffer': 0.10,         # Keep 10% in cash
-    
+
     # Correlation limits
     'max_avg_correlation': 0.60,     # Diversification requirement
     'min_effective_positions': 5,     # Minimum diversification
-    
+
     # Volatility limits
     'max_position_volatility': 0.50, # Max 50% annualized vol
     'target_portfolio_vol': 0.12,    # Target 12% annual vol
@@ -388,7 +396,7 @@ def check_risk_limits(portfolio: dict, limits: dict = RISK_LIMITS) -> list:
     Check all risk limits and return violations.
     """
     violations = []
-    
+
     # Check each limit
     for limit_name, threshold in limits.items():
         current_value = calculate_metric(portfolio, limit_name)
@@ -399,13 +407,14 @@ def check_risk_limits(portfolio: dict, limits: dict = RISK_LIMITS) -> list:
                 'current': current_value,
                 'breach_pct': (current_value - threshold) / threshold
             })
-    
+
     return violations
 ```
 
 ## Risk Reporting Dashboard
 
 ### Daily Risk Report Template
+
 ```
 ╔══════════════════════════════════════════════════════════════╗
 ║                    DAILY RISK REPORT                         ║

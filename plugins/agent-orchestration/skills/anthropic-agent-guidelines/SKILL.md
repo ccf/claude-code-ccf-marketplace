@@ -11,10 +11,10 @@ summary: |
 
 context_cost: medium
 load_when:
-  - "agent design"
-  - "tool design"
-  - "agentic loop"
-  - "anthropic best practices"
+  - 'agent design'
+  - 'tool design'
+  - 'agentic loop'
+  - 'anthropic best practices'
 ---
 
 # Anthropic Agent Guidelines
@@ -24,13 +24,14 @@ Best practices for building effective AI agents based on Anthropic's official gu
 ## Tool Design Principles
 
 ### 1. Extremely Detailed Descriptions
+
 Tool descriptions should be comprehensive and anticipate edge cases:
 
 ```json
 {
   "name": "execute_sql",
-  "description": "Execute a SQL query against the database. Returns results as JSON array. 
-    
+  "description": "Execute a SQL query against the database. Returns results as JSON array.
+
 IMPORTANT CONSTRAINTS:
 - Only SELECT queries allowed (no INSERT, UPDATE, DELETE)
 - Maximum 1000 rows returned (use LIMIT)
@@ -54,6 +55,7 @@ IF QUERY FAILS:
 ```
 
 ### 2. Anticipate Edge Cases
+
 Include handling instructions in tool descriptions:
 
 ```json
@@ -80,6 +82,7 @@ WHEN NOT TO USE:
 ```
 
 ### 3. Tools for Structured Output
+
 Use tools to get structured responses, not just for external actions:
 
 ```json
@@ -100,59 +103,60 @@ Use tools to get structured responses, not just for external actions:
 ## Agentic Loop Patterns
 
 ### Checkpoints for Long Tasks
+
 Implement explicit checkpoints:
 
 ```python
 async def agentic_task(goal: str):
     plan = await create_plan(goal)
-    
+
     for i, step in enumerate(plan.steps):
         # Checkpoint before potentially risky steps
         if step.is_destructive or step.requires_approval:
             await request_human_approval(step)
-        
+
         result = await execute_step(step)
-        
+
         # Checkpoint after significant progress
         if (i + 1) % 5 == 0:
             await save_checkpoint(plan, completed=i+1)
-        
+
         # Check for stop conditions
         if result.requires_clarification:
             return await request_clarification(result.question)
 ```
 
 ### Stop and Ask Conditions
+
 Define explicit conditions for pausing:
 
 ```markdown
 ## Stop and Ask When:
+
 1. **Ambiguous Requirements**
    - Multiple valid interpretations exist
    - Success criteria are unclear
-   
 2. **High Risk Actions**
    - Deleting data or files
    - Modifying production systems
    - Actions that can't be easily undone
-   
 3. **Unexpected State**
    - Assumptions don't match reality
    - Error conditions not in the plan
-   
 4. **Significant Decisions**
    - Choosing between major architectural approaches
    - Trade-offs that affect performance/cost/security
 ```
 
 ### Reasoning Logs
+
 Maintain explicit reasoning for debugging:
 
 ```python
 class AgentContext:
     def __init__(self):
         self.reasoning_log = []
-    
+
     def log_decision(self, decision: str, rationale: str, alternatives: list):
         self.reasoning_log.append({
             "timestamp": datetime.now(),
@@ -160,7 +164,7 @@ class AgentContext:
             "rationale": rationale,
             "alternatives_considered": alternatives
         })
-    
+
     def log_observation(self, observation: str, implications: list):
         self.reasoning_log.append({
             "timestamp": datetime.now(),
@@ -172,6 +176,7 @@ class AgentContext:
 ## Error Handling
 
 ### Retry with Exponential Backoff
+
 ```python
 async def resilient_tool_call(tool, params, max_retries=3):
     for attempt in range(max_retries):
@@ -187,35 +192,37 @@ async def resilient_tool_call(tool, params, max_retries=3):
 ```
 
 ### Graceful Degradation
+
 ```python
 async def get_user_context(user_id: str) -> UserContext:
     context = UserContext()
-    
+
     # Try to get full context, degrade gracefully
     try:
         context.preferences = await get_preferences(user_id)
     except ServiceUnavailable:
         context.preferences = default_preferences()
         context.warnings.append("Using default preferences")
-    
+
     try:
         context.history = await get_history(user_id)
     except ServiceUnavailable:
         context.history = []
         context.warnings.append("History unavailable")
-    
+
     return context
 ```
 
 ### Helpful Error Messages
+
 ```python
 class ToolError(Exception):
-    def __init__(self, message: str, suggestion: str = None, 
+    def __init__(self, message: str, suggestion: str = None,
                  retry_after: int = None):
         self.message = message
         self.suggestion = suggestion
         self.retry_after = retry_after
-    
+
     def to_agent_message(self):
         msg = f"Error: {self.message}"
         if self.suggestion:
@@ -235,6 +242,7 @@ raise ToolError(
 ## Safety Patterns
 
 ### Confirmation for Destructive Actions
+
 ```python
 def execute_with_confirmation(action: Action) -> Result:
     if action.is_destructive:
@@ -244,25 +252,27 @@ def execute_with_confirmation(action: Action) -> Result:
         )
         if not confirmed:
             return Result.cancelled("User declined")
-    
+
     return execute(action)
 ```
 
 ### Scope Limiting
+
 ```python
 class ScopedAgent:
     def __init__(self, allowed_paths: list[str], allowed_tools: list[str]):
         self.allowed_paths = allowed_paths
         self.allowed_tools = allowed_tools
-    
+
     def can_access(self, path: str) -> bool:
         return any(path.startswith(p) for p in self.allowed_paths)
-    
+
     def can_use(self, tool: str) -> bool:
         return tool in self.allowed_tools
 ```
 
 ### Audit Logging
+
 ```python
 def audited_action(action_type: str):
     def decorator(func):
@@ -273,7 +283,7 @@ def audited_action(action_type: str):
                 "timestamp": datetime.now(),
                 "agent_id": get_current_agent_id()
             }
-            
+
             try:
                 result = await func(*args, **kwargs)
                 log_entry["status"] = "success"
@@ -284,7 +294,7 @@ def audited_action(action_type: str):
                 raise
             finally:
                 await audit_log.write(log_entry)
-        
+
         return wrapper
     return decorator
 ```
@@ -292,26 +302,29 @@ def audited_action(action_type: str):
 ## Checklist
 
 ### Tool Design
+
 - [ ] Descriptions are comprehensive (200+ words for complex tools)
 - [ ] Edge cases are documented with handling instructions
 - [ ] Examples show common usage patterns
 - [ ] Clear guidance on when to use vs. alternatives
 
 ### Agentic Loops
+
 - [ ] Checkpoints implemented for long-running tasks
 - [ ] Explicit stop-and-ask conditions defined
 - [ ] Reasoning logged for debugging
 - [ ] Progress can be saved and resumed
 
 ### Error Handling
+
 - [ ] Transient errors retried with backoff
 - [ ] Permanent errors fail fast
 - [ ] Graceful degradation when possible
 - [ ] Error messages help the agent recover
 
 ### Safety
+
 - [ ] Destructive actions require confirmation
 - [ ] Agent scope is limited appropriately
 - [ ] All actions are audit logged
 - [ ] Rollback procedures exist for critical operations
-

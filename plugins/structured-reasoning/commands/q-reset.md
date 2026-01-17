@@ -1,10 +1,11 @@
 ---
-description: "Reset the FPF cycle"
+description: 'Reset the FPF cycle'
 ---
 
 # Reset Cycle
 
 ## Instruction
+
 1.  **Action:**
-    -   Call `quint_transition` to force state to `IDLE` (if supported) or manually advise user to clear `.quint/state.json` if stuck.
-    -   Ideally, use `quint_decide` with a "No Decision / Reset" payload to cleanly archive the current session.
+    - Call `quint_transition` to force state to `IDLE` (if supported) or manually advise user to clear `.quint/state.json` if stuck.
+    - Ideally, use `quint_decide` with a "No Decision / Reset" payload to cleanly archive the current session.

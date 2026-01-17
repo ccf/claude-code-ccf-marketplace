@@ -66,9 +66,9 @@ def db_session(db_engine):
     connection = db_engine.connect()
     transaction = connection.begin()
     session = Session(bind=connection)
-    
+
     yield session
-    
+
     session.close()
     transaction.rollback()
     connection.close()
@@ -139,7 +139,7 @@ def temp_directory():
     """Create and cleanup temp directory."""
     import tempfile
     import shutil
-    
+
     path = tempfile.mkdtemp()
     yield path
     shutil.rmtree(path)
@@ -181,4 +181,3 @@ def reset_environment():
     yield
     os.environ.clear()
 ```
-

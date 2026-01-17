@@ -11,11 +11,11 @@ summary: |
 
 context_cost: medium
 load_when:
-  - "structured reasoning"
-  - "architectural decision"
-  - "design rationale"
-  - "hypothesis"
-  - "first principles"
+  - 'structured reasoning'
+  - 'architectural decision'
+  - 'design rationale'
+  - 'hypothesis'
+  - 'first principles'
 
 enhances:
   - software-architecture
@@ -29,6 +29,7 @@ Structured reasoning for AI coding tools — make better decisions, remember why
 ## When to Use This Skill
 
 **Activate FPF for:**
+
 - Architectural decisions with long-term consequences
 - Multiple viable approaches requiring systematic evaluation
 - Need auditable reasoning trail for team/future reference
@@ -36,6 +37,7 @@ Structured reasoning for AI coding tools — make better decisions, remember why
 - Building up project knowledge base over time
 
 **Skip FPF for:**
+
 - Quick fixes, obvious solutions
 - Easily reversible decisions
 - Time-critical situations where overhead isn't justified
@@ -54,42 +56,46 @@ Then, audit for bias, decide, and document the rationale in a durable record.
 
 Knowledge claims are tracked at different assurance levels:
 
-| Level | Name | Description |
-|-------|------|-------------|
-| **L0** | Observation | Unverified hypothesis or note |
-| **L1** | Reasoned | Passed logical consistency check |
-| **L2** | Verified | Empirically tested and confirmed |
-| **Invalid** | Disproved | Disproved claims (kept for learning) |
+| Level       | Name        | Description                          |
+| ----------- | ----------- | ------------------------------------ |
+| **L0**      | Observation | Unverified hypothesis or note        |
+| **L1**      | Reasoned    | Passed logical consistency check     |
+| **L2**      | Verified    | Empirically tested and confirmed     |
+| **Invalid** | Disproved   | Disproved claims (kept for learning) |
 
 ## Commands
 
 Use the following slash commands in order:
 
-| # | Command | Phase | What it does |
-|---|---------|-------|--------------|
-| 0 | `/q0-init` | Setup | Initialize `.quint/` structure |
-| 1 | `/q1-hypothesize` | Abduction | Generate hypotheses → `L0/` |
-| 1b| `/q1-add` | Abduction | Inject user hypothesis → `L0/` |
-| 2 | `/q2-verify` | Deduction | Logical verification → `L1/` |
-| 3 | `/q3-validate` | Induction | Test (internal) or Research (external) → `L2/` |
-| 4 | `/q4-audit` | Bias-Audit | WLNK analysis, congruence check |
-| 5 | `/q5-decide` | Decision | Create DRR from winning hypothesis |
-| S | `/q-status` | — | Show current state and next steps |
-| Q | `/q-query` | — | Search knowledge base |
-| D | `/q-decay` | — | Check evidence freshness |
+| #   | Command           | Phase      | What it does                                   |
+| --- | ----------------- | ---------- | ---------------------------------------------- |
+| 0   | `/q0-init`        | Setup      | Initialize `.quint/` structure                 |
+| 1   | `/q1-hypothesize` | Abduction  | Generate hypotheses → `L0/`                    |
+| 1b  | `/q1-add`         | Abduction  | Inject user hypothesis → `L0/`                 |
+| 2   | `/q2-verify`      | Deduction  | Logical verification → `L1/`                   |
+| 3   | `/q3-validate`    | Induction  | Test (internal) or Research (external) → `L2/` |
+| 4   | `/q4-audit`       | Bias-Audit | WLNK analysis, congruence check                |
+| 5   | `/q5-decide`      | Decision   | Create DRR from winning hypothesis             |
+| S   | `/q-status`       | —          | Show current state and next steps              |
+| Q   | `/q-query`        | —          | Search knowledge base                          |
+| D   | `/q-decay`        | —          | Check evidence freshness                       |
 
 ## Key Concepts
 
 ### WLNK (Weakest Link)
+
 Assurance = min(evidence), never average. A chain is only as strong as its weakest link.
 
 ### Congruence
+
 External evidence must match our context (high/medium/low). Evidence from a different context may not apply.
 
 ### Validity
+
 Evidence expires — check with `/q-decay`. Stale evidence creates epistemic debt.
 
 ### Scope
+
 Knowledge applies within specified conditions only. Document the boundaries.
 
 ## Workflow Example
@@ -151,7 +157,7 @@ After FPF-driven implementation:
 2. Verify and validate the chosen approach
 3. Implement with the structured reasoning as documentation
 4. Code review references the DRR for context
-5. Future developers understand *why* decisions were made
+5. Future developers understand _why_ decisions were made
 
 ## Benefits
 
@@ -160,4 +166,3 @@ After FPF-driven implementation:
 - **Knowledge Retention**: Project learnings persist
 - **Team Alignment**: Clear rationale for decisions
 - **Technical Debt Prevention**: Bad decisions caught early
-

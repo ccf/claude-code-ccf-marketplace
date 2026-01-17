@@ -11,10 +11,10 @@ summary: |
 
 context_cost: medium
 load_when:
-  - "ai-friendly code"
-  - "writing for claude"
-  - "code structure"
-  - "documentation patterns"
+  - 'ai-friendly code'
+  - 'writing for claude'
+  - 'code structure'
+  - 'documentation patterns'
 ---
 
 # Agentic Coding Patterns
@@ -24,6 +24,7 @@ Patterns and practices for writing code that AI assistants can understand, modif
 ## Core Principles
 
 ### 1. Explicit Over Implicit
+
 AI works best with explicit, clear code rather than clever implicit patterns.
 
 ```python
@@ -36,13 +37,14 @@ class User(metaclass=AutoValidatingMeta):
 class User(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
     email: EmailStr
-    
+
     @validator('name')
     def validate_name(cls, v):
         return v.strip()
 ```
 
 ### 2. Self-Documenting Structure
+
 Code organization should reveal intent.
 
 ```
@@ -60,6 +62,7 @@ src/
 ```
 
 ### 3. Type Everything
+
 Types are documentation that AI can reason about.
 
 ```typescript
@@ -70,14 +73,14 @@ function processOrder(order, options) {
 
 // ✅ AI understands the contract
 interface Order {
-  id: string;
-  items: OrderItem[];
-  status: OrderStatus;
+  id: string
+  items: OrderItem[]
+  status: OrderStatus
 }
 
 interface ProcessOptions {
-  validateInventory: boolean;
-  sendNotification: boolean;
+  validateInventory: boolean
+  sendNotification: boolean
 }
 
 function processOrder(order: Order, options: ProcessOptions): Promise<ProcessedOrder> {
@@ -88,40 +91,44 @@ function processOrder(order: Order, options: ProcessOptions): Promise<ProcessedO
 ## Documentation Patterns
 
 ### Function-Level Context
+
 Include "why" not just "what":
 
 ```python
 def calculate_risk_score(portfolio: Portfolio) -> float:
     """
     Calculate portfolio risk using modified VaR approach.
-    
+
     Why: Standard VaR underestimates tail risk; we use CVaR
     with 99% confidence for regulatory compliance.
-    
+
     Context: Called during daily risk assessment (5am UTC)
     and before any trade execution.
-    
+
     Args:
         portfolio: Current holdings with market values
-        
+
     Returns:
         Risk score between 0.0 (no risk) and 1.0 (maximum risk)
-        
+
     Raises:
         InsufficientDataError: If < 252 days of price history
     """
 ```
 
 ### Module-Level README
+
 Each significant module should have a README:
 
 ```markdown
 # User Registration Module
 
 ## Purpose
+
 Handles new user signups with email verification.
 
 ## Key Flows
+
 1. User submits registration form
 2. Validate email uniqueness
 3. Create pending user record
@@ -129,21 +136,25 @@ Handles new user signups with email verification.
 5. User clicks link, account activated
 
 ## Integration Points
+
 - **Auth Service**: Creates session after activation
 - **Email Service**: Sends verification emails
 - **Analytics**: Tracks signup funnel
 
 ## Configuration
+
 - `VERIFICATION_TTL`: How long links are valid (default: 24h)
 - `MAX_ATTEMPTS`: Rate limiting for resend (default: 3/hour)
 
 ## Testing
+
 Run `pytest tests/user_registration/` for full suite
 ```
 
 ## Error Handling Patterns
 
 ### Typed Errors with Context
+
 ```python
 class OrderError(Exception):
     """Base for order-related errors."""
@@ -151,7 +162,7 @@ class OrderError(Exception):
 
 class InsufficientInventoryError(OrderError):
     """Raised when product inventory is too low."""
-    
+
     def __init__(self, product_id: str, requested: int, available: int):
         self.product_id = product_id
         self.requested = requested
@@ -163,25 +174,29 @@ class InsufficientInventoryError(OrderError):
 ```
 
 ### Error Boundaries
+
 ```typescript
 // Clear error handling at boundaries
 async function handleCreateOrder(req: Request): Promise<Response> {
   try {
-    const order = await orderService.create(req.body);
-    return Response.json(order, { status: 201 });
+    const order = await orderService.create(req.body)
+    return Response.json(order, { status: 201 })
   } catch (error) {
     if (error instanceof ValidationError) {
-      return Response.json({ error: error.details }, { status: 400 });
+      return Response.json({ error: error.details }, { status: 400 })
     }
     if (error instanceof InsufficientInventoryError) {
-      return Response.json({ 
-        error: 'Out of stock',
-        product: error.productId 
-      }, { status: 409 });
+      return Response.json(
+        {
+          error: 'Out of stock',
+          product: error.productId,
+        },
+        { status: 409 }
+      )
     }
     // Unknown error - log and return generic message
-    logger.error('Order creation failed', { error });
-    return Response.json({ error: 'Internal error' }, { status: 500 });
+    logger.error('Order creation failed', { error })
+    return Response.json({ error: 'Internal error' }, { status: 500 })
   }
 }
 ```
@@ -189,9 +204,10 @@ async function handleCreateOrder(req: Request): Promise<Response> {
 ## Configuration Patterns
 
 ### Centralized, Typed Config
+
 ```typescript
 // config/index.ts
-import { z } from 'zod';
+import { z } from 'zod'
 
 const ConfigSchema = z.object({
   database: z.object({
@@ -206,9 +222,9 @@ const ConfigSchema = z.object({
     newCheckout: z.boolean().default(false),
     betaUsers: z.array(z.string()).default([]),
   }),
-});
+})
 
-export type Config = z.infer<typeof ConfigSchema>;
+export type Config = z.infer<typeof ConfigSchema>
 
 export const config = ConfigSchema.parse({
   database: {
@@ -216,12 +232,13 @@ export const config = ConfigSchema.parse({
     poolSize: parseInt(process.env.DB_POOL_SIZE || '10'),
   },
   // ...
-});
+})
 ```
 
 ## Testing Patterns
 
 ### Factories Over Fixtures
+
 ```python
 # ✅ Factories make test intent clear
 def test_order_total_with_discount():
@@ -231,11 +248,12 @@ def test_order_total_with_discount():
         user=user,
         items=[OrderItemFactory.create(product=product, quantity=2)]
     )
-    
+
     assert order.total == 180.00  # 10% premium discount
 ```
 
 ### Descriptive Test Names
+
 ```python
 # ✅ Tests document behavior
 def test_user_cannot_register_with_existing_email():
@@ -258,4 +276,3 @@ def test_notification_is_sent_when_inventory_drops_below_threshold():
 - [ ] Tests use descriptive names that document behavior
 - [ ] Magic strings are constants with documentation
 - [ ] Dependencies are injected, not imported directly
-

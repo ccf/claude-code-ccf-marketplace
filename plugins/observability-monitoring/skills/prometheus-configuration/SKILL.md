@@ -60,7 +60,7 @@ services:
   prometheus:
     image: prom/prometheus:latest
     ports:
-      - "9090:9090"
+      - '9090:9090'
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus-data:/prometheus
@@ -76,6 +76,7 @@ volumes:
 ## Configuration File
 
 **prometheus.yml:**
+
 ```yaml
 global:
   scrape_interval: 15s
@@ -89,7 +90,7 @@ alerting:
   alertmanagers:
     - static_configs:
         - targets:
-          - alertmanager:9093
+            - alertmanager:9093
 
 # Load rules files
 rule_files:
@@ -106,9 +107,9 @@ scrape_configs:
   - job_name: 'node-exporter'
     static_configs:
       - targets:
-        - 'node1:9100'
-        - 'node2:9100'
-        - 'node3:9100'
+          - 'node1:9100'
+          - 'node2:9100'
+          - 'node3:9100'
     relabel_configs:
       - source_labels: [__address__]
         target_label: instance
@@ -143,8 +144,8 @@ scrape_configs:
   - job_name: 'my-app'
     static_configs:
       - targets:
-        - 'app1.example.com:9090'
-        - 'app2.example.com:9090'
+          - 'app1.example.com:9090'
+          - 'app2.example.com:9090'
     metrics_path: '/metrics'
     scheme: 'https'
     tls_config:
@@ -176,12 +177,13 @@ scrape_configs:
   - job_name: 'file-sd'
     file_sd_configs:
       - files:
-        - /etc/prometheus/targets/*.json
-        - /etc/prometheus/targets/*.yml
+          - /etc/prometheus/targets/*.json
+          - /etc/prometheus/targets/*.yml
         refresh_interval: 5m
 ```
 
 **targets/production.json:**
+
 ```json
 [
   {
@@ -281,8 +283,8 @@ groups:
         labels:
           severity: critical
         annotations:
-          summary: "Service {{ $labels.instance }} is down"
-          description: "{{ $labels.job }} has been down for more than 1 minute"
+          summary: 'Service {{ $labels.instance }} is down'
+          description: '{{ $labels.job }} has been down for more than 1 minute'
 
       - alert: HighErrorRate
         expr: job:http_requests_error_rate:percentage > 5
@@ -290,8 +292,8 @@ groups:
         labels:
           severity: warning
         annotations:
-          summary: "High error rate for {{ $labels.job }}"
-          description: "Error rate is {{ $value }}% (threshold: 5%)"
+          summary: 'High error rate for {{ $labels.job }}'
+          description: 'Error rate is {{ $value }}% (threshold: 5%)'
 
       - alert: HighLatency
         expr: job:http_request_duration:p95 > 1
@@ -299,8 +301,8 @@ groups:
         labels:
           severity: warning
         annotations:
-          summary: "High latency for {{ $labels.job }}"
-          description: "P95 latency is {{ $value }}s (threshold: 1s)"
+          summary: 'High latency for {{ $labels.job }}'
+          description: 'P95 latency is {{ $value }}s (threshold: 1s)'
 
   - name: resources
     interval: 1m
@@ -311,8 +313,8 @@ groups:
         labels:
           severity: warning
         annotations:
-          summary: "High CPU usage on {{ $labels.instance }}"
-          description: "CPU usage is {{ $value }}%"
+          summary: 'High CPU usage on {{ $labels.instance }}'
+          description: 'CPU usage is {{ $value }}%'
 
       - alert: HighMemoryUsage
         expr: instance:node_memory:utilization > 85
@@ -320,8 +322,8 @@ groups:
         labels:
           severity: warning
         annotations:
-          summary: "High memory usage on {{ $labels.instance }}"
-          description: "Memory usage is {{ $value }}%"
+          summary: 'High memory usage on {{ $labels.instance }}'
+          description: 'Memory usage is {{ $value }}%'
 
       - alert: DiskSpaceLow
         expr: instance:node_disk:utilization > 90
@@ -329,8 +331,8 @@ groups:
         labels:
           severity: critical
         annotations:
-          summary: "Low disk space on {{ $labels.instance }}"
-          description: "Disk usage is {{ $value }}%"
+          summary: 'Low disk space on {{ $labels.instance }}'
+          description: 'Disk usage is {{ $value }}%'
 ```
 
 ## Validation
@@ -364,16 +366,19 @@ promtool query instant http://localhost:9090 'up'
 ## Troubleshooting
 
 **Check scrape targets:**
+
 ```bash
 curl http://localhost:9090/api/v1/targets
 ```
 
 **Check configuration:**
+
 ```bash
 curl http://localhost:9090/api/v1/status/config
 ```
 
 **Test query:**
+
 ```bash
 curl 'http://localhost:9090/api/v1/query?query=up'
 ```

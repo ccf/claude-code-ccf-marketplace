@@ -11,11 +11,11 @@ summary: |
 
 context_cost: high
 load_when:
-  - "openapi"
-  - "swagger"
-  - "api documentation"
-  - "api spec"
-  - "sdk generation"
+  - 'openapi'
+  - 'swagger'
+  - 'api documentation'
+  - 'api spec'
+  - 'sdk generation'
 
 enhances:
   - api-design-principles
@@ -54,11 +54,11 @@ components:
 
 ### Design Approaches
 
-| Approach | Description | Best For |
-|----------|-------------|----------|
-| **Design-First** | Write spec before code | New APIs, contracts |
-| **Code-First** | Generate spec from code | Existing APIs |
-| **Hybrid** | Annotate code, generate spec | Evolving APIs |
+| Approach         | Description                  | Best For            |
+| ---------------- | ---------------------------- | ------------------- |
+| **Design-First** | Write spec before code       | New APIs, contracts |
+| **Code-First**   | Generate spec from code      | Existing APIs       |
+| **Hybrid**       | Annotate code, generate spec | Evolving APIs       |
 
 ## Quick Reference
 
@@ -73,13 +73,13 @@ components:
       properties:
         id: { type: string, format: uuid }
         email: { type: string, format: email }
-        
+
   parameters:
     PageParam:
       name: page
       in: query
       schema: { type: integer, minimum: 1, default: 1 }
-      
+
   responses:
     NotFound:
       description: Resource not found
@@ -135,5 +135,5 @@ npx openapi-generator-cli generate \
 
 ---
 
-*For detailed templates, see [templates.md](./templates.md)*
-*For validation patterns, see [validation.md](./validation.md)*
+_For detailed templates, see [templates.md](./templates.md)_
+_For validation patterns, see [validation.md](./validation.md)_

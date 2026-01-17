@@ -37,6 +37,7 @@ Request step-by-step reasoning before the final answer. Add "Let's think step by
 Analyze this bug report and determine root cause.
 
 Think step by step:
+
 1. What is the expected behavior?
 2. What is the actual behavior?
 3. What changed recently that could cause this?
@@ -100,6 +101,7 @@ Set global behavior and constraints that persist across the conversation. Define
 System: You are a senior backend engineer specializing in API design.
 
 Rules:
+
 - Always consider scalability and performance
 - Suggest RESTful patterns by default
 - Flag security concerns immediately
@@ -107,6 +109,7 @@ Rules:
 - Use early return pattern
 
 Format responses as:
+
 1. Analysis
 2. Recommendation
 3. Code example
@@ -249,7 +252,7 @@ Only add context Claude doesn't already have. Challenge each piece of informatio
 
 **Good example: Concise** (approximately 50 tokens):
 
-````markdown  theme={null}
+````markdown theme={null}
 ## Extract PDF text
 
 Use pdfplumber for text extraction:
@@ -264,7 +267,7 @@ with pdfplumber.open("file.pdf") as pdf:
 
 **Bad example: Too verbose** (approximately 150 tokens):
 
-```markdown  theme={null}
+```markdown theme={null}
 ## Extract PDF text
 
 PDF (Portable Document Format) files are a common file format that contains
@@ -290,7 +293,7 @@ Use when:
 
 Example:
 
-```markdown  theme={null}
+```markdown theme={null}
 ## Code review process
 
 1. Analyze the code structure and organization
@@ -309,7 +312,7 @@ Use when:
 
 Example:
 
-````markdown  theme={null}
+````markdown theme={null}
 ## Generate report
 
 Use this template and customize as needed:
@@ -332,7 +335,7 @@ Use when:
 
 Example:
 
-````markdown  theme={null}
+````markdown theme={null}
 ## Database migration
 
 Run exactly this script:
@@ -504,12 +507,12 @@ LLMs respond to the same persuasion principles as humans. Understanding this psy
 
 ## Principle Combinations by Prompt Type
 
-| Prompt Type | Use | Avoid |
-|------------|-----|-------|
+| Prompt Type          | Use                                   | Avoid               |
+| -------------------- | ------------------------------------- | ------------------- |
 | Discipline-enforcing | Authority + Commitment + Social Proof | Liking, Reciprocity |
-| Guidance/technique | Moderate Authority + Unity | Heavy authority |
-| Collaborative | Unity + Commitment | Authority, Liking |
-| Reference | Clarity only | All persuasion |
+| Guidance/technique   | Moderate Authority + Unity            | Heavy authority     |
+| Collaborative        | Unity + Commitment                    | Authority, Liking   |
+| Reference            | Clarity only                          | All persuasion      |
 
 ## Why This Works: The Psychology
 

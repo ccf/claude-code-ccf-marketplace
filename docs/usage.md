@@ -50,120 +50,120 @@ Claude Code automatically selects and coordinates the appropriate agents based o
 
 ### Development & Features
 
-| Command | Description |
-|---------|-------------|
+| Command                                    | Description                            |
+| ------------------------------------------ | -------------------------------------- |
 | `/backend-development:feature-development` | End-to-end backend feature development |
 
 ### Testing & Quality
 
-| Command | Description |
-|---------|-------------|
-| `/testing:test-generate` | Generate comprehensive unit tests |
-| `/testing:tdd-cycle` | Complete TDD red-green-refactor cycle |
-| `/testing:tdd-red` | Write failing tests first |
-| `/testing:tdd-green` | Implement code to pass tests |
-| `/testing:tdd-refactor` | Refactor with passing tests |
+| Command                  | Description                           |
+| ------------------------ | ------------------------------------- |
+| `/testing:test-generate` | Generate comprehensive unit tests     |
+| `/testing:tdd-cycle`     | Complete TDD red-green-refactor cycle |
+| `/testing:tdd-red`       | Write failing tests first             |
+| `/testing:tdd-green`     | Implement code to pass tests          |
+| `/testing:tdd-refactor`  | Refactor with passing tests           |
 
 ### Code Quality & Review
 
-| Command | Description |
-|---------|-------------|
-| `/code-quality:ai-review` | AI-powered code review |
-| `/code-quality:full-review` | Multi-perspective analysis |
-| `/code-quality:pr-enhance` | Enhance pull requests |
-| `/code-quality:multi-agent-review` | Multi-agent code review |
+| Command                            | Description                |
+| ---------------------------------- | -------------------------- |
+| `/code-quality:ai-review`          | AI-powered code review     |
+| `/code-quality:full-review`        | Multi-perspective analysis |
+| `/code-quality:pr-enhance`         | Enhance pull requests      |
+| `/code-quality:multi-agent-review` | Multi-agent code review    |
 
 ### Debugging & Troubleshooting
 
-| Command | Description |
-|---------|-------------|
-| `/debugging:smart-debug` | Interactive smart debugging |
-| `/debugging:error-analysis` | Deep error analysis |
-| `/debugging:error-trace` | Stack trace debugging |
-| `/debugging:debug-trace` | Distributed system tracing |
-| `/debugging:multi-agent-review` | Multi-agent problem diagnosis |
+| Command                                | Description                    |
+| -------------------------------------- | ------------------------------ |
+| `/debugging:smart-debug`               | Interactive smart debugging    |
+| `/debugging:error-analysis`            | Deep error analysis            |
+| `/debugging:error-trace`               | Stack trace debugging          |
+| `/debugging:debug-trace`               | Distributed system tracing     |
+| `/debugging:multi-agent-review`        | Multi-agent problem diagnosis  |
 | `/incident-response:incident-response` | Production incident management |
-| `/incident-response:smart-fix` | Automated incident resolution |
+| `/incident-response:smart-fix`         | Automated incident resolution  |
 
 ### Security
 
-| Command | Description |
-|---------|-------------|
-| `/security:security-hardening` | Comprehensive security hardening |
-| `/security:security-sast` | Static application security testing |
-| `/security:security-dependencies` | Dependency vulnerability scanning |
-| `/security:compliance-check` | SOC2/HIPAA/GDPR compliance |
+| Command                           | Description                         |
+| --------------------------------- | ----------------------------------- |
+| `/security:security-hardening`    | Comprehensive security hardening    |
+| `/security:security-sast`         | Static application security testing |
+| `/security:security-dependencies` | Dependency vulnerability scanning   |
+| `/security:compliance-check`      | SOC2/HIPAA/GDPR compliance          |
 
 ### Infrastructure & Deployment
 
-| Command | Description |
-|---------|-------------|
-| `/infrastructure:workflow-automate` | CI/CD pipeline automation |
-| `/infrastructure:config-validate` | Pre-deployment validation |
+| Command                                   | Description                     |
+| ----------------------------------------- | ------------------------------- |
+| `/infrastructure:workflow-automate`       | CI/CD pipeline automation       |
+| `/infrastructure:config-validate`         | Pre-deployment validation       |
 | `/observability-monitoring:monitor-setup` | Setup monitoring infrastructure |
-| `/observability-monitoring:slo-implement` | Implement SLO/SLI metrics |
+| `/observability-monitoring:slo-implement` | Implement SLO/SLI metrics       |
 
 ### Database
 
-| Command | Description |
-|---------|-------------|
-| `/database:sql-migrations` | Database migration automation |
-| `/database:migration-observability` | Migration monitoring |
-| `/database:cost-optimize` | Database cost optimization |
+| Command                             | Description                   |
+| ----------------------------------- | ----------------------------- |
+| `/database:sql-migrations`          | Database migration automation |
+| `/database:migration-observability` | Migration monitoring          |
+| `/database:cost-optimize`           | Database cost optimization    |
 
 ### Refactoring & Modernization
 
-| Command | Description |
-|---------|-------------|
-| `/refactoring:refactor-clean` | Code cleanup and refactoring |
-| `/refactoring:tech-debt` | Technical debt management |
-| `/refactoring:deps-audit` | Dependency auditing |
-| `/refactoring:legacy-modernize` | Legacy code modernization |
-| `/refactoring:code-migrate` | Code migration |
-| `/refactoring:deps-upgrade` | Dependency upgrades |
+| Command                         | Description                  |
+| ------------------------------- | ---------------------------- |
+| `/refactoring:refactor-clean`   | Code cleanup and refactoring |
+| `/refactoring:tech-debt`        | Technical debt management    |
+| `/refactoring:deps-audit`       | Dependency auditing          |
+| `/refactoring:legacy-modernize` | Legacy code modernization    |
+| `/refactoring:code-migrate`     | Code migration               |
+| `/refactoring:deps-upgrade`     | Dependency upgrades          |
 
 ### Data & ML
 
-| Command | Description |
-|---------|-------------|
-| `/machine-learning-ops:ml-pipeline` | ML training pipeline orchestration |
-| `/data-engineering:data-pipeline` | ETL/ELT pipeline construction |
-| `/data-engineering:data-driven-feature` | Data-driven feature development |
+| Command                                 | Description                        |
+| --------------------------------------- | ---------------------------------- |
+| `/machine-learning-ops:ml-pipeline`     | ML training pipeline orchestration |
+| `/data-engineering:data-pipeline`       | ETL/ELT pipeline construction      |
+| `/data-engineering:data-driven-feature` | Data-driven feature development    |
 
 ### Documentation
 
-| Command | Description |
-|---------|-------------|
-| `/documentation:doc-generate` | Generate documentation |
-| `/documentation:code-explain` | Explain code functionality |
-| `/documentation:doc-generate-openapi` | Generate OpenAPI specs |
+| Command                               | Description                |
+| ------------------------------------- | -------------------------- |
+| `/documentation:doc-generate`         | Generate documentation     |
+| `/documentation:code-explain`         | Explain code functionality |
+| `/documentation:doc-generate-openapi` | Generate OpenAPI specs     |
 
 ### Git & PR Workflows
 
-| Command | Description |
-|---------|-------------|
-| `/git-pr-workflows:git-workflow` | Git workflow automation |
-| `/git-pr-workflows:pr-workflow` | PR workflow automation |
-| `/git-pr-workflows:branch-cleanup` | Branch cleanup |
+| Command                            | Description             |
+| ---------------------------------- | ----------------------- |
+| `/git-pr-workflows:git-workflow`   | Git workflow automation |
+| `/git-pr-workflows:pr-workflow`    | PR workflow automation  |
+| `/git-pr-workflows:branch-cleanup` | Branch cleanup          |
 
 ### Structured Reasoning (FPF)
 
-| Command | Description |
-|---------|-------------|
-| `/structured-reasoning:q0-init` | Initialize reasoning knowledge base |
-| `/structured-reasoning:q1-hypothesize` | Generate competing hypotheses |
-| `/structured-reasoning:q2-verify` | Logical verification |
-| `/structured-reasoning:q3-validate` | Empirical validation |
-| `/structured-reasoning:q4-specify` | Create formal specification |
-| `/structured-reasoning:q5-decide` | Create Design Rationale Record |
+| Command                                | Description                         |
+| -------------------------------------- | ----------------------------------- |
+| `/structured-reasoning:q0-init`        | Initialize reasoning knowledge base |
+| `/structured-reasoning:q1-hypothesize` | Generate competing hypotheses       |
+| `/structured-reasoning:q2-verify`      | Logical verification                |
+| `/structured-reasoning:q3-validate`    | Empirical validation                |
+| `/structured-reasoning:q4-specify`     | Create formal specification         |
+| `/structured-reasoning:q5-decide`      | Create Design Rationale Record      |
 
 ### Agent Orchestration
 
-| Command | Description |
-|---------|-------------|
+| Command                                     | Description              |
+| ------------------------------------------- | ------------------------ |
 | `/agent-orchestration:multi-agent-optimize` | Multi-agent optimization |
-| `/agent-orchestration:improve-agent` | Agent improvement |
-| `/agent-orchestration:context-save` | Save context |
+| `/agent-orchestration:improve-agent`        | Agent improvement        |
+| `/agent-orchestration:context-save`         | Save context             |
 
 ---
 
@@ -174,16 +174,19 @@ Claude Code automatically selects and coordinates the appropriate agents based o
 The marketplace includes composable workflow templates in `workflows/`:
 
 #### Feature Development
+
 ```
 @task-planner → @codebase-navigator → @architect-review → @{lang}-pro → @code-reviewer
 ```
 
 #### Bug Investigation
+
 ```
 @codebase-navigator → @debugger → @error-detective → @{lang}-pro → @test-strategist
 ```
 
 #### Architecture Decision
+
 ```
 @context-researcher → @reasoning-orchestrator → /q1-hypothesize → /q5-decide
 ```
@@ -200,6 +203,7 @@ The marketplace includes composable workflow templates in `workflows/`:
 ### Agent Coordination Patterns
 
 #### Pattern 1: Planning → Execution
+
 ```
 @task-planner (decompose task)
   ↓
@@ -211,6 +215,7 @@ The marketplace includes composable workflow templates in `workflows/`:
 ```
 
 #### Pattern 2: Diagnosis → Fix
+
 ```
 @debugger (identify issue)
   ↓
@@ -228,11 +233,13 @@ The marketplace includes composable workflow templates in `workflows/`:
 ### 1. Use Slash Commands for Repeatability
 
 Instead of:
+
 ```
 "Review my code for security issues"
 ```
 
 Use:
+
 ```bash
 /security:security-sast
 ```
@@ -253,6 +260,7 @@ Use:
 ### 3. Use Natural Language for Exploratory Work
 
 When you're not sure what you need:
+
 ```
 "I'm getting intermittent 500 errors in production. Help me investigate."
 ```
@@ -263,13 +271,13 @@ Claude will coordinate the appropriate agents.
 
 Each agent has specific expertise. Use the right agent for the job:
 
-| Task | Best Agent |
-|------|------------|
-| API design | `@backend-architect` |
-| Security review | `@security-auditor` |
-| Performance tuning | `@performance-engineer` |
-| Database optimization | `@database-optimizer` |
-| ML pipeline | `@ml-engineer` |
+| Task                  | Best Agent              |
+| --------------------- | ----------------------- |
+| API design            | `@backend-architect`    |
+| Security review       | `@security-auditor`     |
+| Performance tuning    | `@performance-engineer` |
+| Database optimization | `@database-optimizer`   |
+| ML pipeline           | `@ml-engineer`          |
 
 ---
 

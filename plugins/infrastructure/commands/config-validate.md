@@ -3,9 +3,11 @@
 You are a configuration management expert specializing in validating, testing, and ensuring the correctness of application configurations. Create comprehensive validation schemas, implement configuration testing strategies, and ensure configurations are secure, consistent, and error-free across all environments.
 
 ## Context
+
 The user needs to validate configuration files, implement configuration schemas, ensure consistency across environments, and prevent configuration-related errors. Focus on creating robust validation rules, type safety, security checks, and automated validation processes.
 
 ## Requirements
+
 $ARGUMENTS
 
 ## Instructions
@@ -75,30 +77,30 @@ class ConfigurationAnalyzer:
 Implement configuration schema validation with JSON Schema:
 
 ```typescript
-import Ajv from 'ajv';
-import ajvFormats from 'ajv-formats';
-import { JSONSchema7 } from 'json-schema';
+import Ajv from 'ajv'
+import ajvFormats from 'ajv-formats'
+import { JSONSchema7 } from 'json-schema'
 
 interface ValidationResult {
-  valid: boolean;
+  valid: boolean
   errors?: Array<{
-    path: string;
-    message: string;
-    keyword: string;
-  }>;
+    path: string
+    message: string
+    keyword: string
+  }>
 }
 
 export class ConfigValidator {
-  private ajv: Ajv;
+  private ajv: Ajv
 
   constructor() {
     this.ajv = new Ajv({
       allErrors: true,
       strict: false,
-      coerceTypes: true
-    });
-    ajvFormats(this.ajv);
-    this.addCustomFormats();
+      coerceTypes: true,
+    })
+    ajvFormats(this.ajv)
+    this.addCustomFormats()
   }
 
   private addCustomFormats() {
@@ -106,39 +108,41 @@ export class ConfigValidator {
       type: 'string',
       validate: (data: string) => {
         try {
-          return new URL(data).protocol === 'https:';
-        } catch { return false; }
-      }
-    });
+          return new URL(data).protocol === 'https:'
+        } catch {
+          return false
+        }
+      },
+    })
 
     this.ajv.addFormat('port', {
       type: 'number',
-      validate: (data: number) => data >= 1 && data <= 65535
-    });
+      validate: (data: number) => data >= 1 && data <= 65535,
+    })
 
     this.ajv.addFormat('duration', {
       type: 'string',
-      validate: /^\d+[smhd]$/
-    });
+      validate: /^\d+[smhd]$/,
+    })
   }
 
   validate(configData: any, schemaName: string): ValidationResult {
-    const validate = this.ajv.getSchema(schemaName);
-    if (!validate) throw new Error(`Schema '${schemaName}' not found`);
+    const validate = this.ajv.getSchema(schemaName)
+    if (!validate) throw new Error(`Schema '${schemaName}' not found`)
 
-    const valid = validate(configData);
+    const valid = validate(configData)
 
     if (!valid && validate.errors) {
       return {
         valid: false,
-        errors: validate.errors.map(error => ({
+        errors: validate.errors.map((error) => ({
           path: error.instancePath || '/',
           message: error.message || 'Validation error',
-          keyword: error.keyword
-        }))
-      };
+          keyword: error.keyword,
+        })),
+      }
     }
-    return { valid: true };
+    return { valid: true }
   }
 }
 
@@ -155,14 +159,14 @@ export const schemas = {
       ssl: {
         type: 'object',
         properties: {
-          enabled: { type: 'boolean' }
+          enabled: { type: 'boolean' },
         },
-        required: ['enabled']
-      }
+        required: ['enabled'],
+      },
     },
-    required: ['host', 'port', 'database', 'user', 'password']
-  }
-};
+    required: ['host', 'port', 'database', 'user', 'password'],
+  },
+}
 ```
 
 ### 3. Environment-Specific Validation
@@ -217,15 +221,15 @@ class EnvironmentValidator:
 ### 4. Configuration Testing
 
 ```typescript
-import { describe, it, expect } from '@jest/globals';
-import { ConfigValidator } from './config-validator';
+import { describe, it, expect } from '@jest/globals'
+import { ConfigValidator } from './config-validator'
 
 describe('Configuration Validation', () => {
-  let validator: ConfigValidator;
+  let validator: ConfigValidator
 
   beforeEach(() => {
-    validator = new ConfigValidator();
-  });
+    validator = new ConfigValidator()
+  })
 
   it('should validate database config', () => {
     const config = {
@@ -233,12 +237,12 @@ describe('Configuration Validation', () => {
       port: 5432,
       database: 'myapp',
       user: 'dbuser',
-      password: 'securepass123'
-    };
+      password: 'securepass123',
+    }
 
-    const result = validator.validate(config, 'database');
-    expect(result.valid).toBe(true);
-  });
+    const result = validator.validate(config, 'database')
+    expect(result.valid).toBe(true)
+  })
 
   it('should reject invalid port', () => {
     const config = {
@@ -246,73 +250,70 @@ describe('Configuration Validation', () => {
       port: 70000,
       database: 'myapp',
       user: 'dbuser',
-      password: 'securepass123'
-    };
+      password: 'securepass123',
+    }
 
-    const result = validator.validate(config, 'database');
-    expect(result.valid).toBe(false);
-  });
-});
+    const result = validator.validate(config, 'database')
+    expect(result.valid).toBe(false)
+  })
+})
 ```
 
 ### 5. Runtime Validation
 
 ```typescript
-import { EventEmitter } from 'events';
-import * as chokidar from 'chokidar';
+import { EventEmitter } from 'events'
+import * as chokidar from 'chokidar'
 
 export class RuntimeConfigValidator extends EventEmitter {
-  private validator: ConfigValidator;
-  private currentConfig: any;
+  private validator: ConfigValidator
+  private currentConfig: any
 
   async initialize(configPath: string): Promise<void> {
-    this.currentConfig = await this.loadAndValidate(configPath);
-    this.watchConfig(configPath);
+    this.currentConfig = await this.loadAndValidate(configPath)
+    this.watchConfig(configPath)
   }
 
   private async loadAndValidate(configPath: string): Promise<any> {
-    const config = await this.loadConfig(configPath);
+    const config = await this.loadConfig(configPath)
 
-    const validationResult = this.validator.validate(
-      config,
-      this.detectEnvironment()
-    );
+    const validationResult = this.validator.validate(config, this.detectEnvironment())
 
     if (!validationResult.valid) {
       this.emit('validation:error', {
         path: configPath,
-        errors: validationResult.errors
-      });
+        errors: validationResult.errors,
+      })
 
       if (!this.isDevelopment()) {
-        throw new Error('Configuration validation failed');
+        throw new Error('Configuration validation failed')
       }
     }
 
-    return config;
+    return config
   }
 
   private watchConfig(configPath: string): void {
     const watcher = chokidar.watch(configPath, {
       persistent: true,
-      ignoreInitial: true
-    });
+      ignoreInitial: true,
+    })
 
     watcher.on('change', async () => {
       try {
-        const newConfig = await this.loadAndValidate(configPath);
+        const newConfig = await this.loadAndValidate(configPath)
 
         if (JSON.stringify(newConfig) !== JSON.stringify(this.currentConfig)) {
           this.emit('config:changed', {
             oldConfig: this.currentConfig,
-            newConfig
-          });
-          this.currentConfig = newConfig;
+            newConfig,
+          })
+          this.currentConfig = newConfig
         }
       } catch (error) {
-        this.emit('config:error', { error });
+        this.emit('config:error', { error })
       }
-    });
+    })
   }
 }
 ```
@@ -361,38 +362,38 @@ class ConfigMigrator:
 ### 7. Secure Configuration
 
 ```typescript
-import * as crypto from 'crypto';
+import * as crypto from 'crypto'
 
 interface EncryptedValue {
-  encrypted: true;
-  value: string;
-  algorithm: string;
-  iv: string;
-  authTag?: string;
+  encrypted: true
+  value: string
+  algorithm: string
+  iv: string
+  authTag?: string
 }
 
 export class SecureConfigManager {
-  private encryptionKey: Buffer;
+  private encryptionKey: Buffer
 
   constructor(masterKey: string) {
-    this.encryptionKey = crypto.pbkdf2Sync(masterKey, 'config-salt', 100000, 32, 'sha256');
+    this.encryptionKey = crypto.pbkdf2Sync(masterKey, 'config-salt', 100000, 32, 'sha256')
   }
 
   encrypt(value: any): EncryptedValue {
-    const algorithm = 'aes-256-gcm';
-    const iv = crypto.randomBytes(16);
-    const cipher = crypto.createCipheriv(algorithm, this.encryptionKey, iv);
+    const algorithm = 'aes-256-gcm'
+    const iv = crypto.randomBytes(16)
+    const cipher = crypto.createCipheriv(algorithm, this.encryptionKey, iv)
 
-    let encrypted = cipher.update(JSON.stringify(value), 'utf8', 'hex');
-    encrypted += cipher.final('hex');
+    let encrypted = cipher.update(JSON.stringify(value), 'utf8', 'hex')
+    encrypted += cipher.final('hex')
 
     return {
       encrypted: true,
       value: encrypted,
       algorithm,
       iv: iv.toString('hex'),
-      authTag: cipher.getAuthTag().toString('hex')
-    };
+      authTag: cipher.getAuthTag().toString('hex'),
+    }
   }
 
   decrypt(encryptedValue: EncryptedValue): any {
@@ -400,39 +401,39 @@ export class SecureConfigManager {
       encryptedValue.algorithm,
       this.encryptionKey,
       Buffer.from(encryptedValue.iv, 'hex')
-    );
+    )
 
     if (encryptedValue.authTag) {
-      decipher.setAuthTag(Buffer.from(encryptedValue.authTag, 'hex'));
+      decipher.setAuthTag(Buffer.from(encryptedValue.authTag, 'hex'))
     }
 
-    let decrypted = decipher.update(encryptedValue.value, 'hex', 'utf8');
-    decrypted += decipher.final('utf8');
+    let decrypted = decipher.update(encryptedValue.value, 'hex', 'utf8')
+    decrypted += decipher.final('utf8')
 
-    return JSON.parse(decrypted);
+    return JSON.parse(decrypted)
   }
 
   async processConfig(config: any): Promise<any> {
-    const processed = {};
+    const processed = {}
 
     for (const [key, value] of Object.entries(config)) {
       if (this.isEncryptedValue(value)) {
-        processed[key] = this.decrypt(value as EncryptedValue);
+        processed[key] = this.decrypt(value as EncryptedValue)
       } else if (typeof value === 'object' && value !== null) {
-        processed[key] = await this.processConfig(value);
+        processed[key] = await this.processConfig(value)
       } else {
-        processed[key] = value;
+        processed[key] = value
       }
     }
 
-    return processed;
+    return processed
   }
 }
 ```
 
 ### 8. Documentation Generation
 
-```python
+````python
 from typing import Dict, List
 import yaml
 
@@ -466,7 +467,7 @@ class ConfigDocGenerator:
                 sections.append("```\n")
 
         return sections
-```
+````
 
 ## Output Format
 

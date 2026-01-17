@@ -10,10 +10,10 @@ info:
   title: User Management API
   description: |
     API for managing users and their profiles.
-    
+
     ## Authentication
     All endpoints require Bearer token authentication.
-    
+
     ## Rate Limiting
     - 1000 requests per minute for standard tier
     - 10000 requests per minute for enterprise tier
@@ -104,7 +104,7 @@ components:
         createdAt:
           type: string
           format: date-time
-          
+
     CreateUser:
       type: object
       required: [email]
@@ -114,7 +114,7 @@ components:
           format: email
         name:
           type: string
-          
+
     UserList:
       type: object
       properties:
@@ -124,7 +124,7 @@ components:
             $ref: '#/components/schemas/User'
         pagination:
           $ref: '#/components/schemas/Pagination'
-          
+
     Pagination:
       type: object
       properties:
@@ -136,7 +136,7 @@ components:
           type: integer
         hasMore:
           type: boolean
-          
+
     Error:
       type: object
       required: [code, message]
@@ -242,4 +242,3 @@ paths:
               schema:
                 $ref: '#/components/schemas/File'
 ```
-

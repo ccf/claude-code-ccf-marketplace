@@ -11,11 +11,11 @@ summary: |
 
 context_cost: medium
 load_when:
-  - "debugging"
-  - "root cause"
-  - "stack trace"
-  - "error tracing"
-  - "bug investigation"
+  - 'debugging'
+  - 'root cause'
+  - 'stack trace'
+  - 'error tracing'
+  - 'bug investigation'
 ---
 
 # Root Cause Tracing
@@ -29,6 +29,7 @@ Bugs often manifest deep in the call stack (git init in wrong directory, file cr
 ## When to Use
 
 **Use when:**
+
 - Error happens deep in execution (not at entry point)
 - Stack trace shows long call chain
 - Unclear where invalid data originated
@@ -37,17 +38,21 @@ Bugs often manifest deep in the call stack (git init in wrong directory, file cr
 ## The Tracing Process
 
 ### 1. Observe the Symptom
+
 ```
 Error: git init failed in /Users/jesse/project/packages/core
 ```
 
 ### 2. Find Immediate Cause
+
 **What code directly causes this?**
+
 ```typescript
-await execFileAsync('git', ['init'], { cwd: projectDir });
+await execFileAsync('git', ['init'], { cwd: projectDir })
 ```
 
 ### 3. Ask: What Called This?
+
 ```typescript
 WorktreeManager.createSessionWorktree(projectDir, sessionId)
   → called by Session.initializeWorkspace()
@@ -56,16 +61,20 @@ WorktreeManager.createSessionWorktree(projectDir, sessionId)
 ```
 
 ### 4. Keep Tracing Up
+
 **What value was passed?**
+
 - `projectDir = ''` (empty string!)
 - Empty string as `cwd` resolves to `process.cwd()`
 - That's the source code directory!
 
 ### 5. Find Original Trigger
+
 **Where did empty string come from?**
+
 ```typescript
-const context = setupCoreTest(); // Returns { tempDir: '' }
-Project.create('name', context.tempDir); // Accessed before beforeEach!
+const context = setupCoreTest() // Returns { tempDir: '' }
+Project.create('name', context.tempDir) // Accessed before beforeEach!
 ```
 
 ## Adding Stack Traces
@@ -75,26 +84,28 @@ When you can't trace manually, add instrumentation:
 ```typescript
 // Before the problematic operation
 async function gitInit(directory: string) {
-  const stack = new Error().stack;
+  const stack = new Error().stack
   console.error('DEBUG git init:', {
     directory,
     cwd: process.cwd(),
     nodeEnv: process.env.NODE_ENV,
     stack,
-  });
+  })
 
-  await execFileAsync('git', ['init'], { cwd: directory });
+  await execFileAsync('git', ['init'], { cwd: directory })
 }
 ```
 
 **Critical:** Use `console.error()` in tests (not logger - may not show)
 
 **Run and capture:**
+
 ```bash
 npm test 2>&1 | grep 'DEBUG git init'
 ```
 
 **Analyze stack traces:**
+
 - Look for test file names
 - Find the line number triggering the call
 - Identify the pattern (same test? same parameter?)

@@ -17,15 +17,15 @@ summary: |
   - Primary command or pattern
 
 # Context Management
-context_cost: low | medium | high  # Token impact when fully loaded
-load_when:                          # Trigger phrases for auto-loading
-  - "relevant phrase 1"
-  - "relevant phrase 2"
+context_cost: low | medium | high # Token impact when fully loaded
+load_when: # Trigger phrases for auto-loading
+  - 'relevant phrase 1'
+  - 'relevant phrase 2'
 
 # Optional: Dependencies
-requires:                           # Other skills this depends on
+requires: # Other skills this depends on
   - other-skill-name
-enhances:                           # Skills this adds value to
+enhances: # Skills this adds value to
   - related-skill-name
 ---
 ```
@@ -33,12 +33,14 @@ enhances:                           # Skills this adds value to
 ## Content Structure
 
 ### Tier 1: Summary (in frontmatter)
+
 - 3-5 bullet points
 - Immediately actionable
 - No code blocks
 - < 200 tokens
 
 ### Tier 2: Core Content (SKILL.md body)
+
 - When to use this skill
 - Core concepts (brief)
 - Primary patterns
@@ -46,6 +48,7 @@ enhances:                           # Skills this adds value to
 - < 1000 tokens ideal
 
 ### Tier 3: Extended Content (separate files)
+
 - Detailed templates
 - Complex examples
 - Edge cases
@@ -126,4 +129,3 @@ enhances:
 ✅ **Do**: Use summary for quick decisions
 ✅ **Do**: Split templates into separate files
 ✅ **Do**: Include load_when triggers
-

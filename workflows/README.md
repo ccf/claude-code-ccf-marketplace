@@ -5,6 +5,7 @@ Composable workflows showing how to orchestrate multiple agents for complex task
 ## Available Workflows
 
 ### 1. Feature Development
+
 Full feature implementation with planning, coding, and review.
 
 ```
@@ -24,6 +25,7 @@ Full feature implementation with planning, coding, and review.
 ```
 
 ### 2. Bug Investigation
+
 Systematic debugging with root cause analysis.
 
 ```
@@ -41,6 +43,7 @@ Systematic debugging with root cause analysis.
 ```
 
 ### 3. Code Review
+
 Thorough multi-perspective review.
 
 ```
@@ -54,6 +57,7 @@ Thorough multi-perspective review.
 ```
 
 ### 4. API Design
+
 End-to-end API creation.
 
 ```
@@ -71,6 +75,7 @@ End-to-end API creation.
 ```
 
 ### 5. Architecture Decision
+
 Structured approach to significant decisions.
 
 ```
@@ -90,6 +95,7 @@ Structured approach to significant decisions.
 ```
 
 ### 6. Legacy Modernization
+
 Systematic approach to updating old code.
 
 ```
@@ -109,6 +115,7 @@ Systematic approach to updating old code.
 ```
 
 ### 7. New Project Setup
+
 From zero to productive.
 
 ```
@@ -126,6 +133,7 @@ From zero to productive.
 ```
 
 ### 8. ML Strategy Development
+
 Quantitative finance workflow.
 
 ```
@@ -145,6 +153,7 @@ Quantitative finance workflow.
 ## Usage Pattern
 
 ### Sequential Execution
+
 Use when each step depends on the previous:
 
 ```
@@ -155,12 +164,13 @@ Use when each step depends on the previous:
 ```
 
 ### Parallel Execution
+
 Use when steps are independent:
 
 ```
 # These can run in parallel:
 @frontend-developer → UI components
-@backend-architect → API design  
+@backend-architect → API design
 @database-architect → Schema design
 
 # Then combine:
@@ -168,6 +178,7 @@ Use when steps are independent:
 ```
 
 ### Iterative Refinement
+
 Use when quality requires iteration:
 
 ```
@@ -192,4 +203,3 @@ Adapt workflows to your needs:
 3. **Review significant work** — @output-critic catches issues
 4. **Document decisions** — Use /q5-decide for important choices
 5. **Test before deploying** — @test-strategist plans coverage
-

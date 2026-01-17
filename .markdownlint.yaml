@@ -18,11 +18,11 @@ MD024:
 
 # Trailing punctuation in heading - allow ? and :
 MD026:
-  punctuation: ".,;!"
+  punctuation: '.,;!'
 
 # Ordered list item prefix - allow any number
 MD029:
-  style: "ordered"
+  style: 'ordered'
 
 # Fenced code blocks should have a language specified
 MD040: true
@@ -32,4 +32,3 @@ MD051: true
 
 # Reference links and images should use a label that is defined
 MD052: true
-
